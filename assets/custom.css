@@ -1,0 +1,21 @@
+.mob-product-announcement {
+    display: none;
+}
+
+@media screen and (max-width:480px) {
+    .mob-product-announcement h4 {
+        margin: 0 0 10px 0;
+    }
+
+    .mob-product-announcement {
+        display: block;
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width:375px) {
+
+    .mob-product-announcement {
+        padding: 20px 0;
+    }
+}
