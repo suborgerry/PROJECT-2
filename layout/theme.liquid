@@ -141,16 +141,10 @@
 
   <body data-url-lang="{{ routes.cart_url }}" id="{{ page_title | handle }}" class="{{ header_class }} {{ layout_class }} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.style_product_grid == 'style_product_grid_2' %} style_product_grid_2{% endif %}{% if settings.layout_style == 'layout_style_1170' %} layout_style_1170{% endif %}{% unless settings.enable_before_you_leave_mb %} before-you-leave-disableMobile{% endunless %}{% if settings.product_layout == 'skin_1' %} product_layout_skin_1{% endif %}">
   
-    {% if template contains 'index' %}  
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-  
-    <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
+    {% if template contains 'index' %}
+      <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
     {% endif %}
+    
     {% render 'wrapper-header' %}   
 
     {% if settings.header_layout == 'vertical' %}
@@ -254,31 +248,6 @@
       
     {% include 'mw_GP_objects' %}
     {% render 'mbc-bundles' %}  
-  
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "741831512532497");
-      chatbox.setAttribute("attribution", "biz_inbox");
-
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        js.async = 'async';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-  
-  
 
     <!-- **BEGIN** Hextom QAB Integration // Main Include - DO NOT MODIFY -->
       {% render 'hextom_qab_main', product: product, customer: customer %}
