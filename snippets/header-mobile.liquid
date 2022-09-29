@@ -27,6 +27,7 @@
             <a class="logo-img" href="{{ routes.cart_url | split: 'cart' | first }}" title="Logo">
               <img data-src="{{ section.settings.logo | img_url: 'master' }}"
                    src="{{ section.settings.logo | img_url: 'master' }}"
+                   width="75"
                    alt="{{ section.settings.logo.alt | default: shop.name }}" itemprop="logo" class="lazyautosizes lazyloade" data-sizes="auto">
             </a>
             {% elsif section.settings.brand_text != '' %}
@@ -49,6 +50,7 @@
         <a class="logo-img" href="{{ routes.cart_url | split: 'cart' | first }}" title="Logo">
           <img data-src="{{ section.settings.logo | img_url: 'master' }}"
                src="{{ section.settings.logo | img_url: 'master' }}"
+               width="75"
                alt="{{ section.settings.logo.alt | default: shop.name }}" itemprop="logo" class="lazyautosizes lazyloade" data-sizes="auto">
         </a>
         {% elsif section.settings.brand_text != '' %}

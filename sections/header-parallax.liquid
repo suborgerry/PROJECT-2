@@ -29,7 +29,7 @@
                 <div class="header-panel-bt">
                     <div class="left-header header-items">
                         <div class="header-logo" itemscope itemtype="http://schema.org/Organization">
-                          <meta itemprop="url" content="{{ shop.url }}">
+                            <meta itemprop="url" content="{{ shop.url }}">
                             {% if section.settings.brand_type == 'image' and section.settings.logo_pc != bank %}
                             <a class="logo-img" href="{{ routes.cart_url | split: 'cart' | first }}" title="Logo">
                                 <img itemprop="logo" data-src="{{ section.settings.logo_pc | img_url: 'master' }}"

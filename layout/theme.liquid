@@ -36,13 +36,14 @@
       gtag('config', 'G-M0NYXN49G7');
     </script>
 
+    <!-- TODO:
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "avsvstbgyp");
-    </script>
+    </script> -->
   
     
       <!-- Basic page needs ================================================== -->
@@ -103,33 +104,28 @@
 
       {% render 'linked-options' %}
       {% if template contains 'product' %}
-      <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
       {% endif %}
 
 
       {% render 'easy-gdpr-settings' %}
-    {{ 'customized-styles.aio.min.css' | asset_url | stylesheet_tag }} <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/df10b23a543372659f4a42eeb/2a65c2ce1eddf36401bad6a5f.js");</script> {% include 'kart_discount' %}
+      {{ 'customized-styles.aio.min.css' | asset_url | stylesheet_tag }} <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/df10b23a543372659f4a42eeb/2a65c2ce1eddf36401bad6a5f.js");</script> {% include 'kart_discount' %}
       
       {{ 'custom.aio.min.css' | asset_url | stylesheet_tag }}
       
       
-    {% render 'translation-lab-language-management' %}
-
-                      {% include 'bss-product-labels-configs' %}
-                      
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "cxrx35lkju");
-      
-    </script>
-
-
-  
-
-      {% include "trackify_x" %}
+      {% if settings.enable_multilang %}
+        {% render 'translation-lab-language-management' %}
+      {% endif %}
+                        
+      <script type="text/javascript">
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "cxrx35lkju");
+        
+      </script>
     </head>
              
 
@@ -143,39 +139,15 @@
         {%- assign header_class = 'header-vertical-tpl' -%} 
     {% endif %}
 
-<body data-url-lang="{{ routes.cart_url }}" id="{{ page_title | handle }}" class="{{ header_class }} {{ layout_class }} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.style_product_grid == 'style_product_grid_2' %} style_product_grid_2{% endif %}{% if settings.layout_style == 'layout_style_1170' %} layout_style_1170{% endif %}{% unless settings.enable_before_you_leave_mb %} before-you-leave-disableMobile{% endunless %}{% if settings.product_layout == 'skin_1' %} product_layout_skin_1{% endif %}">
+  <body data-url-lang="{{ routes.cart_url }}" id="{{ page_title | handle }}" class="{{ header_class }} {{ layout_class }} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.style_product_grid == 'style_product_grid_2' %} style_product_grid_2{% endif %}{% if settings.layout_style == 'layout_style_1170' %} layout_style_1170{% endif %}{% unless settings.enable_before_you_leave_mb %} before-you-leave-disableMobile{% endunless %}{% if settings.product_layout == 'skin_1' %} product_layout_skin_1{% endif %}">
   
-  {% if template contains 'index' %}  
-
-  
-  <!-- Messenger Chat Plugin Code -->
+    {% if template contains 'index' %}  
+    <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
     <!-- Your Chat Plugin code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "741831512532497");
-      chatbox.setAttribute("attribution", "biz_inbox");
-
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v12.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        js.async = 'async';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
   
     <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
     {% endif %}
@@ -186,15 +158,16 @@
     {% endif %}    
 
     {% if settings.header_layout == 'vertical' %}
-    {% section 'navigation-vertical-menu' %}
+      {% section 'navigation-vertical-menu' %}
     {% endif %}
-	{% render 'scheme' %}
+    {% render 'scheme' %}
+
     <div class="wrapper-container wrapper-body">	
-        <main class="main-content" role="main">      
-            {{ content_for_layout }}
-	<noscript class="endOfLayoutContentX" type="text/mark"></noscript>
-  {% render 'treedify_script' %}
-        </main>    
+      <main class="main-content" role="main">      
+        {{ content_for_layout }}
+	      <noscript class="endOfLayoutContentX" type="text/mark"></noscript>
+        {% render 'treedify_script' %}
+      </main>    
             
         {% if settings.footer_layout == 'default' %}        
         {% section 'footer' %}
@@ -282,6 +255,28 @@
     {% include 'mw_GP_objects' %}
     {% render 'mbc-bundles' %}  
   
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "741831512532497");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        js.async = 'async';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   
   
 
@@ -295,12 +290,13 @@
     <div class="index-section--flush powr-popup" id="3e18a6cf_1642690312"></div>
 
     {% if content_for_header contains 'product_label' %}
+      {% include 'bss-product-labels-configs' %}
       {% include 'bss-product-label-js' %}
       {% include 'bss-label-style-css' %}
     {% endif %}
+
     <!--Navidium Edit 15/07/2022  -->
     {% include 'navidium-widget-v4' %}
-
   </body>
 </html>
 

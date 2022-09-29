@@ -931,8 +931,8 @@
   window.addEventListener('DOMContentLoaded', function () {
     prefetch();
     {% if cart.total_price > 0 %}
-    setTimeout(nvd_init, 0);
-    updateLiveCart(null);
+      setTimeout(nvd_init, 0);
+      updateLiveCart(null);
     {% endif %}
     window.addEventListener(
       'click', debounce((ev) => {
