@@ -34,11 +34,11 @@ endfor
                             {% when 'image' %}
                           	<div class="thumb filter-{{ media.alt | handle }}">
                                 <a {% if section.settings.enable_zoom_image %}data-zoom{% endif %} class="fancybox" rel="gallery1" href="{{ media | img_url: 'master' }}" data-fancybox="images">
-                                    <img id="product-featured-image-{{media.id}}" src="{{ media | img_url: 'master' }}" alt="{{ media.alt | escape }}"
+                                    <img id="product-featured-image-{{media.id}}" src="{{ media | img_url: '1x1' }}" alt="{{ media.alt | escape }}"
                                         class="lazyload"
-                                        data-src="{{ media | img_url: 'master' }}"
+                                        data-src="{{ media | img_url: '570x570' }}"
+                                        data-srcset="{{ media | img_url: '570x570' }} 1x, {{ media | img_url: '1140x1140' }} 2x"
                                         data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                                        data-aspectratio="{{ media | img_url: 'master' }}"
                                         data-sizes="auto">
                                 </a>
                             </div>
