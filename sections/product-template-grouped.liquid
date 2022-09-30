@@ -100,7 +100,11 @@ endfor
                       <div class="item filter-{{ media.alt | handle }}">
                         <div class="product-single__media" data-media-id="{{ media.id }}">
                           <a href="javascript:void(0)" data-image="{{ media | img_url: 'original' }}" data-zoom-image="{{ media | img_url: 'original' }}">
-                            <img src="{{ media | img_url: 'compact' }}" alt="{{ media.alt | escape }}">
+                            <img class="lazyload" 
+                                 src="{{ media | img_url: '1x1' }}"
+                                 data-src="{{ media | img_url: 'compact' }}"
+                                 data-srcset="{{ media | img_url: '89x' }} 1x, {{ media | img_url: '178x' }} 2x"
+                                 alt="{{ media.alt | escape }}">
                           </a>
                         </div>
                       </div>
