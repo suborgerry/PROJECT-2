@@ -1,0 +1,33 @@
+.blog-tags {
+    &__title {
+        @include media-breakpoint-down(md) {
+            margin: auto;
+            font-size: 3.2rem;
+            line-height: 3.4rem;
+        }
+    }
+    &__list {
+        display: none;
+    }
+    @include media-breakpoint-up(lg) {
+        &__title {
+            margin-right: 4.7rem;
+            min-width: max-content;
+        }
+        &__list {
+            gap: 1rem;
+            display: flex;
+        }
+        &__item {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 6px 10px;
+                border: 1px solid $c-red-1;
+                height: 31px;
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+    }
+}

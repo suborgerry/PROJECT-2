@@ -1,0 +1,119 @@
+// ==========================================================================
+// ## LAYOUT: BASE
+// ==========================================================================
+@import './mixins/helpers';
+
+// --------------------------------------------------
+// Bootstrap
+
+@import "~bootstrap-scss/functions";
+@import "~bootstrap-scss/variables";
+@import "~bootstrap-scss/mixins";
+@import "~bootstrap-scss/utilities";
+@import "~bootstrap-scss/grid";
+
+/// @content
+///   DO NOT ADD CLASSES OR RULES IN THIS FILE DIRECTLY.
+///   Instead, use imports to add extensions or snippets you made along the project.
+///
+///
+/// Production build weights only ~25kb (~4kb gzipped)
+///
+
+/// - SETTINGS & TOOLS (MUST BE AT THE TOP)
+/// Common settings and tools.
+//
+
+@import './mixins/type';
+
+/// - GENERIC
+/// Reset............A level playing field using @necolas’s Normalize.
+/// Print................Reset-like styles for print media.
+/// Elements.............Sensibly and tersely share some global commonalities.
+///
+@import './generic/reset';
+@import './generic/print';
+
+/// - COMPONENTS
+// Build and include your project’s UI components.
+// Uncomment and add to this as necessary.
+///
+/// Button..............Specific styles for btn component and its variations.
+/// Typeface............Specific styles for heading component and its size variations.
+/// Field...............Specific styles for field and input component.
+
+// Variables (replace Bootstrap variable defaults)
+@import './base/functions';
+@import './settings/variables';
+@import './settings/type';
+@import './settings/utilities';
+@import './base/body';
+@import './base/colors';
+
+@import './components/buttons';
+@import './components/products-list';
+@import './components/article-card-blog';
+@import './components/line-list';
+@import './components/customer-custom';
+@import './components/swym-custom-wishlist';
+@import './components/custom-sort-by';
+@import './components/facets-color';
+@import './components/animations';
+// @import './components/price';
+
+/// - SECTIONS
+// These are base section.
+///
+/// Header..............Shopify static section.
+/// Footer..............Shopify static section.
+///
+@import './sections/header';
+@import './sections/footer';
+@import './sections/breadcrumbs';
+@import './sections/blog-tags';
+@import './sections/blog-article-banner';
+@import './sections/main-blog';
+@import './sections/blog-tags';
+@import './sections/articles-by-tag';
+@import './sections/main-article';
+@import './sections/home-hero';
+@import './sections/social';    
+@import './sections/cta';
+@import './sections/cta-banner';
+@import './sections/collections-states';
+@import './sections/collections-tabs-list';
+@import './sections/collections-local';
+@import './sections/collections-brands';
+@import './sections/page';
+@import './sections/collabsible-content-faq';
+@import './sections/anchors-buttons';
+@import './sections/question-form';
+@import './sections/content-with-text';
+@import './sections/image-with-text';
+@import './sections/list';
+@import './sections/steps';
+@import './sections/text-page';
+@import './sections/adresses';
+@import './sections/video-with-info';
+@import './sections/video-custom';
+@import './sections/text-with-collage';
+@import './sections/previous';
+@import './sections/template-404';
+@import './sections/interns';
+@import './sections/work-to-roa';
+@import './sections/terms-job';
+@import './sections/wholesale-form';
+@import './sections/subscribe';
+@import './sections/get-involved';
+@import './sections/columns-with-links';
+@import './sections/stamped-customize';
+@import './sections/brand-ambassador-form';
+@import './sections/main-collection';
+@import './sections/profile';
+@import './sections/product-links-to-category';
+@import './sections/main-product-roa';
+@import './sections/product-tabs';
+@import './sections/store-locator.scss';
+@import './sections/cart-custom.scss';
+@import './sections/products-slider.scss';
+@import './sections/articles-categories';

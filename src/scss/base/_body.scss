@@ -1,0 +1,23 @@
+body {
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    font-family: 'Axiforma';
+    overflow-x: hidden;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+#storeify-sl-btn-trigger-popup {
+    display: none !important;
+}
+
+.shopify-policy__container {
+    padding-top: 60px;
+}
+
+.shopify-policy__title {
+    margin-bottom: 24px;
+}
