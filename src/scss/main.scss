@@ -50,15 +50,7 @@
 @import './base/body';
 @import './base/colors';
 
-@import './components/buttons';
-@import './components/products-list';
-@import './components/article-card-blog';
-@import './components/line-list';
-@import './components/customer-custom';
-@import './components/swym-custom-wishlist';
-@import './components/custom-sort-by';
-@import './components/facets-color';
-@import './components/animations';
+
 // @import './components/price';
 
 /// - SECTIONS
@@ -70,50 +62,3 @@
 @import './sections/header';
 @import './sections/footer';
 @import './sections/breadcrumbs';
-@import './sections/blog-tags';
-@import './sections/blog-article-banner';
-@import './sections/main-blog';
-@import './sections/blog-tags';
-@import './sections/articles-by-tag';
-@import './sections/main-article';
-@import './sections/home-hero';
-@import './sections/social';    
-@import './sections/cta';
-@import './sections/cta-banner';
-@import './sections/collections-states';
-@import './sections/collections-tabs-list';
-@import './sections/collections-local';
-@import './sections/collections-brands';
-@import './sections/page';
-@import './sections/collabsible-content-faq';
-@import './sections/anchors-buttons';
-@import './sections/question-form';
-@import './sections/content-with-text';
-@import './sections/image-with-text';
-@import './sections/list';
-@import './sections/steps';
-@import './sections/text-page';
-@import './sections/adresses';
-@import './sections/video-with-info';
-@import './sections/video-custom';
-@import './sections/text-with-collage';
-@import './sections/previous';
-@import './sections/template-404';
-@import './sections/interns';
-@import './sections/work-to-roa';
-@import './sections/terms-job';
-@import './sections/wholesale-form';
-@import './sections/subscribe';
-@import './sections/get-involved';
-@import './sections/columns-with-links';
-@import './sections/stamped-customize';
-@import './sections/brand-ambassador-form';
-@import './sections/main-collection';
-@import './sections/profile';
-@import './sections/product-links-to-category';
-@import './sections/main-product-roa';
-@import './sections/product-tabs';
-@import './sections/store-locator.scss';
-@import './sections/cart-custom.scss';
-@import './sections/products-slider.scss';
-@import './sections/articles-categories';
