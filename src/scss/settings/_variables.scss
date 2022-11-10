@@ -1,21 +1,15 @@
 // --------------------------------------------------
-// Type
-
-// $font-family-base: "Silka", sans-serif !important;
-
-// $headings-font-family: "Cormorant Infant", sans-serif !important;
-
-// --------------------------------------------------
 // Colors
 
-// --------------------------------------------------
-// Links
-// $link-color: $secondary;
-// $link-hover-color: $primary;
-// $link-hover-decoration: none;
+$c-red: #DA291C;
+$c-green: #17E260;
+$c-blue: #1761FF;
+$c-black: #000000;
+$c-gray: #EEEEEE;
+$c-white: #FFFFFF;
 
 // --------------------------------------------------
-// Buttons
+// Breakpoints
 
 $grid-breakpoints: (
   xs: 0,
@@ -26,8 +20,3 @@ $grid-breakpoints: (
   xl1: 1360px,
   xxl: 1440px
 );
-
-// Box shadows
-
-
-

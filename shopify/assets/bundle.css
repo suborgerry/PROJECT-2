@@ -5635,3 +5635,51 @@ body {
 main {
   overflow-x: hidden;
 }
+
+.c-red {
+  color: #DA291C;
+}
+
+.c-red-bg {
+  background-color: #DA291C;
+}
+
+.c-green {
+  color: #17E260;
+}
+
+.c-green-bg {
+  background-color: #17E260;
+}
+
+.c-blue {
+  color: #1761FF;
+}
+
+.c-blue-bg {
+  background-color: #1761FF;
+}
+
+.c-black {
+  color: #000000;
+}
+
+.c-black-bg {
+  background-color: #000000;
+}
+
+.c-gray {
+  color: #EEEEEE;
+}
+
+.c-gray-bg {
+  background-color: #EEEEEE;
+}
+
+.c-white {
+  color: #FFFFFF;
+}
+
+.c-white-bg {
+  background-color: #FFFFFF;
+}

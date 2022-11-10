@@ -1,6 +1,58 @@
 // Class for color 
 // Add '-bg' prefix for using background-color
+//
+// Example:
+//           .c-red-bg - for backgrund color
+//              or
+//           .c-red - for color 
+//
 
 .c {
-    //
+    &-red {
+        color: $c-red;
+
+        &-bg {
+            background-color: $c-red;
+        }
+    }
+
+    &-green {
+        color: $c-green;
+
+        &-bg {
+            background-color: $c-green;
+        }
+    }
+
+    &-blue {
+        color: $c-blue;
+
+        &-bg {
+            background-color: $c-blue;
+        }
+    }
+
+    &-black {
+        color: $c-black;
+
+        &-bg {
+            background-color: $c-black;
+        }
+    }
+
+    &-gray {
+        color: $c-gray;
+
+        &-bg {
+            background-color: $c-gray;
+        }
+    }
+
+    &-white {
+        color: $c-white;
+
+        &-bg {
+            background-color: $c-white;
+        }
+    }
 }
