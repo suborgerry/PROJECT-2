@@ -102,6 +102,9 @@
   </script>
 
   {{ content_for_header }}
+
+  {{ 'bundle.css' | asset_url | stylesheet_tag }}
+
 </head>
 
 <body class="template-{{ template | split: '.' | first | handle }}
@@ -140,7 +143,16 @@
     {% section 'popup' %}
   {% endif %}
 
+  
   {{ 'vendor.min.js'  | asset_url | script_tag }}
   {{ 'theme.js'  | asset_url | script_tag }}
+
+  <!-- webpack bundle -->
+  <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
+
+  <script>
+    var lazyLoadInstance = new LazyLoad();
+  </script>
 </body>
 </html>
