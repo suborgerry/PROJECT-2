@@ -24,11 +24,13 @@
         </button>
         <ul id="country-list-{{ input_prefix }}" class="disclosure-list" data-disclosure-list>
           {% for country in localization.available_countries %}
-            <li class="disclosure-list__item{% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
-              <a class="disclosure-list__option disclosure-option-with-parts" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
-                <span class="disclosure-option-with-parts__part">{{ country.name }}</span> <span class="disclosure-option-with-parts__part">({{ country.currency.iso_code }}&nbsp;{{ country.currency.symbol }})</span>
-              </a>
-            </li>
+            {% if country.iso_code == "US" or country.iso_code == "GB" %}
+              <li class="disclosure-list__item{% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
+                <a class="disclosure-list__option disclosure-option-with-parts" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
+                  <span class="disclosure-option-with-parts__part">{{ country.name }}</span> <span class="disclosure-option-with-parts__part">({{ country.currency.iso_code }}&nbsp;{{ country.currency.symbol }})</span>
+                </a>
+              </li>
+            {% endif %}
           {%- endfor -%}
         </ul>
         <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" data-disclosure-input/>
