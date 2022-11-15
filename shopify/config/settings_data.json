@@ -980,6 +980,7 @@
     "prod_thumb_detail_col_a": "#202223",
     "prod_over_redu_text": "#c4293d",
     "prod_over_redu_bg": "#ffffff",
+    "prod_over_low_text": "#6d7175",
     "prod_over_low_bg": "#ffffff",
     "prod_over_new_text": "#6d7175",
     "prod_over_new_bg": "#ffffff",
@@ -1006,6 +1007,8 @@
     "font_size_logo_int": 24,
     "button_style": "normal",
     "button_shape": "slightlyrounded",
+    "avoid_orphans": true,
+    "coll_grid_image_shape": "portrait-45",
     "prod_thumb_shape": "shortest",
     "prod_thumb_crop": false,
     "prod_thumb_text_align": "left",
@@ -1014,6 +1017,8 @@
     "prod_block_label_loc": "top right",
     "prod_stock_warn_show": true,
     "prod_stock_warn_limit_int": 10,
+    "prod_new_method": "date",
+    "prod_new_limit_int": 100,
     "prod_sale_show": true,
     "prod_sold_out_show": true,
     "enable_product_reviews_collection": false,
@@ -1191,11 +1196,6 @@
           "show_social_icons": true
         }
       }
-    },
-    "prod_over_low_text": "#6d7175",
-    "avoid_orphans": true,
-    "coll_grid_image_shape": "portrait-45",
-    "prod_new_method": "date",
-    "prod_new_limit_int": 100
+    }
   }
 }
