@@ -970,7 +970,7 @@
     "image_overlay_bg": "#000000",
     "image_overlay_opacity": 10,
     "image_overlay_shadow_opacity": 15,
-    "alt_bg_col": "#ffe802",
+    "alt_bg_col": "#0688e2",
     "alt_bg_head_col": "#202223",
     "alt_bg_text_col": "#6d7175",
     "alt_bg_link_col": "#202223",
@@ -1052,7 +1052,11 @@
         "settings": {
           "announcement_bar_col": "#000000",
           "announcement_text_col": "#ffffff",
-          "show_social_icons": true
+          "message_font_size": 14,
+          "show_social_icons": true,
+          "menu": "",
+          "show_country_selector": true,
+          "show_language_selector": true
         }
       },
       "header": {
@@ -1060,9 +1064,24 @@
         "settings": {
           "logo": "{{ shop.brand.logo }}",
           "logo_img_width_int": 75,
+          "mobile_logo_img_width_int": 100,
+          "logo_h1": true,
           "enable_sticky": true,
+          "enable_transparent": false,
           "transparent_color": "#ffffff",
-          "menu_layout": "inline-menu-center"
+          "menu_linklist": "main-menu",
+          "menu_linklist_mobile": "",
+          "menu_layout": "inline-menu-center",
+          "nav_featured_link": "Sale",
+          "enable_mobile_promo_carousel": true,
+          "enable_nav_mob_products": false,
+          "nav_mob_products_title": "Best Sellers",
+          "nav_mob_products_collection": "",
+          "enable_search": true,
+          "search_suggestions_title": "",
+          "search_suggestions_menu": "",
+          "icon_strategy": "icons_cart_search",
+          "cart_icon": "basket"
         }
       },
       "store-messages": {
@@ -1156,6 +1175,8 @@
           "1599638662124": {
             "type": "text",
             "settings": {
+              "title": "Talk about your store",
+              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
               "image_width": 75,
               "show_social_icons": true,
               "soc_icons_large": false
@@ -1164,12 +1185,16 @@
           "1599639374976": {
             "type": "menu",
             "settings": {
+              "title": "Quick links",
               "menu": "footer"
             }
           },
           "1599639431729": {
             "type": "newsletter",
             "settings": {
+              "title": "Newsletter",
+              "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
+              "button_style": "primary",
               "show_social_icons": true,
               "soc_icons_large": false
             }
@@ -1182,7 +1207,9 @@
         ],
         "settings": {
           "lower_menu": "",
-          "show_payment_icons": true
+          "show_payment_icons": true,
+          "show_country_selector": true,
+          "show_language_selector": true
         }
       },
       "popup": {
@@ -1192,10 +1219,15 @@
           "popup_delay_seconds": 4,
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
+          "title": "Sign up and save",
+          "text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>",
           "show_newsletter": true,
           "show_social_icons": true
         }
       }
-    }
+    },
+    "content_for_index": [
+
+    ]
   }
 }
