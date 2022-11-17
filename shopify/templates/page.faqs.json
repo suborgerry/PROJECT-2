@@ -1,175 +1,78 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_tax_and_shipping": false,
-            "enable_product_reviews_by_price": true
-          }
-        },
-        "vendor": {
-          "type": "vendor",
-          "settings": {
-          }
-        },
-        "divider": {
-          "type": "divider",
-          "settings": {
-            "show_in_quickbuy": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "show_single": false,
-            "select_first_variant": true,
-            "variant_style": "listed",
-            "disable_unavailable_variants": true,
-            "show_size_chart": false,
-            "size_chart_variant": "Size",
-            "size_chart_page": ""
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_quantity_selector": true,
-            "enable_payment_button": true,
-            "show_backorder_text": true,
-            "show_pickup_availability": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "show_in_tab": false,
-            "open_tab": false,
-            "icon": "",
-            "show_in_quickbuy": false
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "price",
-        "vendor",
-        "divider",
-        "variant_picker",
-        "buy_buttons",
-        "description"
-      ],
-      "settings": {
-        "show_breadcrumbs": true,
-        "show_location_underneath": false,
-        "inventory_transfers_enable": true,
-        "enable_sticky_columns": false,
-        "gallery_size": "medium",
-        "gallery_layout": "carousel-under",
-        "enable_zoom": true,
-        "enable_video_looping": false,
-        "enable_var_img_grouping": false,
-        "var_img_grouping_option": "Color,Colour,Couleur,Farbe"
-      }
-    },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "title": "You may also like",
-        "show_vendor": false,
-        "grid": 4
-      }
-    },
-    "1668682792589dc11c": {
-      "type": "apps",
-      "blocks": {
-        "166aa983-6673-4d45-a1a8-8f82ee31ca67": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": true,
-            "sku_tagtype": "sku"
-          }
-        }
-      },
-      "block_order": [
-        "166aa983-6673-4d45-a1a8-8f82ee31ca67"
-      ],
+      "type": "main-page",
       "settings": {
         "full_width": false
       }
     },
-    "9d50033d-d9bc-4746-9bb7-fade5e4fa940": {
+    "7e5558be-23bb-481e-9230-e658c16c0a97": {
       "type": "collapsible-tabs",
       "blocks": {
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-0": {
+        "template--16981205582143__7e5558be-23bb-481e-9230-e658c16c0a97-16686830866eeaaa35-0": {
           "type": "question",
           "settings": {
             "title": "I have a question about an item, who can I contact?",
-            "answer": "<p>For any questions regarding Rolling Square's products, you can contact us at <strong>support@rollingsqua.re<\/strong> or use our <strong>live chat<\/strong>!<br\/>            <br\/>          <\/p>"
+            "answer": "<p>For any questions regarding Rolling Square's products, you can contact us at <strong>support@rollingsqua.re<\/strong> or use our <strong>live chat<\/strong>!<br\/><\/p>"
           }
         },
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-1": {
+        "template--16981205582143__7e5558be-23bb-481e-9230-e658c16c0a97-16686830866eeaaa35-1": {
           "type": "question",
           "settings": {
             "title": "What is the warranty policy?",
             "answer": "<p>We offer a <strong>2 year limited warranty<\/strong> for all Rolling Square <br\/>products.<br\/><br\/>Our warranty covers any manufacturing or workmanship defects but does <br\/>not cover damages that may have resulted from normal wear and tear, <br\/>misuse\/abuse or modification of the product.<br\/><br\/><br\/>Our lifetime warranty, when offered, covers exactly the same defects as <br\/>our standard 2 years warranty, but it extends the coverage period.<br\/>            <\/p>"
           }
         },
-        "a677b7ca-2e99-4b68-b53b-8bf4baca528a": {
+        "f224588e-3692-4fc3-b5bf-3b934e513652": {
           "type": "question",
           "settings": {
             "title": "What is the return policy?",
             "answer": "<p>If you are not completely satisfied with your purchase, you may return the item in its original condition <strong>within 30 days<\/strong> of receipt for a refund (not including the original shipping fee).<br\/><br\/><br\/><br\/><br\/><br\/>Only items purchased directly from Rolling Square’s online store or <br\/>Indiegogo will be accepted. If you purchased your items from authorized <br\/>retailers (online or offline), please get in touch with them directly <br\/>for returns.<br\/><br\/><br\/>Returned items must be in their original packaging, including any accessories, manuals, and documentation, where applicable.<br\/><br\/><br\/>Non-returnable items include items purchased through retailers, <br\/>incorrect products purchased, and damaged products through customer <br\/>mishandling.<br\/><br\/><br\/><br\/><br\/>Please note that original shipping charges are non-refundable except in <br\/>cases where we have made a shipping error. All VAT\/Import taxes are the <br\/>responsibility of the receiver and are non-refundable.<br\/>            <\/p>"
           }
         },
-        "ce3507ea-54f5-4743-8858-67afcb9e1128": {
+        "17bda6d3-05d2-40a6-9b7c-0cd388e46566": {
           "type": "question",
           "settings": {
             "title": "How can I return an item?",
             "answer": "<p><br\/>              If you would like to return an item that you suspect is defective, please contact <strong>support@rollingsqua.re<\/strong>.<br\/> We will issue a replacement or store credit for approved warranty <br\/>requests. The defective item may need to be returned to us in some <br\/>cases.<br\/>            <\/p>"
           }
         },
-        "ebc8fd40-7a6c-4771-acf5-574aef534175": {
+        "08c35098-a432-46a2-b18f-6fe548a077ce": {
           "type": "question",
           "settings": {
             "title": "How long does it take for my order to be dispatched?",
             "answer": "<p><br\/>              Your order will be shipped within <strong>48 hours<\/strong> of confirmation.<br\/>            <\/p>"
           }
         },
-        "4af3918a-9cf9-4311-ba88-680b61dd6f21": {
+        "57cbc10a-5c90-4d4b-989b-c305cdaefc50": {
           "type": "question",
           "settings": {
             "title": "How long does shipping take?",
             "answer": "<p>Shipping normally takes 5-18 working days. In cases where customs processing is slow, delivery can take up to 6 weeks.<br\/><br\/><br\/>For more detailed tracking information for international shipments, you <br\/>can copy and paste your tracking number into the search bar here: <strong>https:\/\/track.aftership.com\/ <\/strong> or on the destination country's national post.<br\/><br\/><br\/><br\/><br\/>Items are also subject to customs clearance and may be held until duties<br\/> and taxes are paid. As the importer\/consignee, it is your <br\/>responsibility to pay duties and taxes. We are not able to refund <br\/>customs fees or additional charges that must be paid to get your package<br\/> delivered. If your order is returned to us, please contact <strong>support@rollingsqua.re<\/strong>.<br\/>            <\/p>"
           }
         },
-        "0c434414-5ae2-4c75-b113-3a7270110cdf": {
+        "b0d13475-f514-4289-9dda-d02db7c62ffb": {
           "type": "question",
           "settings": {
             "title": "My address is wrong but the order has already shipped.",
             "answer": "<p><br\/>              If your package has already shipped, we can't change your <br\/>address at this time. If your address was wrong the package will be <br\/>shipped back to us. Once we receive it we will ship it to you again, <br\/>please contact us at <strong>support@rollingsqua.re<\/strong> to provide the correct address.<br\/>            <\/p>"
           }
         },
-        "474559ca-0b32-4a79-8f25-5de273b6bbd8": {
+        "48546c01-d64d-474e-8872-2dbfe0e6a819": {
+          "type": "question",
+          "settings": {
+            "title": "My address is wrong but the order has already shipped.",
+            "answer": "<p><br\/>              If your package has already shipped, we can't change your <br\/>address at this time. If your address was wrong the package will be <br\/>shipped back to us. Once we receive it we will ship it to you again, <br\/>please contact us at <strong>support@rollingsqua.re<\/strong> to provide the correct address.<br\/>            <\/p>"
+          }
+        },
+        "2f1da6e3-e1dc-46f0-8888-3ce209290a79": {
           "type": "question",
           "settings": {
             "title": "By booking at the tracking number, the order seems stuck.",
             "answer": "<p><br\/>              Depending on the destination country, tracking numbers may<br\/> be slow to update (i.e. USPS). Most of the times the order is on its <br\/>way and will be delivered on time or with a small delay. If the shipping<br\/> time has exceeded our shipping timelines by more than 8 business days, <br\/>please contact the courier directly. We receive the same tracking as you<br\/> do once shipped and unfortunately do not have insight into any <br\/>additional information. If they are not able to locate your shipment, <br\/>contact us at <strong>support@rollingsqua.re<\/strong>.<br\/>            <\/p>"
           }
         },
-        "18cef75d-5993-46b2-9cdd-a1b0b1a0519d": {
+        "ba21261c-cccf-4629-8d69-3c9ae1513007": {
           "type": "question",
           "settings": {
             "title": "Where can I find my tracking number?",
@@ -178,15 +81,16 @@
         }
       },
       "block_order": [
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-0",
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-1",
-        "a677b7ca-2e99-4b68-b53b-8bf4baca528a",
-        "ce3507ea-54f5-4743-8858-67afcb9e1128",
-        "ebc8fd40-7a6c-4771-acf5-574aef534175",
-        "4af3918a-9cf9-4311-ba88-680b61dd6f21",
-        "0c434414-5ae2-4c75-b113-3a7270110cdf",
-        "474559ca-0b32-4a79-8f25-5de273b6bbd8",
-        "18cef75d-5993-46b2-9cdd-a1b0b1a0519d"
+        "template--16981205582143__7e5558be-23bb-481e-9230-e658c16c0a97-16686830866eeaaa35-0",
+        "template--16981205582143__7e5558be-23bb-481e-9230-e658c16c0a97-16686830866eeaaa35-1",
+        "f224588e-3692-4fc3-b5bf-3b934e513652",
+        "17bda6d3-05d2-40a6-9b7c-0cd388e46566",
+        "08c35098-a432-46a2-b18f-6fe548a077ce",
+        "57cbc10a-5c90-4d4b-989b-c305cdaefc50",
+        "b0d13475-f514-4289-9dda-d02db7c62ffb",
+        "48546c01-d64d-474e-8872-2dbfe0e6a819",
+        "2f1da6e3-e1dc-46f0-8888-3ce209290a79",
+        "ba21261c-cccf-4629-8d69-3c9ae1513007"
       ],
       "settings": {
         "title": "Collapsible tabs"
@@ -195,8 +99,6 @@
   },
   "order": [
     "main",
-    "recommendations",
-    "1668682792589dc11c",
-    "9d50033d-d9bc-4746-9bb7-fade5e4fa940"
+    "7e5558be-23bb-481e-9230-e658c16c0a97"
   ]
 }
