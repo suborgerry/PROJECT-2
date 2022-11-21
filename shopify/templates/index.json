@@ -19,7 +19,10 @@
         "height_desktop": 600,
         "height_mobile": 500,
         "full_width": true,
-        "overlay_style": "no_background"
+        "overlay_style": "no_background",
+        "use_alternate_height": false,
+        "alternate_height": 100,
+        "max_width": 100
       }
     },
     "81e043df-2f92-49b1-821c-54f85f968d90": {
@@ -37,6 +40,7 @@
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
+        "max_width": 100,
         "text": "<p>The case for people who hate cases.<\/p>",
         "enlarge_text": true,
         "button_label_1": "discover",
@@ -64,6 +68,7 @@
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
+        "max_width": 57,
         "text": "<p>Premium quality at an affordable price. <\/p>",
         "enlarge_text": true,
         "button_label_1": "discover",
@@ -91,6 +96,7 @@
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
+        "max_width": 100,
         "text": "<p>Making All Other Cables Obsolete.<\/p>",
         "enlarge_text": true,
         "button_label_1": "discover",
@@ -122,7 +128,10 @@
         "height_desktop": 400,
         "height_mobile": 500,
         "full_width": true,
-        "overlay_style": "shadow"
+        "overlay_style": "shadow",
+        "use_alternate_height": true,
+        "alternate_height": 70,
+        "max_width": 100
       }
     },
     "2518f5f1-24d2-4acb-9fca-a016bc14d5cd": {
@@ -144,7 +153,10 @@
         "height_desktop": 600,
         "height_mobile": 500,
         "full_width": true,
-        "overlay_style": "shadow"
+        "overlay_style": "shadow",
+        "use_alternate_height": false,
+        "alternate_height": 100,
+        "max_width": 100
       }
     },
     "16359278676808bea5": {
@@ -176,6 +188,7 @@
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
+        "max_width": 100,
         "text": "",
         "enlarge_text": true,
         "button_label_1": "discover",
@@ -413,6 +426,7 @@
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
+        "max_width": 100,
         "text": "<p> 4.8 out of 5 star rating on Trustpilot, the most trusted and transparent consumer review platform in the World.<br\/><br\/><br\/>                        <\/p>",
         "enlarge_text": true,
         "button_label_1": "see reviewvs",

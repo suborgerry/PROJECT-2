@@ -1,5 +1,9 @@
 <div id="section-id-{{ section.id }}" data-section-type="image-with-text-overlay">
   {% style %}
+    .oti-{{ section.id }} {
+      max-width: {{ section.settings.max_width }}%;
+    }
+
     {%- if section.settings.height == 'fixed' -%}
     #section-id-{{ section.id }} .fixed-height-item {
       height: {{ section.settings.height_mobile }}px;
@@ -102,7 +106,7 @@
 
     {%- if show_overlay_text -%}
       <div class="overlay-text overlay-text--for-banner overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} overlay--h-{{ section.settings.text_alignment | split: ' ' | last }} image-overlay__over">
-        <div class="overlay-text__inner">
+        <div class="overlay-text__inner oti-{{ section.id }}">
           <div class="overlay-text__text">
             {%- if section.settings.subheading != blank -%}
               <div class="overlay-text__subheading subheading subheading--over">{{ section.settings.subheading | escape }}</div>
@@ -340,6 +344,16 @@
         "label": "Set as primary page heading",
         "info": "Use <h1> tag. One per page recommended. [Read more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
         "default": false
+      },
+      {
+        "type": "range",
+        "id": "max_width",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Max-width text",
+        "default": 100
       },
       {
         "type": "richtext",

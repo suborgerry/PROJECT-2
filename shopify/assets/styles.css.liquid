@@ -9913,7 +9913,17 @@ table.noborders td {
   position: relative;
   width: 100%;
   padding: 20px;
+  position: absolute;
 }
+
+.overlay-text.overlay--h-right .overlay-text__inner {
+  right: 0;
+}
+
+.overlay-text.overlay--h-left .overlay-text__inner {
+  left: 0;
+}
+
 @media (min-width: 768px) {
   .overlay-text--for-banner .overlay-text__inner {
     padding: 50px;

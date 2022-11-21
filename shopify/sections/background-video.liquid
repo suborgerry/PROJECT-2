@@ -1,5 +1,9 @@
 <div id="section-id-{{ section.id }}" class="{% unless section.settings.full_width %}container fully-spaced-row{% endunless %}" data-section-type="background-video" data-cc-animate>
   {% style %}
+    .oti-{{ section.id }} {
+      max-width: {{ section.settings.max_width }}%;
+    }
+
     #section-id-{{ section.id }} .video-container {
       height: {{ section.settings.height_mobile }}px;
     }
@@ -9,6 +13,7 @@
       line-height: 1em;
       {%- endif %}
     }
+
     @media (min-width: 768px) {
       #section-id-{{ section.id }} .video-container {
         height: {{ section.settings.height_desktop }}px;
@@ -29,6 +34,14 @@
         {%- endif %}
       }
     }
+
+    {%- if section.settings.use_alternate_height -%}
+      @media (min-width: 800px) {
+        #section-id-{{ section.id }} .video-container {
+          height: {{ section.settings.alternate_height }}vh;
+        }
+      }
+    {%- endif %}
   {% endstyle %}
 
   {% if section.settings.video != blank %}
@@ -58,7 +71,7 @@
 
       {%- if show_overlay_text -%}
         <div class="overlay-text overlay-text--for-banner overlay--v-{{ section.settings.text_alignment | split: ' ' | first }} overlay--h-{{ section.settings.text_alignment | split: ' ' | last }} image-overlay__over">
-          <div class="overlay-text__inner">
+          <div class="overlay-text__inner oti-{{ section.id }}">
             <div class="overlay-text__text" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.5s">
               {%- if section.settings.subheading != blank -%}
                 <div class="overlay-text__subheading subheading subheading--over">{{ section.settings.subheading | escape }}</div>
@@ -288,6 +301,32 @@
             "label": "No background"
           }
         ]
+      },
+      {
+        "type": "checkbox",
+        "id": "use_alternate_height",
+        "label": "Use alternative height",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "alternate_height",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "vh",
+        "label": "Alternative height",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "max_width",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Max-width text",
+        "default": 100
       }
     ],
     "presets": [
