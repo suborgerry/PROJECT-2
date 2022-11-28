@@ -1,4 +1,10 @@
-<div id="section-id-{{ section.id }}" data-section-type="gallery">
+{%- style -%}
+  .section-{{ section.id }} h2 {
+    text-transform: {{ section.settings.transform_heading }}
+  }
+{%- endstyle -%}
+
+<div id="section-id-{{ section.id }}" data-section-type="gallery" class="section-{{ section.id }}">
   {% style %}
     {%- if section.settings.height == 'fixed' -%}
       #section-id-{{ section.id }} .gallery__item {
@@ -104,7 +110,7 @@
                     <div class="overlay-text__subheading subheading subheading--over">{{ block.settings.subheading | escape }}</div>
                   {%- endif -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class="overlay-text__title h4-style">{% render 'multiline-text' with block.settings.title %}</h2>
+                    <h2 class="overlay-text__title h4-style" style="color: {{ block.settings.text_color }}">{% render 'multiline-text' with block.settings.title %}</h2>
                   {%- endif -%}
                   {%- if block.settings.button_label != blank -%}
                     <div class="overlay-text__button-row overlay-text__button-row--{{ section.settings.button_style }}">
@@ -274,6 +280,26 @@
           "value": "link"
         }
       ]
+    },
+    {
+      "type": "select",
+      "id": "transform_heading",
+      "label": "Transform heading",
+      "options": [
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "none",
+          "label": "None" 
+        }
+      ],
+      "default": "none"
     }
   ],
   "blocks": [
@@ -353,6 +379,12 @@
           "type": "text",
           "id": "button_label",
           "label": "Button"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Heading color",
+          "default": "#000000"
         },
         {
           "type": "url",

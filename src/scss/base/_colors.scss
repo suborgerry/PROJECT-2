@@ -56,3 +56,11 @@
         }
     }
 }
+
+.text-black a {
+    @extend .c-black;
+}
+
+.text-black a.navigation__link {
+    @extend .c-black;
+}

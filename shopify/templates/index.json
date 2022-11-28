@@ -6,6 +6,7 @@
         "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0057\/7604\/8197\/files\/home_sito_V6.mp4?v=1648548393",
         "subheading": "",
         "title": "inCharge X",
+        "title_transform": "none",
         "title_size": 84,
         "title_size_mobile": 32,
         "use_h1": false,
@@ -15,9 +16,14 @@
         "button_url_1": "shopify:\/\/products\/x",
         "button_label_2": "",
         "button_url_2": "",
+        "background_color": "#000000",
+        "background_color_hover": "#ffffff",
+        "text_color": "#ffffff",
+        "text_color_hover": "#000000",
         "text_alignment": "center center",
         "height_desktop": 600,
         "height_mobile": 500,
+        "height_full": true,
         "full_width": true,
         "overlay_style": "no_background",
         "use_alternate_height": false,
@@ -37,6 +43,7 @@
         "image_link": "",
         "subheading": "",
         "title": "NAKEY",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
@@ -65,6 +72,7 @@
         "image_link": "",
         "subheading": "",
         "title": "GaN Chargers",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
@@ -93,6 +101,7 @@
         "image_link": "",
         "subheading": "",
         "title": "inCharge XL",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
@@ -115,6 +124,7 @@
         "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0057\/7604\/8197\/files\/EDGE_Rotating.mp4?v=1648718516",
         "subheading": "",
         "title": "EDGE",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 32,
         "use_h1": false,
@@ -124,9 +134,14 @@
         "button_url_1": "shopify:\/\/products\/edge-kit",
         "button_label_2": "",
         "button_url_2": "",
+        "background_color": "#000000",
+        "background_color_hover": "#ffffff",
+        "text_color": "#ffffff",
+        "text_color_hover": "#000000",
         "text_alignment": "center right",
         "height_desktop": 400,
         "height_mobile": 500,
+        "height_full": false,
         "full_width": true,
         "overlay_style": "shadow",
         "use_alternate_height": true,
@@ -140,6 +155,7 @@
         "video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0057\/7604\/8197\/files\/01_TAU_TUBE.mp4?v=1648718117",
         "subheading": "",
         "title": "Tau",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 32,
         "use_h1": false,
@@ -149,9 +165,14 @@
         "button_url_1": "shopify:\/\/products\/tau",
         "button_label_2": "",
         "button_url_2": "",
+        "background_color": "#000000",
+        "background_color_hover": "#ffffff",
+        "text_color": "#ffffff",
+        "text_color_hover": "#000000",
         "text_alignment": "center right",
         "height_desktop": 600,
         "height_mobile": 500,
+        "height_full": false,
         "full_width": true,
         "overlay_style": "shadow",
         "use_alternate_height": false,
@@ -185,6 +206,7 @@
         "image_link": "",
         "subheading": "",
         "title": "all products",
+        "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
         "use_h1": false,
@@ -213,6 +235,7 @@
             "subheading": "",
             "title": "incharge",
             "button_label": "buy now",
+            "text_color": "#000000",
             "link": "shopify:\/\/products\/incharge-x-max",
             "text_alignment": "bottom center"
           }
@@ -226,6 +249,7 @@
             "subheading": "",
             "title": "incharge 6",
             "button_label": "buy now",
+            "text_color": "#000000",
             "link": "shopify:\/\/products\/incharge-6",
             "text_alignment": "bottom center"
           }
@@ -239,6 +263,7 @@
             "subheading": "",
             "title": "incharge all models",
             "button_label": "buy now",
+            "text_color": "#ffffff",
             "link": "shopify:\/\/collections\/cables",
             "text_alignment": "bottom center"
           }
@@ -252,6 +277,7 @@
             "subheading": "",
             "title": "about the rolling team",
             "button_label": "discover",
+            "text_color": "#ffffff",
             "link": "shopify:\/\/pages\/about",
             "text_alignment": "bottom center"
           }
@@ -276,7 +302,8 @@
         "use_alt_bg": false,
         "enable_carousel": true,
         "overlay_style": "full",
-        "button_style": "primary"
+        "button_style": "primary",
+        "transform_heading": "uppercase"
       }
     },
     "1f4d6850-384d-48b4-840a-304cbe307d34": {
@@ -422,12 +449,13 @@
         "height_mobile": 460,
         "image_link": "",
         "subheading": "",
-        "title": "Trusted by 300.000+ happy Tech Minimalists.",
-        "title_size": 84,
-        "title_size_mobile": 46,
+        "title": "Trusted by 300.000 happy Tech Minimalists.",
+        "title_transform": "uppercase",
+        "title_size": 36,
+        "title_size_mobile": 20,
         "use_h1": false,
         "max_width": 100,
-        "text": "<p> 4.8 out of 5 star rating on Trustpilot, the most trusted and transparent consumer review platform in the World.<br\/><br\/><br\/>                        <\/p>",
+        "text": "<p> 4.8 out of 5 star rating on Trustpilot, the most trusted and transparent consumer review platform in the World.<\/p>",
         "enlarge_text": true,
         "button_label_1": "see reviewvs",
         "button_url_1": "#",
@@ -457,6 +485,38 @@
       "settings": {
         "full_width": false
       }
+    },
+    "1669286817596df793": {
+      "type": "apps",
+      "blocks": {
+        "7cdab2bf-75b1-43ac-85bd-c18bb83f50bd": {
+          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/carousel\/a103faaf-2125-4b0e-89fa-de5149736723",
+          "settings": {
+            "title": "Real Reviews from Real Customers",
+            "auto_play": false,
+            "take": 30,
+            "color_title": "",
+            "color_star": "",
+            "color_text": "",
+            "color_link": "",
+            "review_ids": "",
+            "product_ids": "",
+            "category": "",
+            "product_brand": "",
+            "tags": "",
+            "min_rating": "none",
+            "fill_empty": true,
+            "random": true,
+            "with_photos": false
+          }
+        }
+      },
+      "block_order": [
+        "7cdab2bf-75b1-43ac-85bd-c18bb83f50bd"
+      ],
+      "settings": {
+        "full_width": false
+      }
     }
   },
   "order": [
@@ -471,6 +531,7 @@
     "16359279164ff7d3f3",
     "1f4d6850-384d-48b4-840a-304cbe307d34",
     "13f595c4-fd07-4e27-85ab-6b52e6262a61",
-    "1668685322a4c0e31c"
+    "1668685322a4c0e31c",
+    "1669286817596df793"
   ]
 }

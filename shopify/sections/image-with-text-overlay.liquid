@@ -4,6 +4,10 @@
       max-width: {{ section.settings.max_width }}%;
     }
 
+    .text-transform-{{ section.id }} {
+      text-transform: {{ section.settings.title_transform }}
+    }
+
     {%- if section.settings.height == 'fixed' -%}
     #section-id-{{ section.id }} .fixed-height-item {
       height: {{ section.settings.height_mobile }}px;
@@ -115,7 +119,7 @@
               {% if section.settings.use_h1 %}
                 <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
               {% else %}
-                <h2 class="overlay-text__title h1-style">{% render 'multiline-text' with section.settings.title %}</h2>
+                <h2 class="overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
               {% endif %}
             {%- endif -%}
             {%- if section.settings.text != blank -%}
@@ -317,6 +321,30 @@
         "id": "title",
         "label": "Heading",
         "default": "Two line\ntext heading"
+      },
+      {
+        "type": "select",
+        "id": "title_transform",
+        "label": "Title transform",
+        "options": [
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          },
+          {
+            "value": "capitalize",
+            "label": "Сapitalize"
+          },
+          {
+            "value": "lowercase",
+            "label": "Lowercase"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ],
+        "default": "uppercase"
       },
       {
         "type": "range",

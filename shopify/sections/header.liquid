@@ -443,6 +443,19 @@
   }
   theme.inlineNavigationCheck();
 </script>
+
+<script>
+  const headerWrapper = document.querySelector("#pageheader");
+
+  window.addEventListener('scroll', () => { 
+
+    if(window.scrollY >= headerWrapper.offsetHeight){
+        headerWrapper.classList.add('bg-white', 'text-black');
+    }else{    
+        headerWrapper.classList.remove('bg-white', 'text-black');
+    }
+  });
+</script>
 {%- endif -%}
 
 {%- endif -%}

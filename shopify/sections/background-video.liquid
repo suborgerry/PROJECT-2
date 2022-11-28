@@ -4,9 +4,32 @@
       max-width: {{ section.settings.max_width }}%;
     }
 
-    #section-id-{{ section.id }} .video-container {
-      height: {{ section.settings.height_mobile }}px;
+    .text-transform-{{ section.id }} {
+      text-transform: {{ section.settings.title_transform }}
     }
+
+    .bv-{{ section.id }} {
+      {% if section.settings.height_full %}
+        height: 100vh;
+      {% endif %}
+    }
+
+    .overlay-text__button-row .btn-color-{{ section.id }} {
+      background-color: {{ section.settings.background_color }};
+      color: {{ section.settings.text_color }};
+    }
+
+    .overlay-text__button-row .btn-color-{{ section.id }}:hover {
+      background-color: {{ section.settings.background_color_hover }};
+      color: {{ section.settings.text_color_hover }};
+    }
+
+    {% unless section.settings.height_full %}
+      #section-id-{{ section.id }} .video-container {
+        height: {{ section.settings.height_mobile }}px;
+      }
+    {% endunless %}
+
     #section-id-{{ section.id }} .overlay-text__title {
       font-size: {{ section.settings.title_size_mobile }}px;
       {%- if section.settings.title_size_mobile >= 90 -%}
@@ -15,9 +38,12 @@
     }
 
     @media (min-width: 768px) {
-      #section-id-{{ section.id }} .video-container {
-        height: {{ section.settings.height_desktop }}px;
-      }
+      {% unless section.settings.height_full %}
+        #section-id-{{ section.id }} .video-container {
+          height: {{ section.settings.height_desktop }}px;
+        }
+      {% endunless %}
+
       #section-id-{{ section.id }} .overlay-text__title {
         {%- assign title_size_medium = section.settings.title_size | times: 0.7 | at_least: section.settings.title_size_mobile -%}
         font-size: {{ title_size_medium }}px;
@@ -45,7 +71,7 @@
   {% endstyle %}
 
   {% if section.settings.video != blank %}
-    <div class="height--fixed video-container video-container--background image-overlay image-overlay--bg-{{ section.settings.overlay_style }}"
+    <div class="height--fixed video-container video-container--background image-overlay image-overlay--bg-{{ section.settings.overlay_style }} bv-{{ section.id }}"
       data-video-url="{{ section.settings.video | escape }}"
       data-video-autoplay="true"
       data-video-loop="true"
@@ -80,7 +106,7 @@
                 {% if section.settings.use_h1 %}
                   <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
                 {% else %}
-                  <h2 class="overlay-text__title h1-style">{% render 'multiline-text' with section.settings.title %}</h2>
+                  <h2 class="overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
                 {% endif %}
               {%- endif -%}
               {%- if section.settings.text != blank -%}
@@ -89,10 +115,10 @@
               {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
                 <div class="overlay-text__button-row">
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button altcolour" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button button btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button button altcolour" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button button btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}
@@ -142,6 +168,30 @@
         "default": "Background video"
       },
       {
+        "type": "select",
+        "id": "title_transform",
+        "label": "Title transform",
+        "options": [
+          {
+            "value": "uppercase",
+            "label": "Uppercase"
+          },
+          {
+            "value": "capitalize",
+            "label": "Сapitalize"
+          },
+          {
+            "value": "lowercase",
+            "label": "Lowercase"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ],
+        "default": "uppercase"
+      },
+      {
         "type": "range",
         "id": "title_size",
         "min": 20,
@@ -181,6 +231,10 @@
         "default": true
       },
       {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
         "type": "text",
         "id": "button_label_1",
         "label": "Button 1 label"
@@ -199,6 +253,30 @@
         "type": "url",
         "id": "button_url_2",
         "label": "Button 2 link"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color of button",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "background_color_hover",
+        "label": "Background color(Hover) of button",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color of button",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "text_color_hover",
+        "label": "Text color(hover) of button",
+        "default": "#000000"
       },
       {
         "type": "select",
@@ -267,6 +345,12 @@
         "unit": "px",
         "label": "Mobile fixed height",
         "default": 500
+      },
+      {
+        "type": "checkbox",
+        "id": "height_full",
+        "label": "Full page height",
+        "default": false
       },
       {
         "id": "full_width",

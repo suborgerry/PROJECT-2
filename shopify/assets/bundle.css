@@ -5671,7 +5671,7 @@ main {
   background-color: #1761FF;
 }
 
-.c-black {
+.c-black, .text-black a.navigation__link, .text-black a {
   color: #000000;
 }
 
