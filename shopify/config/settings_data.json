@@ -1063,6 +1063,7 @@
         "type": "header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo_white.webp",
+          "logo_contrast": "shopify:\/\/shop_images\/image_2_1_1.png",
           "logo_img_width_int": 145,
           "mobile_logo_img_width_int": 100,
           "logo_h1": true,
