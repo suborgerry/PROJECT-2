@@ -24,6 +24,11 @@
       color: {{ section.settings.text_color_hover }};
     }
 
+    .overlay-text .overlay-text__title.bv-other-text-color-{{ section.id }},
+    .bv-other-text-color-{{ section.id }} {
+      color: {{ section.settings.other_text_color }}
+    }
+
     {% unless section.settings.height_full %}
       #section-id-{{ section.id }} .video-container {
         height: {{ section.settings.height_mobile }}px;
@@ -106,11 +111,11 @@
                 {% if section.settings.use_h1 %}
                   <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
                 {% else %}
-                  <h2 class="overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
+                  <h2 class="bv-other-text-color-{{ section.id }} overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
                 {% endif %}
               {%- endif -%}
               {%- if section.settings.text != blank -%}
-                <div class="overlay-text__rte rte {% if section.settings.enlarge_text %}large-text{% endif %}">{{ section.settings.text }}</div>
+                <div class="bv-other-text-color-{{ section.id }} overlay-text__rte rte {% if section.settings.enlarge_text %}large-text{% endif %}">{{ section.settings.text }}</div>
               {%- endif -%}
               {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
                 <div class="overlay-text__button-row">
@@ -277,6 +282,12 @@
         "id": "text_color_hover",
         "label": "Text color(hover) of button",
         "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "other_text_color",
+        "label": "Other text color",
+        "default": "#fff"
       },
       {
         "type": "select",

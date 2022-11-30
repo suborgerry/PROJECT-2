@@ -5647,6 +5647,18 @@ main {
   overflow-x: hidden;
 }
 
+@media (max-width: 1025px) {
+  main {
+    margin-top: 58px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 100px;
+  }
+}
+
 .c-red {
   color: #DA291C;
 }
@@ -5671,7 +5683,7 @@ main {
   background-color: #1761FF;
 }
 
-.c-black, .text-black a.navigation__link, .text-black a {
+.c-black, .text-black + #main-nav a, .text-black a.navigation__link, .text-black a {
   color: #000000;
 }
 
@@ -5693,4 +5705,9 @@ main {
 
 .c-white-bg {
   background-color: #FFFFFF;
+}
+
+.bg-white.text-black svg {
+  fill: #000;
+  stroke: #000;
 }

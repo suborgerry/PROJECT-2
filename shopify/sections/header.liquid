@@ -115,6 +115,7 @@
               {%- if section.settings.logo != blank -%}
                 {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
                 <img class="logo__image" src="{{ section.settings.logo | img_url: img_size }}" alt="{{ section.settings.logo.alt | default: shop.name | escape }}" itemprop="logo" width="{{ section.settings.logo.width }}" height="{{ section.settings.logo.height }}" />
+                <img class="logo__image contrast" src="{{ section.settings.logo_contrast | img_url: img_size }}" alt="{{ section.settings.logo_contrast.alt | default: shop.name | escape }}" itemprop="logo" width="{{ section.settings.logo_contrast.width }}" height="{{ section.settings.logo_contrast.height }}" />
 
                 {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
                   <img class="logo__image-transparent" src="{{ section.settings.transparent_logo | img_url: img_size }}" alt="{{ section.settings.transparent_logo.alt | escape }}" width="{{ section.settings.transparent_logo.width }}" height="{{ section.settings.transparent_logo.height }}" aria-hidden="true" />
@@ -470,6 +471,12 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Logo",
+        "info": "520 x 200px (recommended)"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_contrast",
+        "label": "Logo contrast",
         "info": "520 x 200px (recommended)"
       },
       {

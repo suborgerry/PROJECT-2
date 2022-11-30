@@ -4,8 +4,24 @@
       max-width: {{ section.settings.max_width }}%;
     }
 
+    .overlay-text .overlay-text__title.text-color-{{ section.id }},
+    .text-color-{{ section.id }} {
+      color: {{ section.settings.text_color }};
+    }
+
     .text-transform-{{ section.id }} {
       text-transform: {{ section.settings.title_transform }}
+    }
+
+    .overlay-text__button-row .iwto-btn-color-{{ section.id }} {
+      background: {{ section.settings.btn_color }}
+    }
+    
+    .ev__rte-{{ section.id }} {
+      font-size: {{ section.settings.text_size }}px;
+      max-width: 472px;
+      margin: auto;
+      line-height: 23px;
     }
 
     {%- if section.settings.height == 'fixed' -%}
@@ -21,7 +37,13 @@
       {%- endif %}
     }
 
-    @media (min-width: 768px) {
+    @media (max-width: 495px) {
+      .oti-{{ section.id }} {
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 1025px) {
       {%- if section.settings.height == 'fixed' -%}
       #section-id-{{ section.id }} .fixed-height-item {
         height: {{ section.settings.height_desktop }}px;
@@ -119,11 +141,11 @@
               {% if section.settings.use_h1 %}
                 <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
               {% else %}
-                <h2 class="overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
+                <h2 class="overlay-text__title h1-style text-transform-{{ section.id }} text-color-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
               {% endif %}
             {%- endif -%}
             {%- if section.settings.text != blank -%}
-              <div class="overlay-text__rte rte {% if section.settings.enlarge_text %}large-text{% endif %}">{{ section.settings.text }}</div>
+              <div class="overlay-text__rte ev__rte-{{ section.id }} rte {% if section.settings.enlarge_text %}large-text{% endif %} text-color-{{ section.id }}">{{ section.settings.text }}</div>
             {%- endif -%}
             {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
               <div class="overlay-text__button-row">
@@ -136,7 +158,7 @@
                   {%- endif -%}
                 {%- else -%}
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button altcolour" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button button altcolour iwto-btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
                     <a class="overlay-text__button button altcolour" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
@@ -367,6 +389,16 @@
         "default": 46
       },
       {
+        "type": "range",
+        "id": "text_size",
+        "min": 10,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "Other text size",
+        "default": 20
+      },
+      {
         "type": "checkbox",
         "id": "use_h1",
         "label": "Set as primary page heading",
@@ -394,6 +426,18 @@
         "id": "enlarge_text",
         "label": "Enlarge text",
         "default": true
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#fff"
+      },    
+      {
+        "type": "color",
+        "id": "btn_color",
+        "label": "Button bg color",
+        "default": "#fff"
       },
       {
         "type": "text",

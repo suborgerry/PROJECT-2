@@ -35,6 +35,7 @@
       "type": "image-with-text-overlay",
       "settings": {
         "image": "shopify:\/\/shop_images\/NAKEY_desktop_new_c3c7d7f3-7abd-4f13-85d2-bfe5f15e6ab1.png",
+        "mobile_image": "shopify:\/\/shop_images\/NAKEY_mobile_new_5146d47a-f2bc-4410-8ce2-99df21725fc9.png",
         "image_position": "center center",
         "mobile_image_position": "center center",
         "height": "adapt",
@@ -64,6 +65,7 @@
       "type": "image-with-text-overlay",
       "settings": {
         "image": "shopify:\/\/shop_images\/Essentials_GaN_chargers_desktop.png",
+        "mobile_image": "shopify:\/\/shop_images\/Essentials_GaN_chargers_mobile_48b10125-e1aa-4e70-b538-f834f435f8fe.png",
         "image_position": "center center",
         "mobile_image_position": "center center",
         "height": "adapt",
@@ -93,8 +95,9 @@
       "type": "image-with-text-overlay",
       "settings": {
         "image": "shopify:\/\/shop_images\/XL_desktop_V8-03-min_1_-min_1.png",
+        "mobile_image": "shopify:\/\/shop_images\/XL_mobile_V10.png",
         "image_position": "center center",
-        "mobile_image_position": "center center",
+        "mobile_image_position": "left bottom",
         "height": "adapt",
         "height_desktop": 600,
         "height_mobile": 460,
@@ -198,6 +201,7 @@
       "type": "image-with-text-overlay",
       "settings": {
         "image": "shopify:\/\/shop_images\/desktop_allproducts.png",
+        "mobile_image": "shopify:\/\/shop_images\/mobile_allproducts.png",
         "image_position": "center center",
         "mobile_image_position": "center center",
         "height": "adapt",
@@ -446,7 +450,7 @@
         "mobile_image_position": "center center",
         "height": "fixed",
         "height_desktop": 600,
-        "height_mobile": 460,
+        "height_mobile": 700,
         "image_link": "",
         "subheading": "",
         "title": "Trusted by 300.000 happy Tech Minimalists.",
@@ -488,32 +492,6 @@
     },
     "1669286817596df793": {
       "type": "apps",
-      "blocks": {
-        "7cdab2bf-75b1-43ac-85bd-c18bb83f50bd": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/carousel\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "title": "Real Reviews from Real Customers",
-            "auto_play": false,
-            "take": 30,
-            "color_title": "",
-            "color_star": "",
-            "color_text": "",
-            "color_link": "",
-            "review_ids": "",
-            "product_ids": "",
-            "category": "",
-            "product_brand": "",
-            "tags": "",
-            "min_rating": "none",
-            "fill_empty": true,
-            "random": true,
-            "with_photos": false
-          }
-        }
-      },
-      "block_order": [
-        "7cdab2bf-75b1-43ac-85bd-c18bb83f50bd"
-      ],
       "settings": {
         "full_width": false
       }

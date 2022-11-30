@@ -57,10 +57,19 @@
     }
 }
 
+.bg-white.text-black svg {
+    fill: #000;
+    stroke: #000;
+}
+
 .text-black a {
     @extend .c-black;
 }
 
 .text-black a.navigation__link {
+    @extend .c-black;
+}
+
+.text-black + #main-nav a {
     @extend .c-black;
 }

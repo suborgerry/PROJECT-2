@@ -18,6 +18,7 @@
         "message": {
           "type": "message_input",
           "settings": {
+            "half_width": false
           }
         }
       },
@@ -27,6 +28,10 @@
         "message"
       ],
       "settings": {
+        "show_page_title": true,
+        "use_columns": true,
+        "contact_title": "",
+        "contact_text": ""
       }
     }
   },
