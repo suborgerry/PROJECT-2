@@ -1,0 +1,47 @@
+<div class="page-width">
+    <div class="custom-instafeed d-flex flex-column">
+      <div class="hashtag-logo">
+        <p class="hashtag-logo__hashtag">
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M1276 4834 c-368 -67 -698 -310 -869 -642 -57 -110 -101 -239 -122 -356 -23 -133 -23 -2419 0 -2552 89 -506 493 -910 999 -999 133 -23 2419 -23 2552 0 507 89 910 492 999 999 23 133 23 2419 0 2552 -89 507 -492 910 -999 999 -127 22 -2437 21 -2560 -1z m2532 -320 c352 -72 634 -354 706 -706 14 -68 16 -218 16 -1248 0 -1288 2 -1240 -61 -1400 -91 -227 -282 -418 -509 -509 -160 -63 -112 -61 -1400 -61 -1283 0 -1238 -2 -1397 60 -224 86 -427 289 -513 513 -62 159 -60 114 -60 1397 0 1283 -2 1238 60 1397 86 224 289 426 513 513 154 60 105 58 1390 59 1038 1 1187 -1 1255 -15z"/><path d="M3674 4027 c-166 -80 -205 -297 -74 -427 101 -102 254 -106 363 -10 62 55 90 124 85 209 -5 77 -25 125 -75 174 -50 51 -97 71 -178 75 -58 2 -79 -1 -121 -21z"/><path d="M2380 3665 c-293 -47 -576 -227 -747 -476 -46 -67 -110 -200 -138 -286 -212 -650 218 -1346 895 -1448 611 -93 1183 326 1275 935 73 479 -169 951 -596 1166 -219 109 -452 146 -689 109z m370 -328 c209 -57 368 -171 480 -344 89 -136 125 -259 125 -433 0 -174 -36 -297 -125 -433 -238 -366 -718 -474 -1087 -247 -226 139 -363 368 -380 636 -26 400 254 753 662 833 67 13 257 6 325 -12z"/></g></svg>            
+          {{ section.settings.hashtag }}
+        </p>
+        <p class="hashtag-logo__text">{{ section.settings.text }}</p>
+      </div>
+  
+      <div class="custom-instafeed__app">
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+      </div>
+  
+    </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Instafeed custom",
+    "class": "section-space",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hashtag",
+        "label": "Hashtag"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Instafeed custom"
+      }
+    ]
+  }
+{% endschema %}

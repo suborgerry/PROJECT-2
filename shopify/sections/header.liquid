@@ -1,6 +1,16 @@
 {%- assign mobile_expand_with_entire_link = true -%}
 
 {% style %}
+  {%- if template.name == 'index' -%}
+    .pageheader {
+      background: transparent;
+    }
+
+    main {
+      margin-top: 0
+    }
+  {% endif %}
+
   .logo img {
     width: {{ section.settings.logo_img_width_int }}px;
   }

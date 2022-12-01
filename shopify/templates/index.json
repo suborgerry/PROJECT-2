@@ -48,12 +48,13 @@
         "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
+        "text_size": 20,
         "use_h1": false,
         "max_width": 100,
         "text": "<p>The case for people who hate cases.<\/p>",
         "enlarge_text": true,
         "text_color": "#ffffff",
-        "btn_color": "#fff",
+        "btn_color": "#ffffff",
         "button_label_1": "discover",
         "button_url_1": "shopify:\/\/products\/nakey",
         "button_label_2": "",
@@ -80,12 +81,13 @@
         "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
+        "text_size": 20,
         "use_h1": false,
         "max_width": 57,
         "text": "<p>Premium quality at an affordable price. <\/p>",
         "enlarge_text": true,
         "text_color": "#000000",
-        "btn_color": "#fff",
+        "btn_color": "#ffffff",
         "button_label_1": "discover",
         "button_url_1": "",
         "button_label_2": "",
@@ -112,12 +114,13 @@
         "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
+        "text_size": 20,
         "use_h1": false,
         "max_width": 100,
         "text": "<p>Making All Other Cables Obsolete.<\/p>",
         "enlarge_text": true,
         "text_color": "#ffffff",
-        "btn_color": "#fff",
+        "btn_color": "#ffffff",
         "button_label_1": "discover",
         "button_url_1": "",
         "button_label_2": "",
@@ -222,12 +225,13 @@
         "title_transform": "uppercase",
         "title_size": 84,
         "title_size_mobile": 46,
+        "text_size": 20,
         "use_h1": false,
         "max_width": 100,
         "text": "",
         "enlarge_text": true,
         "text_color": "#ffffff",
-        "btn_color": "#fff",
+        "btn_color": "#ffffff",
         "button_label_1": "discover",
         "button_url_1": "shopify:\/\/collections\/all",
         "button_label_2": "",
@@ -468,6 +472,7 @@
         "title_transform": "uppercase",
         "title_size": 36,
         "title_size_mobile": 20,
+        "text_size": 20,
         "use_h1": false,
         "max_width": 100,
         "text": "<p> 4.8 out of 5 star rating on Trustpilot, the most trusted and transparent consumer review platform in the World.<\/p>",
@@ -484,10 +489,10 @@
         "overlay_style": "shadow"
       }
     },
-    "1668685322a4c0e31c": {
-      "type": "apps",
+    "8ac7eb08-e30c-4396-8d3d-d707a2a2e653": {
+      "type": "instafeed-custom",
       "blocks": {
-        "2f851de1-89d2-40b8-9427-379dc864d7e3": {
+        "62dd78de-4d97-44c6-aba5-68f1a624779a": {
           "type": "shopify:\/\/apps\/instafeed-instagram-feed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "heading_size": 20,
@@ -497,14 +502,26 @@
         }
       },
       "block_order": [
-        "2f851de1-89d2-40b8-9427-379dc864d7e3"
+        "62dd78de-4d97-44c6-aba5-68f1a624779a"
       ],
       "settings": {
-        "full_width": false
+        "hashtag": "#ROLLINGSQUARE ON INSTAGRAM",
+        "text": "We are not just a brand. We are a community of tech minimalists. You are part of it."
       }
     },
-    "1669286817596df793": {
+    "1669842465d51f5eee": {
       "type": "apps",
+      "blocks": {
+        "31171293-84cf-4b05-b8a1-ed734d266ad3": {
+          "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "31171293-84cf-4b05-b8a1-ed734d266ad3"
+      ],
       "settings": {
         "full_width": false
       }
@@ -522,7 +539,7 @@
     "16359279164ff7d3f3",
     "1f4d6850-384d-48b4-840a-304cbe307d34",
     "13f595c4-fd07-4e27-85ab-6b52e6262a61",
-    "1668685322a4c0e31c",
-    "1669286817596df793"
+    "8ac7eb08-e30c-4396-8d3d-d707a2a2e653",
+    "1669842465d51f5eee"
   ]
 }
