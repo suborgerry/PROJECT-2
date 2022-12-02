@@ -1,3 +1,9 @@
+{%- style -%}
+  .overlay-text__inner {
+    position: relative;
+  }
+{%- endstyle -%}
+
 <div data-section-id="{{ section.id }}" data-section-type="collection-template" data-ajax-filtering="{{ section.settings.ajax_products }}" data-filter-section-id="{{ section.id }}" data-components="accordion,modal,price-range" data-cc-animate>
 {% paginate collection.products by section.settings.coll_num_per_page_int %}
 

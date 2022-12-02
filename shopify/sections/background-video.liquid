@@ -42,21 +42,13 @@
       {%- endif %}
     }
 
-    @media (min-width: 768px) {
-      {% unless section.settings.height_full %}
+    {% unless section.settings.height_full %}
+      @media (min-width: 768px) {
         #section-id-{{ section.id }} .video-container {
           height: {{ section.settings.height_desktop }}px;
         }
-      {% endunless %}
-
-      #section-id-{{ section.id }} .overlay-text__title {
-        {%- assign title_size_medium = section.settings.title_size | times: 0.7 | at_least: section.settings.title_size_mobile -%}
-        font-size: {{ title_size_medium }}px;
-        {%- if title_size_medium >= 90 -%}
-        line-height: 1em;
-        {%- endif %}
       }
-    }
+    {% endunless %}
     @media (min-width: 1100px) {
       #section-id-{{ section.id }} .overlay-text__title {
         font-size: {{ section.settings.title_size }}px;

@@ -1,3 +1,17 @@
+{%- style -%}
+  @media (min-width: 999px) {
+    .product-form.theme-init h1.title {
+      font-size: 58px;
+    }
+  }
+
+  @media (max-width: 1025px) {
+    main {
+      margin-top: 100px
+    }
+  }
+{%- endstyle -%}
+
 {% paginate search.results by section.settings.coll_num_per_page_int %}
 
 <div data-section-id="{{ section.id }}" data-section-type="search-template" data-ajax-filtering="{{ section.settings.ajax_products }}" data-filter-section-id="{{ section.id }}" data-components="accordion,modal,price-range">
