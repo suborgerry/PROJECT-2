@@ -5266,6 +5266,7 @@ input[type=text].main-search__input {
   justify-content: flex-end;
   text-align: end;
 }
+
 .utility-bar__right .utility-bar__item {
   margin-inline-start: 12px;
 }
@@ -11575,6 +11576,12 @@ model-viewer .container {
 /* mobile visibility utilities */
 @media (min-width: 768.98px) {
   .mobile-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .utility-bar .utility-bar__right .utility-bar__item .layout-switchers {
     display: none !important;
   }
 }
