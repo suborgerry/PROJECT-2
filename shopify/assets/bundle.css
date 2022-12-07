@@ -5466,7 +5466,7 @@ h1.h3-style, .h1.h3-style {
 
 @media (max-width: 991.98px) {
   h1, .h1 {
-    font-size: 36px;
+    font-size: 24px;
     line-height: 48px;
   }
 }
@@ -5642,7 +5642,7 @@ p {
 
 body {
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 14px;
   line-height: 2.2rem;
   overflow-x: hidden;
 }

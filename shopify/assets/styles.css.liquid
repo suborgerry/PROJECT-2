@@ -2705,7 +2705,7 @@ body {
     background: linear-gradient(90deg, transparent 0%, {{ panel_nav_bg }} 100%);
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 1025px) {
   .navigation .navigation__columns--over-5-cols {
     flex-wrap: wrap;
   }
@@ -8687,6 +8687,10 @@ shopify-payment-terms {
   clear: both;
 }
 
+.product-form h1 a {
+  font-size: 30px;
+}
+
 .product-form .label {
   display: block;
   font-size: {{ font_size_base_int }}px;
@@ -9372,7 +9376,7 @@ shopify-payment-terms {
 .buttoned-input a {
   display: inline-block;
   padding: 0 5px;
-  padding-inline-start: 10px;
+  padding-inline-start: 7px;
 }
 .buttoned-input a:last-child {
   padding-inline-start: 5px;
@@ -10248,6 +10252,14 @@ a .state {
 
 .video-container__video video {
   object-fit: cover;
+}
+
+.video-container__video.left video {
+  object-position: left top;
+}
+
+.video-container__video.center video {
+  object-position: center center;
 }
 
 .video-container__stop {

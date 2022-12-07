@@ -73,7 +73,7 @@
       data-video-autoplay="true"
       data-video-loop="true"
       data-cc-animate>
-      <div class="video-container__video"></div>
+      <div class="video-container__video {{ section.settings.video_position }} "></div>
       {% if section.settings.placeholder_image %}
         <div class="video-container__fallback rimage-outer-wrapper rimage-background lazyload fade-in"
           data-bgset="{% render 'bgset', image: section.settings.placeholder_image %}"
@@ -145,6 +145,22 @@
         "label": "Video link",
         "info": "Supports mp4, YouTube and Vimeo. Please read documentation before using. [Read more](https://cleancanvas.co.uk/support/general/background-video)",
         "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "id": "video_position",
+        "type": "select",
+        "label": "Video position",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          }
+        ],
+        "default": "left"
       },
       {
         "id": "placeholder_image",
