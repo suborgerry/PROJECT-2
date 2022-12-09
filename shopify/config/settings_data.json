@@ -1027,6 +1027,7 @@
     "live_search_show_vendor": false,
     "live_search_show_price": false,
     "live_search_search_meta": false,
+    "favicon": "shopify:\/\/shop_images\/LOGO_32x32_b0a82d14-59c2-4235-aaee-2290fbbcc81c.webp",
     "cart_type": "drawer",
     "sections": {
       "announcement-bar": {
