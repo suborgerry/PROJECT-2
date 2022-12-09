@@ -2094,103 +2094,6 @@ body {
   word-break: break-word;
 }
 
-@media (min-width: 1024.98px) {
-  .pageheader--layout-inline-menu-center .logo-area__left {
-    position: relative;
-    margin-left: 20px;
-    margin-right: 20px;
-    order: 1;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__left .show-search-link {
-    display: none;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__left__inner {
-    position: relative;
-    left: 0;
-    min-height: 100%;
-    width: calc(100vw - 600px);
-    // transform: translateX(-50%);
-  }
-  .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left {
-    left: 0;
-    width: 100%;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left .navigation__tier-1-container {
-    left: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__middle {
-    margin-left: 0;
-    margin-right: 0;
-    flex: 1 0 0;
-    text-align: start;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__middle .logo {
-    display: inline-block;
-  }
-  .pageheader--layout-inline-menu-center .logo-area__right {
-    flex: 1 0 0;
-    order: 2;
-    max-width: max-content;
-  }
-   .show-search-link {
-    display: flex;
-    align-items: center;
-  }
-
-  .pageheader .navigation--left {
-    visibility: visible;
-  }
-  .pageheader--layout-inline-permitted .navigation.navigation--left {
-    border: none;
-    color: inherit;
-  }
-  .pageheader--layout-inline-permitted .navigation.navigation--left .navigation__link:hover,
-  .pageheader--layout-inline-permitted .navigation.navigation--left .menu-promotion__link:hover {
-    color: inherit;
-  }
-  .pageheader--layout-inline-permitted .navigation.navigation--left .navigation__tier-1 {
-    background: transparent;
-    border: none;
-  }
-  .pageheader--layout-inline-permitted .logo-area__left::after,
-  .pageheader--layout-inline-permitted .logo-area__left__inner::after {
-    content: "-";
-    visibility: hidden;
-  }
-  .pageheader--layout-inline-permitted .logo-area__left {
-    font-size: {{ font_size_nav_int }}px;
-    min-height: calc(22px * 2 + 1.5em);
-    display: flex;
-    justify-content: center;
-  }
-  .pageheader--layout-inline-permitted .logo-area__left__inner .show-search-link {
-    display: none;
-  }
-  .pageheader--layout-inline-permitted .logo-area__right .show-search-link {
-    display: flex;
-    align-items: center;
-  }
-  .pageheader + #main-nav .navigation--main {
-    border: 0;
-    visibility: hidden;
-  }
-  .pageheader + #main-nav .navigation--main .navigation__tier-1 {
-    height: 0;
-  }
-  .pageheader + #main-nav .navigation--main .navigation__tier-1 > .navigation__item > .navigation__link,
-  .pageheader + #main-nav .navigation--main .navigation__tier-1 > .navigation__item > .navigation__children-toggle {
-    display: none;
-  }
-  .pageheader + #main-nav .navigation--main .navigation__tier-2-container {
-    border-top: 0;
-  }
-
-  .logo-area__middle--logo-image {
-    line-height: 0px;
-  }
-}
 .header-disclosures {
   display: inline-block;
 }
@@ -2477,7 +2380,7 @@ body {
 .navigation .featured-link > .navigation__link {
   color: {{ nav_featured_col }};
 }
-@media (min-width: 1024.98px) {
+@media (min-width: 1025px) {
   .navigation {
     /* border-bottom: 1px solid {{ head_nav_div_col }}; */
     text-align: center;
@@ -3140,6 +3043,7 @@ body:not(.reveal-mobile-nav) .mobile-navigation-drawer .mobile-navigation-drawer
 .logo-area__left {
   flex: 2 0 0;
   display: flex;
+  justify-content: center;
 }
 
 .logo-area__left__inner {
@@ -3150,7 +3054,7 @@ body:not(.reveal-mobile-nav) .mobile-navigation-drawer .mobile-navigation-drawer
   align-items: center;
   // overflow: hidden;
 }
-@media (min-width: 1024.98px) {
+@media (min-width: 1025px) {
   .pageheader--layout-inline-permitted .logo-area__left__inner {
     overflow: visible;
   }
@@ -3399,6 +3303,105 @@ body:not(.reveal-mobile-nav) .mobile-navigation-drawer .mobile-navigation-drawer
     --scale: 0.85;
   }
 }
+
+@media (min-width: 1025px) {
+  .pageheader--layout-inline-menu-center .logo-area__left {
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    order: 1;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__left .show-search-link {
+    display: none;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__left__inner {
+    position: relative;
+    left: 0;
+    min-height: 100%;
+    width: calc(100vw - 600px);
+    // transform: translateX(-50%);
+  }
+  .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left {
+    left: 0;
+    width: 100%;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left .navigation__tier-1-container {
+    left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__middle {
+    margin-left: 0;
+    margin-right: 0;
+    flex: 1 0 0;
+    text-align: start;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__middle .logo {
+    display: inline-block;
+  }
+  .pageheader--layout-inline-menu-center .logo-area__right {
+    flex: 1 0 0;
+    order: 2;
+    max-width: max-content;
+  }
+  .logo-area__right .show-search-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .pageheader .navigation--left {
+    visibility: visible;
+  }
+  .pageheader--layout-inline-permitted .navigation.navigation--left {
+    border: none;
+    color: inherit;
+  }
+  .pageheader--layout-inline-permitted .navigation.navigation--left .navigation__link:hover,
+  .pageheader--layout-inline-permitted .navigation.navigation--left .menu-promotion__link:hover {
+    color: inherit;
+  }
+  .pageheader--layout-inline-permitted .navigation.navigation--left .navigation__tier-1 {
+    background: transparent;
+    border: none;
+  }
+  .pageheader--layout-inline-permitted .logo-area__left::after,
+  .pageheader--layout-inline-permitted .logo-area__left__inner::after {
+    content: "-";
+    visibility: hidden;
+  }
+  .pageheader--layout-inline-permitted .logo-area__left {
+    font-size: {{ font_size_nav_int }}px;
+    min-height: calc(22px * 2 + 1.5em);
+    display: flex;
+    justify-content: center;
+  }
+  .pageheader--layout-inline-permitted .logo-area__left__inner .show-search-link {
+    display: none;
+  }
+  .pageheader--layout-inline-permitted .logo-area__right .show-search-link {
+    display: flex;
+    align-items: center;
+  }
+  .pageheader + #main-nav .navigation--main {
+    border: 0;
+    visibility: hidden;
+  }
+  .pageheader + #main-nav .navigation--main .navigation__tier-1 {
+    height: 0;
+  }
+  .pageheader + #main-nav .navigation--main .navigation__tier-1 > .navigation__item > .navigation__link,
+  .pageheader + #main-nav .navigation--main .navigation__tier-1 > .navigation__item > .navigation__children-toggle {
+    display: none;
+  }
+  .pageheader + #main-nav .navigation--main .navigation__tier-2-container {
+    border-top: 0;
+  }
+
+  .logo-area__middle--logo-image {
+    line-height: 0px;
+  }
+}
+
 @media (min-width: 1000px) {
   .marquee {
     --scale: 1;
