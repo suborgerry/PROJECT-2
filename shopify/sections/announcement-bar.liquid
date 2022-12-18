@@ -33,8 +33,13 @@
         {%- if section.blocks.size > 0 -%}
           <div class="announcement-bar__announcements">
             {%- for block in section.blocks -%}
-              <div class="announcement{% unless forloop.first %} announcement--inactive{% endunless %}" {{ block.shopify_attributes }}>
-                <div class="announcement__text">{{ block.settings.text }}</div>
+              <div class="announcement-{{ block.id }} announcement{% unless forloop.first %} announcement--inactive{% endunless %}" {{ block.shopify_attributes }}>
+                <style>
+                  .announcement.announcement-{{ block.id }}:after {
+                    background-color:{{ block.settings.bg_color }}
+                  }
+                </style>
+                <div class="announcement__text" style="color: {{ block.settings.color }}">{{ block.settings.text }}</div>
               </div>
             {%- endfor -%}
           </div>
@@ -143,6 +148,18 @@
             "id": "text",
             "label": "Text",
             "default": "<p>Announce <a href=\"#\">something</a> here</p>"
+          },
+          {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "#000"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "label": "Text color",
+            "default": "#000"
           }
         ]
       }

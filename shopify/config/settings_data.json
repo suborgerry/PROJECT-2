@@ -87,13 +87,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             }
           },
@@ -304,13 +308,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             }
           },
@@ -648,13 +656,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             }
           },
@@ -779,13 +791,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>",
+                "bg_color": "#000",
+                "color": "#000"
               }
             }
           },
@@ -996,11 +1012,11 @@
     "foot_text_col": "#6d7175",
     "foot_heading_col": "#202223",
     "foot_divider_col": "#eeeeee",
-    "type_heading_font": "helvetica_n7",
+    "type_heading_font": "montserrat_n7",
     "capitalize_headings": false,
     "type_base_font": "helvetica_n4",
     "type_nav_font": "helvetica_n4",
-    "type_logo_font": "helvetica_n7",
+    "type_logo_font": "montserrat_n7",
     "font_size_heading_int": 30,
     "font_size_base_int": 14,
     "font_size_nav_int": 14,
@@ -1036,13 +1052,17 @@
           "1478526632860": {
             "type": "announcement",
             "settings": {
-              "text": "<p>Welcome to our store<\/p>"
+              "text": "<p>Designed with ❤️ in Switzerland<\/p>",
+              "bg_color": "#17e260",
+              "color": "#000"
             }
           },
           "1478526632861": {
             "type": "announcement",
             "settings": {
-              "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+              "text": "<p>✈️ Free Shipping over <\/p>",
+              "bg_color": "#1761ff",
+              "color": "#fefdfd"
             }
           }
         },
