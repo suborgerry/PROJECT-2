@@ -700,9 +700,11 @@
                     endif
 
                     for related_product in block.settings.product_list
-                      echo '<div class="column column--half">'
-                      render 'product-block', product: related_product, no_quick_buy: true, custom_aspect_ratio: chosen_aspect_ratio
-                      echo '</div>'
+                      unless related_product.id == 7020622118974
+                        echo '<div class="column column--half">'
+                        render 'product-block', product: related_product, no_quick_buy: true, custom_aspect_ratio: chosen_aspect_ratio
+                        echo '</div>'
+                      endunless
                     endfor
                   -%}
                 </div>

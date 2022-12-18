@@ -38,7 +38,9 @@
             endif
           -%}
           {%- for product in recommendations.products -%}
-            {% render 'product-block', product: product, custom_aspect_ratio: chosen_aspect_ratio %}
+            {% unless product.id == 7020622118974 %}
+              {% render 'product-block', product: product, custom_aspect_ratio: chosen_aspect_ratio %}
+            {% endunless %}
           {%- endfor -%}
         </div>
       </div>
