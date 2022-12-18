@@ -28,7 +28,17 @@
   <summary class="cc-accordion-item__title">{{- title -}}{{- toggle_icon -}}</summary>
   <div class="cc-accordion-item__panel">
     <div class="cc-accordion-item__content{{ content_class }}">
-      {{- content -}}
+      {% if reviews %}
+        {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+      {%- elsif moreinfo -%}
+        {{ product.metafields.c_f['custom tab1'] }}
+      {%- elsif whatsinthebox -%}
+        {{ product.metafields.c_f['custom tab2'] }}
+      {%- elsif howtouse -%}
+        {{ product.metafields.c_f['custom tab4'] }}
+      {% else %}
+        {{- content -}}
+      {% endif %}
     </div>
   </div>
 </details>

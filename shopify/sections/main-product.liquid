@@ -4,6 +4,12 @@
       margin-top: 70px;
     }
   }
+
+  .mini-description {
+    font-size: 12px;
+    font-family: 'Montserat', Helvetica, Arial;
+    line-height: 22px;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -165,8 +171,31 @@
               <div class="title-row" {{ block.shopify_attributes }}>
                 <h1 class="title">{{ product.title | escape }}</h1>
               </div>
+            {% when 'mini-description' %}
+              {% if product.description contains '[countdown]' %}
+                {% assign des = product.description | split:'[/countdown]' | last %}
+                
+                {% if des contains '[custom tab]'%}
+                  {% assign des = des | split:'[custom tab]' | first | split:'<iframe' | first %}
+                {% endif %}
+              {% else %}
+                {% assign des = product.description %}
+                
+                {% if des contains '[custom tab]'%}
+                  {% assign des = des | split:'[custom tab]' | first | split:'<iframe' | first %}
+                {% endif %}
+              {% endif %}
+              
+              {% if product.metafields.c_f['Short Description'] %}
+                {% assign des = product.metafields.c_f['Short Description'] %}
+              {% endif %}
 
-            {% when 'price' %}
+              <div class="mini-description">
+                {{ des }}
+              </div>
+            {% when 'info-image' %}
+              <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/badges.png?v=1648657628" style="width:100%; max-width:350px; display:block; margin-bottom:25px;">
+            {% when 'product.description' %}
               <div class="price-container" {{ block.shopify_attributes }}>
                 <div class="variant-visibility-area">
                   {%- for variant in product.variants -%}
@@ -456,7 +485,7 @@
                       </div>
                     {%- endif -%}
                   {%- endcapture -%}
-                  {% render 'accordion', allow_multi_open: true, add_content_class: 'rte cf', first_item_open: block.settings.open, item1_title: accordion_title, item1_content: content %}
+                  {% render 'accordion', reviews: block.settings.reviews, moreinfo: block.settings.moreinfo, whatsinthebox: block.settings.whatsinthebox, howtouse: block.settings.howtouse, allow_multi_open: true, add_content_class: 'rte cf', first_item_open: block.settings.open, item1_title: accordion_title, item1_content: content %}
                 </div>
               {%- endif -%}
 
@@ -737,9 +766,9 @@
     </div>
   </div><!-- /.product-detail -->
 
-  {% if section.settings.show_location_underneath %}
+  {%- comment -%} {% if section.settings.show_location_underneath %}
     <div class="product-description rte container cf padded-row not-in-quickbuy">{{ product.description }}</div>
-  {% endif %}
+  {% endif %} {%- endcomment -%}
 </div>
 
 {% render 'structured-data-product', product: product, current_variant: product.selected_or_first_available_variant %}
@@ -907,6 +936,16 @@
             "default": true
           }
         ]
+      },
+      {
+        "type": "mini-description",
+        "name": "Mini description",
+        "limit": 1
+      },
+      {
+        "type": "info-image",
+        "name": "Info image",
+        "limit": 1
       },
       {
         "type": "description",
@@ -1437,6 +1476,30 @@
             "type": "checkbox",
             "id": "show_in_quickbuy",
             "label": "Show in quick buy",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "reviews",
+            "label": "Show reviews",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "moreinfo",
+            "label": "Moreinfo",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "whatsinthebox",
+            "label": "What`s in the box",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "howtouse",
+            "label": "How to use",
             "default": false
           }
         ]
