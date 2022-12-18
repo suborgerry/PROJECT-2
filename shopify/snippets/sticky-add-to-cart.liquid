@@ -64,7 +64,8 @@
         background-size: 12px;
         height: 100%;
         border-radius: 6px;
-        width: 230px;
+        width: 190px;
+        font-family: 'Montserat', Helvetica, Arial;
     }
 
     
@@ -111,12 +112,39 @@
         height: 36px;
         line-height: 16px;
         transition: all ease 0.3s;
+        font-family: 'Montserat', Helvetica, Arial;
     }
 
     .action.sticky-item .sticky-add-to-cart:hover {
         background: #fff;
         border-color: #000;
         color: #000;
+    }
+
+    @media (max-width: 1025px) {
+        .col-img-title {
+            display: none;
+        }
+
+        .form-container,
+        .main-container {
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 568px) {
+        .sticky-item.sticky_group .quantity {
+            display: none;
+        }
+
+        .main-container > div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sticky-item.sticky_group > div {
+            margin-right: 10px;
+        }
     }
 </style>
 <div class="sticky_form" data-sticky-add-to-cart>
