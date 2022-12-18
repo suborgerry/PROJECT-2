@@ -1910,6 +1910,10 @@ body {
   min-height: 1.4em;
 }
 
+#section-id-announcement-bar {
+  overflow: hidden;
+}
+
 #section-id-announcement-bar .selectors-form .disclosure {
   transition: all 0.3s ease;
 }
@@ -2010,6 +2014,11 @@ body {
   z-index: 4000;
   /* Place above slider for live-search dropdown */
   transition: background-color 175ms ease-in;
+}
+
+.text-black.pageheader {
+  position: fixed;
+  top: -1px;
 }
 
 @media (min-width: 765px) and (max-width: 1025px) {
@@ -6173,7 +6182,7 @@ input[type=text].main-search__input {
   padding: 0 10px 20px 10px;
 }
 
-.cc-accordion-item__content strong {
+.cc-accordion-item__content span strong {
   font-family: 'Montserat', Helvetica, Arial;
   font-weight: 800;
   font-size: 28px;
@@ -6217,6 +6226,7 @@ input[type=text].main-search__input {
 .js .cc-accordion-item.is-open:not(.is-closing) .cc-accordion-item__content {
   transform: translateY(0px);
   opacity: 1;
+  padding-top: 5px;
 }
 
 .cc-accordion {
@@ -7330,7 +7340,7 @@ svg.feather {
   text-align: center;
 }
 .page-header:not(.page-header--with-background) {
-  padding: 0 0 20px;
+  padding: 30px 0 0;
 }
 
 .page-header--with-upper-spacing {
@@ -7819,9 +7829,9 @@ ul.inline li {
     transition: all 100ms ease-out;
   }
   .product-block .image-cont .btn.quickbuy-toggle:hover {
-    background: {{ btn_alt_bg }};
-    color: {{ btn_alt_txt }};
-    border-color: {{ font_col_base | color_modify: "alpha", 0.15 }};
+    background: #000;
+    color: #fff;
+    border-color: #fff;
   }
   .product-block .image-cont:hover .btn.quickbuy-toggle {
     opacity: 1;
@@ -8699,7 +8709,7 @@ ul.inline li {
   position: relative;
 }
 .product-detail .detail .product-detail-accordion + .product-detail-accordion {
-  margin-top: -50px;
+  margin-top: -40px;
 }
 .product-detail .detail .product-detail-accordion + .product-detail-accordion .cc-accordion {
   border-top: none;
@@ -9012,6 +9022,7 @@ shopify-payment-terms {
 .product-detail-accordion .cc-accordion-item__title {
   /* padding-top: 18px; */
   line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .sku--no-sku {
