@@ -5443,14 +5443,12 @@ h3 {
   font-weight: 700;
 }
 
-.font-Montserat, .title, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+.font-Montserat, .title,
+.product-block__title, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: "Montserat", Helvetica, Arial;
 }
 
-.font-Basier-Square-Mono, p,
-div,
-span,
-a {
+.font-Basier-Square-Mono {
   font-family: "Basier Square Mono", "Courier";
 }
 
@@ -5644,7 +5642,6 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 2.2rem;
-  overflow-x: hidden;
 }
 
 .c-red {
