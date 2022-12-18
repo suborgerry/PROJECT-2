@@ -15,17 +15,6 @@
             "enable_product_reviews_by_price": true
           }
         },
-        "vendor": {
-          "type": "vendor",
-          "settings": {
-          }
-        },
-        "divider": {
-          "type": "divider",
-          "settings": {
-            "show_in_quickbuy": false
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -36,6 +25,18 @@
             "show_size_chart": false,
             "size_chart_variant": "Size",
             "size_chart_page": ""
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "divider": {
+          "type": "divider",
+          "settings": {
+            "show_in_quickbuy": false
           }
         },
         "buy_buttons": {
@@ -50,7 +51,7 @@
         "description": {
           "type": "description",
           "settings": {
-            "show_in_tab": false,
+            "show_in_tab": true,
             "open_tab": false,
             "icon": "",
             "show_in_quickbuy": false
@@ -60,17 +61,17 @@
       "block_order": [
         "title",
         "price",
+        "variant_picker",
         "vendor",
         "divider",
-        "variant_picker",
         "buy_buttons",
         "description"
       ],
       "settings": {
         "show_breadcrumbs": true,
-        "show_location_underneath": false,
+        "show_location_underneath": true,
         "inventory_transfers_enable": true,
-        "enable_sticky_columns": false,
+        "enable_sticky_columns": true,
         "gallery_size": "medium",
         "gallery_layout": "carousel-under",
         "enable_zoom": true,
@@ -89,23 +90,6 @@
     },
     "1668682792589dc11c": {
       "type": "apps",
-      "blocks": {
-        "166aa983-6673-4d45-a1a8-8f82ee31ca67": {
-          "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
-          "settings": {
-            "animation": true,
-            "tags_exclude": "",
-            "tags_include": "",
-            "search": "",
-            "linkify": true,
-            "use_metafields": true,
-            "sku_tagtype": "sku"
-          }
-        }
-      },
-      "block_order": [
-        "166aa983-6673-4d45-a1a8-8f82ee31ca67"
-      ],
       "settings": {
         "full_width": false
       }
@@ -189,7 +173,23 @@
         "18cef75d-5993-46b2-9cdd-a1b0b1a0519d"
       ],
       "settings": {
-        "title": "Collapsible tabs"
+        "title": "FAQ"
+      }
+    },
+    "16711426401037af74": {
+      "type": "apps",
+      "blocks": {
+        "72d22e74-0048-4567-b302-60187b133789": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "72d22e74-0048-4567-b302-60187b133789"
+      ],
+      "settings": {
+        "full_width": false
       }
     }
   },
@@ -197,6 +197,7 @@
     "main",
     "recommendations",
     "1668682792589dc11c",
-    "9d50033d-d9bc-4746-9bb7-fade5e4fa940"
+    "9d50033d-d9bc-4746-9bb7-fade5e4fa940",
+    "16711426401037af74"
   ]
 }
