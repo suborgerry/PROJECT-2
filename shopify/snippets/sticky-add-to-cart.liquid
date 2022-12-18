@@ -1,0 +1,246 @@
+<style>
+    .sticky_form {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1;
+        box-shadow: 0 -3px 3px -3px rgb(0 0 0 / 10%);
+        padding: 10px 0;
+    }
+
+    .form-container {
+        justify-content: center;
+    }
+
+    .sticky_form .col-img-title {
+        max-width: calc(25% + 65px);
+        flex: 0 0 calc(25% + 65px);
+    }
+    
+    .pr-img.sticky-item img {
+        width: 45px;
+        height: 45px;
+    }
+
+    
+    .pr-img.sticky-item {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+    }
+    
+    .sticky-item.sticky_group {
+        display: flex;
+        align-items: center;
+        height: 36px;
+    }
+
+    .sticky-item.sticky_group > div {
+        height: 36px;
+    }
+    
+    .sticky-item.sticky_group > div {
+        margin-right: 20px;
+    }
+
+    .pr-img.sticky-item .product-title {
+        font-family: 'Montserat', Helvetica, Arial;
+        color: #000;
+        margin-left: 17px;
+    }
+
+    .pr-selectors {
+        height: max-content;
+    }
+
+    .pr-selectors select {
+        border: 1px solid #dbdcdd;
+        padding: 11px 20px 9px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");        background-repeat: no-repeat;
+        background-position: right 20px center;
+        line-height: 1;
+        font-size: 12px;
+        background-size: 12px;
+        height: 100%;
+        border-radius: 6px;
+        width: 230px;
+    }
+
+    
+    .qty-group {
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        border: 1px solid #dbdcdd;
+        height: 100%;
+        border-radius: 6px;
+    }
+
+    .qty-group a {
+        font-size: 25px;
+        color: #dbdcdd;
+    }
+
+    .qty-group a:hover {
+        cursor: pointer;
+    }
+
+    .qty-group a.plus {
+        position: relative;
+        top: 2px;
+    }
+    
+    .qty-group input {
+        text-align: center;
+        font-size: 14px;
+        border: none;
+        max-width: 50px;
+        display: flex;
+        padding: 0;
+    }
+
+    .action.sticky-item .sticky-add-to-cart {
+        background: #5fd6a0;
+        color: #fff;
+        border-color: transparent;
+        width: 100%;
+        min-width: initial;
+        font-size: 13px;
+        max-width: 200px;
+        height: 36px;
+        line-height: 16px;
+        transition: all ease 0.3s;
+    }
+
+    .action.sticky-item .sticky-add-to-cart:hover {
+        background: #fff;
+        border-color: #000;
+        color: #000;
+    }
+</style>
+<div class="sticky_form" data-sticky-add-to-cart>
+    <div class="container">
+        <div class="row align-items-center w-100 main-container">
+            {% if settings.display_countdown %}
+          	{% if product.description contains '[/countdown]' %}
+            {% assign count_down_first = product.description | split:'[/countdown]' | first %}
+            {% assign count_down_final = count_down_first | split:'[countdown]' | last %}
+          	{% endif %}
+            <div class="col-12 col-lg-3">
+                <div class="sticky-countdown sticky-item">
+                    <div class="sticky_icon">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="countdown-item" data-countdown-normal data-countdown-value="{{ count_down_final }}"></div>
+                </div>
+            </div>
+          	
+            {% endif %}
+
+            <div class="col-12{% if settings.display_countdown %} col-lg-9{% else %} col-lg-12{% endif %}">
+                <div class="shopify-product-form" id="form-sticky">
+                    <div class="row align-items-center w-100 form-container">
+                        <div class=" col-img-title">
+                            <div class="pr-img sticky-item">
+                                <img src="{{ product.featured_image.src  | product_img_url: 'compact' }}" alt="">
+
+                                <div class="product-title">
+                                   {{ product.title }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-variant">                           
+                            <div class="sticky-item sticky_group">
+                                {% assign variantCount = product.variants | size %}
+                                {% if variantCount > 1 and product.available %}
+                                <div class="pr-selectors">
+                                    <select>
+                                        {% for variant in product.variants %}
+                                            <option value="{{ variant.title }}" 
+                                                {% if variant.image != null %} 
+                                                    data-img="{{ variant.image.src | product_img_url: 'compact' }}"
+                                                {% else %} 
+                                                    data-img="{{ product.featured_image.src | product_img_url: 'compact' }}"
+                                                {% endif %}
+                                                data-value="{{ variant.id }}"
+                                                class="pr-swatch 
+                                                {% if variant.available == false %}sold-out{% endif %}"
+                                                {% if variant.available == false %}disabled="disabled"{% endif %}>
+                                                {{ variant.title }} - {{ variant.price | money }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                {% endif %}
+
+                                {% if product.available %}
+                                <div class="quantity">
+                                    <div class="qty-group" id="action-sticky-item">
+                                        <a data-minus-qtt class="minus" id="sticky-minus">-</a>
+                                        <input type="text" id="sticky-quantity" value="1">
+                                        <a data-plus-qtt class="plus" id="sticky-plus">+</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>                                                        
+                        </div>
+
+                        <div class=" col-actions">
+                            <div class="action sticky-item">
+                                {% if product.selected_or_first_available_variant.available %}
+                                <input type="hidden" name="id" value="{{ product.variants[0].id }}" /> 
+                                <input data-sticky-btn-addToCart type="submit" name="add" class="btn sticky-add-to-cart" {% if settings.enable_multilang %}data-translate="products.product.add_to_cart"{%endif%} value="{{ 'products.product.add_to_cart' | t }}">          
+                                {% else %} 
+                                <input type="submit" name="add" class="btn sticky-add-to-cart" {% if settings.enable_multilang %}data-translate="products.product.unavailable"{%endif%} disabled value="{{ 'products.product.unavailable' | t }}">          
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (() => {
+        const stickyItem = document.querySelector('#action-sticky-item');
+        const stickyAddToCart = document.querySelector('.sticky-add-to-cart');
+        const prSelectors = document.querySelector('.pr-selectors').querySelector('select');
+
+        prSelectors.addEventListener('change', () => {
+            const optionSelector = document.querySelector('.option-selector__btns');
+            for (option of optionSelector.children) {
+                if(option.value == prSelectors.value) {
+                    option.checked = true;
+                }
+            }
+        });
+
+        stickyAddToCart.addEventListener('click', () => {
+            document.querySelector('#main-product-add-to-cart').click();
+        })
+
+        stickyItem.addEventListener('click', evt => {
+            const minusBtn = document.querySelector('#sticky-minus');
+            const plusBtn = document.querySelector('#sticky-plus');
+
+            const mainMinusBtn = document.querySelector('#down');
+            const mainPlusBtn = document.querySelector('#up');
+
+            const quantity = document.querySelector('#sticky-quantity');
+            
+            const element = evt.target;
+            
+            console.log(element);
+            if(element == minusBtn) {
+                mainMinusBtn.click();
+                quantity.value = document.querySelector('#quantity').value;
+            } else if(element == plusBtn) {
+                mainPlusBtn.click();
+                quantity.value = document.querySelector('#quantity').value;
+            }
+        })
+    })();
+</script>

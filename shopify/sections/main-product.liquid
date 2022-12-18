@@ -41,6 +41,10 @@
   endif
 -%}
 
+{% if section.settings.display_sticky %} 
+  {% render 'sticky-add-to-cart' with product as product %}
+{% endif %}
+
 <div data-section-type="main-product" data-components="accordion,custom-select,modal">
   {% if section.settings.show_breadcrumbs %}
     <div class="container desktop-only not-in-quickbuy" data-cc-animate data-cc-animate-delay="0.2s">
@@ -342,9 +346,9 @@
                       {% if block.settings.show_quantity_selector %}
                         <label class="label" for="quantity">{{ 'products.product.quantity' | t }}</label>
                         <div class="quantity-wrapper">
-                          <a href="#" data-quantity="down">{% render 'svg-minus' %}</a>
+                          <a href="#" data-quantity="down" id="down">{% render 'svg-minus' %}</a>
                           <input aria-label="{{ 'products.product.quantity' | t }}" id="quantity" type="number" name="quantity" value="1" />
-                          <a href="#" data-quantity="up">{% render 'svg-plus' %}</a>
+                          <a href="#" data-quantity="up" id="up""">{% render 'svg-plus' %}</a>
                         </div>
                       {% endif %}
                       <div class="quantity-submit-row__submit input-row">
@@ -355,7 +359,7 @@
                             {{- 'products.product.add_to_cart' | t -}}
                           {%- endif -%}
                         {%- endcapture -%}
-                        <button class="button button--large" type="submit" data-add-to-cart-text="{{ add_to_cart_text | escape }}">
+                        <button class="button button--large" id="main-product-add-to-cart" type="submit" data-add-to-cart-text="{{ add_to_cart_text | escape }}">
                           {{- add_to_cart_text -}}
                         </button>
                       </div>
@@ -740,7 +744,6 @@
 
 {% render 'structured-data-product', product: product, current_variant: product.selected_or_first_available_variant %}
 
-
 {% schema %}
   {
     "name": "Product pages",
@@ -770,6 +773,12 @@
         "id": "enable_sticky_columns",
         "label": "Enable stick on scroll",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "display_sticky",
+        "label": "Show cticky cart",
+        "default": true
       },
       {
         "type": "header",
