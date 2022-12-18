@@ -1054,7 +1054,7 @@
             "settings": {
               "text": "<p>Designed with ❤️ in Switzerland<\/p>",
               "bg_color": "#17e260",
-              "color": "#000"
+              "color": "#000000"
             }
           },
           "1478526632861": {
@@ -1250,6 +1250,21 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "12120936241911852800": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/reviews_tab\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+          "position": "right"
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }

@@ -8,6 +8,11 @@
           "settings": {
           }
         },
+        "0f669737-ef4f-469f-87a8-5d82c180ad56": {
+          "type": "mini-description",
+          "settings": {
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -48,6 +53,11 @@
             "show_pickup_availability": true
           }
         },
+        "844ccdc8-e8e6-47ea-a5a2-88c791907b66": {
+          "type": "info-image",
+          "settings": {
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -56,22 +66,89 @@
             "icon": "",
             "show_in_quickbuy": false
           }
+        },
+        "cea407f5-f2a9-48a0-bc82-2d00f83befdb": {
+          "type": "accordion",
+          "settings": {
+            "title": "CUSTOMER REVIEWS",
+            "icon": "",
+            "content": "<p>Collapsible tab content<\/p>",
+            "page": "",
+            "open": false,
+            "show_in_quickbuy": false,
+            "reviews": true,
+            "moreinfo": false,
+            "whatsinthebox": false,
+            "howtouse": false
+          }
+        },
+        "f8a55e0d-0f5e-4953-a22f-4db6366eb518": {
+          "type": "accordion",
+          "settings": {
+            "title": "MORE INFO",
+            "icon": "",
+            "content": "<p>1<\/p>",
+            "page": "",
+            "open": false,
+            "show_in_quickbuy": false,
+            "reviews": false,
+            "moreinfo": true,
+            "whatsinthebox": false,
+            "howtouse": false
+          }
+        },
+        "754f99ed-5093-48fa-9e8c-f99b766aaeeb": {
+          "type": "accordion",
+          "settings": {
+            "title": "WHAT'S IN THE BOX",
+            "icon": "",
+            "content": "<p>Collapsible tab content<\/p>",
+            "page": "",
+            "open": false,
+            "show_in_quickbuy": false,
+            "reviews": false,
+            "moreinfo": false,
+            "whatsinthebox": true,
+            "howtouse": false
+          }
+        },
+        "0e71d3df-6e6c-4788-8edc-bdfa1d0021c3": {
+          "type": "accordion",
+          "settings": {
+            "title": "HOW TO USE",
+            "icon": "",
+            "content": "<p>Collapsible tab content<\/p>",
+            "page": "",
+            "open": false,
+            "show_in_quickbuy": false,
+            "reviews": false,
+            "moreinfo": false,
+            "whatsinthebox": false,
+            "howtouse": true
+          }
         }
       },
       "block_order": [
         "title",
+        "0f669737-ef4f-469f-87a8-5d82c180ad56",
         "price",
         "variant_picker",
         "vendor",
         "divider",
         "buy_buttons",
-        "description"
+        "844ccdc8-e8e6-47ea-a5a2-88c791907b66",
+        "description",
+        "cea407f5-f2a9-48a0-bc82-2d00f83befdb",
+        "f8a55e0d-0f5e-4953-a22f-4db6366eb518",
+        "754f99ed-5093-48fa-9e8c-f99b766aaeeb",
+        "0e71d3df-6e6c-4788-8edc-bdfa1d0021c3"
       ],
       "settings": {
         "show_breadcrumbs": true,
         "show_location_underneath": true,
         "inventory_transfers_enable": true,
         "enable_sticky_columns": true,
+        "display_sticky": true,
         "gallery_size": "medium",
         "gallery_layout": "carousel-under",
         "enable_zoom": true,
@@ -92,88 +169,6 @@
       "type": "apps",
       "settings": {
         "full_width": false
-      }
-    },
-    "9d50033d-d9bc-4746-9bb7-fade5e4fa940": {
-      "type": "collapsible-tabs",
-      "blocks": {
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-0": {
-          "type": "question",
-          "settings": {
-            "title": "I have a question about an item, who can I contact?",
-            "answer": "<p>For any questions regarding Rolling Square's products, you can contact us at <strong>support@rollingsqua.re<\/strong> or use our <strong>live chat<\/strong>!<br\/>            <br\/>          <\/p>"
-          }
-        },
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-1": {
-          "type": "question",
-          "settings": {
-            "title": "What is the warranty policy?",
-            "answer": "<p>We offer a <strong>2 year limited warranty<\/strong> for all Rolling Square <br\/>products.<br\/><br\/>Our warranty covers any manufacturing or workmanship defects but does <br\/>not cover damages that may have resulted from normal wear and tear, <br\/>misuse\/abuse or modification of the product.<br\/><br\/><br\/>Our lifetime warranty, when offered, covers exactly the same defects as <br\/>our standard 2 years warranty, but it extends the coverage period.<br\/>            <\/p>"
-          }
-        },
-        "a677b7ca-2e99-4b68-b53b-8bf4baca528a": {
-          "type": "question",
-          "settings": {
-            "title": "What is the return policy?",
-            "answer": "<p>If you are not completely satisfied with your purchase, you may return the item in its original condition <strong>within 30 days<\/strong> of receipt for a refund (not including the original shipping fee).<br\/><br\/><br\/><br\/><br\/><br\/>Only items purchased directly from Rolling Square’s online store or <br\/>Indiegogo will be accepted. If you purchased your items from authorized <br\/>retailers (online or offline), please get in touch with them directly <br\/>for returns.<br\/><br\/><br\/>Returned items must be in their original packaging, including any accessories, manuals, and documentation, where applicable.<br\/><br\/><br\/>Non-returnable items include items purchased through retailers, <br\/>incorrect products purchased, and damaged products through customer <br\/>mishandling.<br\/><br\/><br\/><br\/><br\/>Please note that original shipping charges are non-refundable except in <br\/>cases where we have made a shipping error. All VAT\/Import taxes are the <br\/>responsibility of the receiver and are non-refundable.<br\/>            <\/p>"
-          }
-        },
-        "ce3507ea-54f5-4743-8858-67afcb9e1128": {
-          "type": "question",
-          "settings": {
-            "title": "How can I return an item?",
-            "answer": "<p><br\/>              If you would like to return an item that you suspect is defective, please contact <strong>support@rollingsqua.re<\/strong>.<br\/> We will issue a replacement or store credit for approved warranty <br\/>requests. The defective item may need to be returned to us in some <br\/>cases.<br\/>            <\/p>"
-          }
-        },
-        "ebc8fd40-7a6c-4771-acf5-574aef534175": {
-          "type": "question",
-          "settings": {
-            "title": "How long does it take for my order to be dispatched?",
-            "answer": "<p><br\/>              Your order will be shipped within <strong>48 hours<\/strong> of confirmation.<br\/>            <\/p>"
-          }
-        },
-        "4af3918a-9cf9-4311-ba88-680b61dd6f21": {
-          "type": "question",
-          "settings": {
-            "title": "How long does shipping take?",
-            "answer": "<p>Shipping normally takes 5-18 working days. In cases where customs processing is slow, delivery can take up to 6 weeks.<br\/><br\/><br\/>For more detailed tracking information for international shipments, you <br\/>can copy and paste your tracking number into the search bar here: <strong>https:\/\/track.aftership.com\/ <\/strong> or on the destination country's national post.<br\/><br\/><br\/><br\/><br\/>Items are also subject to customs clearance and may be held until duties<br\/> and taxes are paid. As the importer\/consignee, it is your <br\/>responsibility to pay duties and taxes. We are not able to refund <br\/>customs fees or additional charges that must be paid to get your package<br\/> delivered. If your order is returned to us, please contact <strong>support@rollingsqua.re<\/strong>.<br\/>            <\/p>"
-          }
-        },
-        "0c434414-5ae2-4c75-b113-3a7270110cdf": {
-          "type": "question",
-          "settings": {
-            "title": "My address is wrong but the order has already shipped.",
-            "answer": "<p><br\/>              If your package has already shipped, we can't change your <br\/>address at this time. If your address was wrong the package will be <br\/>shipped back to us. Once we receive it we will ship it to you again, <br\/>please contact us at <strong>support@rollingsqua.re<\/strong> to provide the correct address.<br\/>            <\/p>"
-          }
-        },
-        "474559ca-0b32-4a79-8f25-5de273b6bbd8": {
-          "type": "question",
-          "settings": {
-            "title": "By booking at the tracking number, the order seems stuck.",
-            "answer": "<p><br\/>              Depending on the destination country, tracking numbers may<br\/> be slow to update (i.e. USPS). Most of the times the order is on its <br\/>way and will be delivered on time or with a small delay. If the shipping<br\/> time has exceeded our shipping timelines by more than 8 business days, <br\/>please contact the courier directly. We receive the same tracking as you<br\/> do once shipped and unfortunately do not have insight into any <br\/>additional information. If they are not able to locate your shipment, <br\/>contact us at <strong>support@rollingsqua.re<\/strong>.<br\/>            <\/p>"
-          }
-        },
-        "18cef75d-5993-46b2-9cdd-a1b0b1a0519d": {
-          "type": "question",
-          "settings": {
-            "title": "Where can I find my tracking number?",
-            "answer": "<p>You can find your tracking information by logging into your Rolling <br\/>Square account from our site's homepage. Once you find the order you'd <br\/>like to track on the Order History page of your account, you can locate <br\/>the tracking link below the product information on this order's page.<br\/><br\/><br\/><br\/><br\/>Please allow some time for tracking to update. For additional shipping <br\/>& tracking inquiries please contact the courier directly.<br\/>            <\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-0",
-        "template--16981205811519__9d50033d-d9bc-4746-9bb7-fade5e4fa940-16686830558307a75a-1",
-        "a677b7ca-2e99-4b68-b53b-8bf4baca528a",
-        "ce3507ea-54f5-4743-8858-67afcb9e1128",
-        "ebc8fd40-7a6c-4771-acf5-574aef534175",
-        "4af3918a-9cf9-4311-ba88-680b61dd6f21",
-        "0c434414-5ae2-4c75-b113-3a7270110cdf",
-        "474559ca-0b32-4a79-8f25-5de273b6bbd8",
-        "18cef75d-5993-46b2-9cdd-a1b0b1a0519d"
-      ],
-      "settings": {
-        "title": "FAQ"
       }
     },
     "16711426401037af74": {
@@ -197,7 +192,6 @@
     "main",
     "recommendations",
     "1668682792589dc11c",
-    "9d50033d-d9bc-4746-9bb7-fade5e4fa940",
     "16711426401037af74"
   ]
 }
