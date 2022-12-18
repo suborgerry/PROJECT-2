@@ -148,7 +148,8 @@ h4, .h4 {
   @extend .font-Montserat;
 }
 
-.title {
+.title,
+.product-block__title {
   @extend .font-Montserat;
 }
 
@@ -156,9 +157,9 @@ p {
   margin: 0;
 }
 
-p,
-div,
-span,
-a {
-  @extend .font-Basier-Square-Mono;
-}
+// p,
+// div,
+// span,
+// a {
+//   @extend .font-Basier-Square-Mono;
+// }
