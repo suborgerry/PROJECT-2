@@ -56,23 +56,24 @@
 
     .pr-selectors select {
         border: 1px solid #dbdcdd;
-        padding: 11px 20px 9px;
+        padding: 11px 25px 9px 20px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");        background-repeat: no-repeat;
-        background-position: right 20px center;
+        background-position: right 10px center;
         line-height: 1;
         font-size: 12px;
         background-size: 12px;
         height: 100%;
         border-radius: 6px;
-        width: 190px;
+        width: max-content;
         font-family: 'Montserat', Helvetica, Arial;
+        color: #000;
     }
 
     
     .qty-group {
         display: flex;
         align-items: center;
-        padding: 0 5px;
+        padding: 0 12px;
         border: 1px solid #dbdcdd;
         height: 100%;
         border-radius: 6px;
@@ -89,7 +90,11 @@
 
     .qty-group a.plus {
         position: relative;
-        top: 2px;
+    }
+
+    .qty-group a.plus {
+        position: relative;
+        left: 4px;
     }
     
     .qty-group input {
@@ -130,6 +135,10 @@
         .main-container {
             margin: auto;
         }
+
+        .sticky_form .col-variant {
+            margin: 10px;
+        }
     }
 
     @media (max-width: 568px) {
@@ -143,7 +152,7 @@
         }
 
         .sticky-item.sticky_group > div {
-            margin-right: 10px;
+            margin: 0px;
         }
     }
 </style>
@@ -193,9 +202,15 @@
                                                     data-img="{{ product.featured_image.src | product_img_url: 'compact' }}"
                                                 {% endif %}
                                                 data-value="{{ variant.id }}"
-                                                class="pr-swatch 
-                                                {% if variant.available == false %}sold-out{% endif %}"
-                                                {% if variant.available == false %}disabled="disabled"{% endif %}>
+                                                data-id="{{ variant.id }}"
+                                                class="pr-swatch{% if variant.available == false %}sold-out{% endif %}"
+                                                {% if variant.available == false %}disabled="disabled"{% endif %}
+                                                
+                                                {% for option in variant.options %}
+                                                    data-option{{ forloop.index }}="{{ option }}"
+                                                {% endfor %}
+
+                                                >
                                                 {{ variant.title }} - {{ variant.price | money }}
                                             </option>
                                         {% endfor %}
@@ -235,40 +250,89 @@
     (() => {
         const stickyItem = document.querySelector('#action-sticky-item');
         const stickyAddToCart = document.querySelector('.sticky-add-to-cart');
-        const prSelectors = document.querySelector('.pr-selectors').querySelector('select');
+        const mainButton = document.querySelector('#main-product-add-to-cart');
+        const stickySelectors = document.querySelector('.pr-selectors')?.querySelector('select');
+        const optionSelectors = document.querySelector('.option-selectors');
+        const productQuantity= document.querySelector('.product-purchase-form').querySelector('.quantity-wrapper');
+        const minusBtn = document.querySelector('#sticky-minus');
+        const plusBtn = document.querySelector('#sticky-plus');
+        const mainMinusBtn = document.querySelector('#down');
+        const mainPlusBtn = document.querySelector('#up');
+        const quantity = document.querySelector('#sticky-quantity');
 
-        prSelectors.addEventListener('change', () => {
-            const optionSelector = document.querySelector('.option-selector__btns');
-            for (option of optionSelector.children) {
-                if(option.value == prSelectors.value) {
-                    option.checked = true;
+        optionSelectors && optionSelectors.addEventListener('click', evt => {
+            const element = evt.target;
+            const parentContainer = document.querySelector('.form-container');
+            const img = parentContainer.querySelector('.col-img-title').querySelector('img');
+
+            const option1 = optionSelectors.querySelector('[data-option-index="0"]').querySelector('.opt-btn:checked');
+            const option2 = optionSelectors.querySelector('[data-option-index="1"]')?.querySelector('.opt-btn:checked');
+
+            // console.log(option1.value, option2.value);
+
+            // translate variant to sticky form from main form
+            setTimeout(() => {
+                if(element.classList.contains('opt-btn')) {
+                    for (option of stickySelectors) {
+                        // if product have options more one
+                        if(option2 && option.dataset.option2 == option2.value && option.dataset.option1 == option1.value) {
+                            option.selected = true;
+                            img.src = option.dataset.img;
+                        } else if(!option2 && option.dataset.option1 == option1.value) {
+                            option.selected = true;
+                        }
+                    }
                 }
-            }
+
+                stickyAddToCart.value = mainButton.innerText;
+            }, 300);
         });
 
-        stickyAddToCart.addEventListener('click', () => {
-            document.querySelector('#main-product-add-to-cart').click();
+        // variants from sticky selector to main vatiants
+        stickySelectors && stickySelectors.addEventListener('change', evt => {
+            const element = evt.target;
+
+            const parentContainer = element.closest('.form-container');
+            const img = parentContainer.querySelector('.col-img-title').querySelector('img');
+            
+            const optionSelectors = document.querySelector('.option-selectors');
+            const option1 = element.selectedOptions[0].dataset.option1;
+            const option2 = element.selectedOptions[0].dataset.option2;
+            const vatianWithOption1 = optionSelectors.querySelector(`[value="${option1}"]`);
+            const vatianWithOption2 = optionSelectors.querySelector(`[value="${option2}"]`);
+            
+            img.src = element.selectedOptions[0].dataset.img;
+            
+            vatianWithOption1 && vatianWithOption1.click();
+            vatianWithOption2 && vatianWithOption2.click();
+        });
+
+        // add to cart from sticky to main button
+        stickyAddToCart && stickyAddToCart.addEventListener('click', () => {
+            mainButton.click();
         })
 
-        stickyItem.addEventListener('click', evt => {
-            const minusBtn = document.querySelector('#sticky-minus');
-            const plusBtn = document.querySelector('#sticky-plus');
 
-            const mainMinusBtn = document.querySelector('#down');
-            const mainPlusBtn = document.querySelector('#up');
-
-            const quantity = document.querySelector('#sticky-quantity');
-            
+        // sticky quantitty to main quantity
+        stickyItem && stickyItem.addEventListener('click', evt => {
             const element = evt.target;
             
-            console.log(element);
             if(element == minusBtn) {
                 mainMinusBtn.click();
                 quantity.value = document.querySelector('#quantity').value;
             } else if(element == plusBtn) {
                 mainPlusBtn.click();
                 quantity.value = document.querySelector('#quantity').value;
-            }
-        })
+            };
+        });
+
+        // main quantity to sticky quantity
+        productQuantity && productQuantity.addEventListener('click', () => {
+            setTimeout(() =>{
+                quantity.value = parseFloat(productQuantity.querySelector('#quantity').value);
+            }, 150);
+        });
+
+
     })();
 </script>
