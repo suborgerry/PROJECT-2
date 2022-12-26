@@ -47,10 +47,6 @@
   endif
 -%}
 
-{% if section.settings.display_sticky %} 
-  {% render 'sticky-add-to-cart' with product as product %}
-{% endif %}
-
 <div data-section-type="main-product" data-components="accordion,custom-select,modal">
   {% if section.settings.show_breadcrumbs %}
     <div class="container desktop-only not-in-quickbuy" data-cc-animate data-cc-animate-delay="0.2s">
@@ -194,8 +190,8 @@
                 {{ des }}
               </div>
             {% when 'info-image' %}
-              <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/badges.png?v=1648657628" style="width:100%; max-width:350px; display:block; margin-bottom:25px;">
-            {% when 'product.description' %}
+              <img src="{{ block.settings.image | image_url }}" style="width:100%; max-width:350px; display:block; margin-bottom:25px;">
+            {% when 'price' %}
               <div class="price-container" {{ block.shopify_attributes }}>
                 <div class="variant-visibility-area">
                   {%- for variant in product.variants -%}
@@ -771,6 +767,10 @@
   {% endif %} {%- endcomment -%}
 </div>
 
+{% if section.settings.display_sticky %} 
+  {% render 'sticky-add-to-cart' with product as product %}
+{% endif %}
+
 {% render 'structured-data-product', product: product, current_variant: product.selected_or_first_available_variant %}
 
 {% schema %}
@@ -945,7 +945,14 @@
       {
         "type": "info-image",
         "name": "Info image",
-        "limit": 1
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
       },
       {
         "type": "description",
