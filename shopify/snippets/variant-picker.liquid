@@ -85,10 +85,14 @@
               <div class="option-selector__btns">
                 {%- for value in option.values -%}
                   <input class="opt-btn js-option"
+                        data-id="{{ option.id }}"
                         type="radio"
                         name="{{ option_id }}"
                         id="{{ option_id }}-opt-{{ forloop.index0 }}"
                         value="{{ value | escape }}"
+                        {% unless product.available %}
+                          disabled="disabled" 
+                        {% endunless %}
                         {% if block.settings.select_first_variant or product.variants.size == 1 or product.selected_variant %}{% if option.selected_value == value %}checked{% endif %}{% endif %}
                         required>
                   <label class="opt-label"{% if uses_swatches %} data-swatch="{{ value | replace: '"', '' | downcase }}"{% endif %} for="{{ option_id }}-opt-{{ forloop.index0 }}"><span class="opt-label__text">{{ value | escape_once }}</span></label>
