@@ -5123,7 +5123,6 @@ button,
 [type=submit],
 [role=button] {
   cursor: pointer;
-  color: inherit;
 }
 
 button::-moz-focus-inner,
@@ -5642,6 +5641,7 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 2.2rem;
+  font-family: "Montserat", Helvetica, Arial;
 }
 
 .c-red {
