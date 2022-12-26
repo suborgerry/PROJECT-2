@@ -4,7 +4,6 @@
   var cc = {
     sections: [] };
 
-
   theme.cartNoteMonitor = {
     load: function load($notes) {
       $notes.on('change.themeCartNoteMonitor paste.themeCartNoteMonitor keyup.themeCartNoteMonitor', function () {
@@ -2057,6 +2056,7 @@
           appendTo($('.video-container__video', this));
 
           var $video = $('<video playsinline>');
+          var $sourceVideo = $(`<source type="video/mp4">`);
           if ($(this).data('video-loop')) {
             $video.attr('loop', 'loop');
           }
@@ -2073,9 +2073,12 @@
           $video.on('playing', function () {
             $(this).addClass('video--play-started');
           }.bind(this));
+          $sourceVideo.attr('src', $(this).data('video-url'));
+          $sourceVideo.appendTo($video);
           $video.attr('src', $(this).data('video-url')).appendTo(videoElement);
           _.mp4Vars.videoData[containerId] = {
             element: $video[0] };
+          
 
         });
       }
