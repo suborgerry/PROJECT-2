@@ -3983,7 +3983,9 @@
       }
 
       var $nav = options.nav,
-      $cartLinkIcon = $('.cart-link__icon');
+      $cartLinkIcon = $('.cart-link__icon'),
+      $pageheader = $('#pageheader'),
+      $headerAccountLink = $('.logo-area container');
       navHoverDelay = 0,
       $navLastOpenDropdown = $(),
       navOpenTimeoutId = -1;
@@ -4183,8 +4185,12 @@
       // transparent header hover
       $nav[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
       $nav[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
-      $cartLinkIcon[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
-      $cartLinkIcon[0].addEventListener('mouseleave', theme.Navigation.onNavHover)
+      // $cartLinkIcon[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
+      // $cartLinkIcon[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
+      $pageheader[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
+      $pageheader[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
+      $headerAccountLink[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
+      $headerAccountLink[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
       if (options.proxyTier1Nav.length) {
         options.proxyTier1Nav[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
         options.proxyTier1Nav[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
