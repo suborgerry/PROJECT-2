@@ -5444,7 +5444,7 @@ h3 {
 
 .font-Montserat, .title,
 .product-block__title, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  font-family: "Montserat", Helvetica, Arial;
+  font-family: "Montserat", Arial;
 }
 
 .font-Basier-Square-Mono {
@@ -5484,6 +5484,10 @@ h4, .h4 {
   font-weight: 800;
   font-size: 2rem;
   line-height: 2.5rem;
+}
+
+.product-block__title {
+  font-weight: 800;
 }
 
 p {
@@ -5641,7 +5645,7 @@ body {
   font-weight: 300;
   font-size: 14px;
   line-height: 2.2rem;
-  font-family: "Montserat", Helvetica, Arial;
+  font-family: "Montserat", Arial;
 }
 
 .c-red {
@@ -5690,9 +5694,4 @@ body {
 
 .c-white-bg {
   background-color: #FFFFFF;
-}
-
-.bg-white.text-black svg {
-  fill: #000;
-  stroke: #000;
 }
