@@ -104,7 +104,7 @@
   {{ content_for_header }}
 
   {{ 'bundle.css' | asset_url | stylesheet_tag }}
-
+  {{ 'fonts.css' | asset_url | stylesheet_tag }}
 </head>
 
 <body class="template-{{ template | split: '.' | first | handle }}

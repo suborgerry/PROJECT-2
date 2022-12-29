@@ -103,7 +103,7 @@
 
 // Font family
 .font-Montserat {
-  font-family: 'Montserat', Helvetica, Arial;
+  font-family: 'Montserat',  Arial;
 }
 
 .font-Basier-Square-Mono {
@@ -151,6 +151,10 @@ h4, .h4 {
 .title,
 .product-block__title {
   @extend .font-Montserat;
+}
+
+.product-block__title {
+  font-weight: 800;
 }
 
 p {

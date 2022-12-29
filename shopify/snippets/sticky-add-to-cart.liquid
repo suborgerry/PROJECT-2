@@ -45,7 +45,7 @@
     }
 
     .pr-img.sticky-item .product-title {
-        font-family: 'Montserat', Helvetica, Arial;
+        font-family: 'Montserat',  Arial;
         color: #000;
         margin-left: 17px;
     }
@@ -65,7 +65,7 @@
         height: 100%;
         border-radius: 6px;
         width: max-content;
-        font-family: 'Montserat', Helvetica, Arial;
+        font-family: 'Montserat',  Arial;
         color: #000;
     }
 
@@ -80,8 +80,12 @@
     }
 
     .qty-group a {
-        font-size: 25px;
-        color: #dbdcdd;
+        width: 15px;
+    }
+
+    .qty-group a svg {
+        stroke: #000;
+        width: 100%
     }
 
     .qty-group a:hover {
@@ -107,8 +111,8 @@
     }
 
     .action.sticky-item .sticky-add-to-cart {
-        background: #5fd6a0;
-        color: #fff;
+        background: #17e260;
+        color: #000;
         border-color: transparent;
         width: 100%;
         min-width: initial;
@@ -117,13 +121,11 @@
         height: 36px;
         line-height: 16px;
         transition: all ease 0.3s;
-        font-family: 'Montserat', Helvetica, Arial;
+        font-family: 'Montserat',  Arial;
     }
 
     .action.sticky-item .sticky-add-to-cart:hover {
-        background: #fff;
         border-color: #000;
-        color: #000;
     }
 
     @media (max-width: 1025px) {
@@ -221,9 +223,13 @@
                                 {% if product.available %}
                                 <div class="quantity">
                                     <div class="qty-group" id="action-sticky-item">
-                                        <a data-minus-qtt class="minus" id="sticky-minus">-</a>
+                                        <a data-minus-qtt class="minus" id="sticky-minus">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><title>Minus</title><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                        </a>
                                         <input type="text" id="sticky-quantity" value="1">
-                                        <a data-plus-qtt class="plus" id="sticky-plus">+</a>
+                                        <a data-plus-qtt class="plus" id="sticky-plus">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><title>Plus</title><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                        </a>
                                     </div>
                                 </div>
                                 {% endif %}
