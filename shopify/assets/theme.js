@@ -2950,7 +2950,9 @@
           items: Math.min($this.children().length, 8),
           center: true,
           nav: false,
-          dots: false };
+          dots: true,
+          dotsContainer: '#carousel-custom-dots'
+        };
 
       }
 
@@ -3981,10 +3983,10 @@
       }
 
       var $nav = options.nav,
-      navHoverDelay = 250,
+      $cartLinkIcon = $('.cart-link__icon');
+      navHoverDelay = 0,
       $navLastOpenDropdown = $(),
       navOpenTimeoutId = -1;
-
 
       /// Mobile nav
 
@@ -4181,6 +4183,8 @@
       // transparent header hover
       $nav[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
       $nav[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
+      $cartLinkIcon[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
+      $cartLinkIcon[0].addEventListener('mouseleave', theme.Navigation.onNavHover)
       if (options.proxyTier1Nav.length) {
         options.proxyTier1Nav[0].addEventListener('mouseenter', theme.Navigation.onNavHover);
         options.proxyTier1Nav[0].addEventListener('mouseleave', theme.Navigation.onNavHover);
