@@ -1399,6 +1399,25 @@ table {
   font: inherit;
 }
 
+.collection-slider .owl-dots {
+  margin-top: 15px;
+}
+
+.collection-slider button.owl-dot {
+  width: 10px;
+  height: 10px;
+  background: #eee;
+  padding: 0;
+}
+
+.collection-slider button.owl-dot.active {
+  background: #a4a1a1;
+}
+
+.collection-slider button.owl-dot + button.owl-dot {
+  margin-left: 12px;
+}
+
 .owl-carousel.owl-loading {
   opacity: 0;
   display: block;
@@ -1948,6 +1967,10 @@ body {
   color: #000 !important;
 }
 
+.section-header--nav-hover #pageheader .container a span svg {
+  fill: #000 !important
+}
+
 .section-header--nav-hover #pageheader .container a span.cart-link__count {
   background: #000;
   color: #fff !important;
@@ -2180,6 +2203,7 @@ body {
   margin: 0;
   padding: 8px 0;
   vertical-align: middle;
+  font-weight: 800
 }
 .header-disclosures .disclosure__toggle:hover {
   background: transparent;
@@ -2483,7 +2507,7 @@ body {
     content: "";
     position: absolute;
     bottom: 15px;
-    background-color: #eeeeee;
+    background-color: #000;
     height: 2px;
     transition: transform 0.3s;
     z-index: 20;
@@ -2509,7 +2533,7 @@ body {
     pointer-events: none;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 175ms ease-in, visibility 175ms;
+    transition: all 0.2s ease;
     text-align: start;
   }
 
@@ -2601,8 +2625,8 @@ body {
   .navigation .navigation__columns .navigation__column:not(.navigation__column--promotion) .navigation__column-title {
     display: inline-block;
     padding: 0 0 15px;
-    font-size: 0.8em;
-    line-height: 1.2em;
+    font-size: 14px;
+    line-height: 14px;
     font-weight: 800;
     color: #000;
     font-family: 'Montserat', Helvetica, Arial;
@@ -3679,8 +3703,8 @@ input[type=text].main-search__input {
 
 .gallery__item {
   position: relative;
-  flex: 1 1 320px;
-  width: 100%;
+  flex: 2 1 320px;
+  width: 50%;
   transition: background-color 150ms;
 }
 .gallery__item .gallery__image {
@@ -3777,6 +3801,12 @@ input[type=text].main-search__input {
   .gallery--with-margins .gallery__item {
     margin: 0 0 20px 20px;
   }
+
+  .gallery--with-margins .gallery__item {
+    width: 50%;
+    max-width: 50%;
+  }
+
   .gallery--with-margins .gallery__item:not(:first-child) {
     margin-top: 0;
   }
@@ -5564,9 +5594,14 @@ input[type=text].main-search__input {
   opacity: 0;
 }
 .opt-btn:checked + .opt-label {
-  border-color: {{ font_col_base }};
+  border-color: #000;
   cursor: default;
 }
+
+.opt-btn:checked + .opt-label .opt-label__text {
+  color: #000;
+}
+
 .opt-btn.is-unavailable + .opt-label {
   background: no-repeat center/100% 100% rgba(0, 0, 0, 0.05);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='0.4' preserveAspectRatio='none' %3E%3Cline x1='24' y1='0' x2='0' y2='24'%3E%3C/line%3E%3C/svg%3E");
@@ -5600,8 +5635,9 @@ input[type=text].main-search__input {
   border: 1.5px solid {{ font_col_base | color_mix: bg_col, 25 }};
   /* border-radius: {{ button_border_radius }}px; */
   border-radius: 10px;
-  background-color: #eeeeee;
+  background-color: #fff;
   color: #6d6d6d;
+  transition: all 0.3s ease;
 }
 
 .opt-label .opt-label__text {
@@ -5628,6 +5664,10 @@ input[type=text].main-search__input {
     background-color: #000;
     border-color: {{ font_col_base | color_mix: bg_col, 55 }};
     cursor: pointer;
+  }
+
+  .opt-label:hover .opt-label__text {
+    color: #fff !important;
   }
 }
 
@@ -6305,7 +6345,7 @@ html {
 }
 
 #pageheader {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 #pageheader.pageheader.bg-white {
@@ -6318,9 +6358,17 @@ html {
   font-family: 'Montserat', Helvetica, Arial;
 }
 
+#pageheader.pageheader .container a span svg {
+  fill: #fff;
+}
+
 #pageheader.pageheader.bg-white .container a,
 #pageheader.pageheader.bg-white .container a span {
   color: #000;
+}
+
+#pageheader.pageheader.bg-white .cart-link__icon svg {
+  fill: #000;
 }
 
 /* Remove FF input padding for consistant alignment */
@@ -8783,7 +8831,7 @@ ul.inline li {
 .price-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 @media (min-width: 768px) {
   .price-container {
@@ -8855,12 +8903,13 @@ shopify-payment-terms {
 
 .product-form .input-row,
 .buy-buttons-row {
-  margin: 25px 0;
+  margin: 16px 0;
   clear: both;
 }
 
 .product-form h1.title {
   font-size: 32px;
+  line-height: 32px;
   font-weight: 800;
 }
 
@@ -8900,7 +8949,7 @@ shopify-payment-terms {
 }
 
 .product-form .option-selector {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .option-selector-fieldset {
@@ -8921,8 +8970,8 @@ shopify-payment-terms {
   margin-bottom: 0;
 }
 .product-form .quantity-submit-row .quantity-submit-row__submit {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .product-form .quantity-submit-row .quantity-submit-row__submit button[type=submit] {
   width: 100%;
@@ -9322,6 +9371,7 @@ shopify-payment-terms {
 
 .has-paging__title {
   vertical-align: middle;
+  font-weight: 800;
 }
 
 .owl-btn-disabled {
@@ -10457,6 +10507,12 @@ a .state {
 
 .video-container__video.left video {
   object-position: left top;
+}
+
+@media (min-width: 1700px) {
+  .video-container__video.left video {
+    object-position: left 15%;
+  }
 }
 
 .video-container__video.center video {
