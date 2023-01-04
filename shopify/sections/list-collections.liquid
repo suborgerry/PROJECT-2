@@ -1,0 +1,134 @@
+<div class="container">
+  {% if section.settings.title != blank %}
+  <div class="page-header cf">
+    <h1 class="majortitle">{{ section.settings.title | escape }}</h1>
+  </div>
+  {% endif %}
+  <div class="list-categories list-categories-default">
+    <div class="row">
+      {% if section.settings.style_categories == 'style_show_all' %}
+        {% for collection in collections %}
+          {% if collection.handle != 'frontpage' and collection.all_products_count > 0 %}
+            {% render 'list-collection-item', collection: collection %}
+          {% endif %}
+        {% endfor %}
+
+      {% else %}
+
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+          {% render 'list-collection-item', block: block, collection: collection %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Main List Collections",
+    "settings": [	   
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collections"
+      },
+	   {
+        "type": "select",
+        "id": "list_collection_results_per_row",
+        "label": "Products per row",
+        "default": "3",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          }
+        ]
+      },
+	  {
+		"type": "text",
+		"id": "list_collection_title_size",
+		"label": "Collection Title Font Size",
+		"default": "20"
+	  },
+	  {
+        "type": "radio",
+        "id": "style_categories",
+        "label": "Show all \/ Only a few categories",
+        "options": [
+          {
+            "value": "style_show_all",
+            "label": "Show all"
+          },
+          {
+            "value": "style_little",
+            "label": "Only a few categories"
+          }
+        ]
+      }
+	  
+	],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Main List Collections"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .collections-wrapper .collection-title {
+    font-size: {{ section.settings.list_collection_title_size }}px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0px;
+    line-height: 2.2rem;
+  }
+  .collections-wrapper .count-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .collections-wrapper .collections-btn {
+    max-width: 137px;
+    width: 100%;
+    font-size: 14px;
+    display: flex!important;
+    margin: 0 auto!important;
+  }
+  .collections-wrapper .des {
+    padding-bottom: 20px;
+  }
+  .list-categories .grid-item {
+    padding-bottom: 30px;
+    line-height: 20px;
+  }
+</style>

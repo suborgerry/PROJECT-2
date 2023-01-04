@@ -2,11 +2,85 @@
   "sections": {
     "main": {
       "type": "main-list-collections",
+      "disabled": true,
       "settings": {
+        "title": "Our collections",
+        "display_type": "all",
+        "grid": 4
+      }
+    },
+    "80ece06f-2fb9-41e1-b762-604c2a4bc35b": {
+      "type": "list-collections",
+      "blocks": {
+        "80262970-6ac3-423f-bd90-619c66ca3055": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-products"
+          }
+        },
+        "7ddeb14a-e226-47d5-b5d2-acd6901804eb": {
+          "type": "collection",
+          "settings": {
+            "collection": "cables"
+          }
+        },
+        "5cd15ec4-493c-4b59-b84e-cb60bce60da5": {
+          "type": "collection",
+          "settings": {
+            "collection": "cases"
+          }
+        },
+        "f96b4b69-c770-43a7-9c51-578d81fb6351": {
+          "type": "collection",
+          "settings": {
+            "collection": "edge®-the-first-modular-work-from-home-kit"
+          }
+        },
+        "7e0d18ec-c621-4b18-af34-14adad1c0152": {
+          "type": "collection",
+          "settings": {
+            "collection": "gan-chargers"
+          }
+        },
+        "3b8445f8-ff38-4bff-b484-e044ad0c4cdc": {
+          "type": "collection",
+          "settings": {
+            "collection": "powerbank"
+          }
+        },
+        "34bf362a-6854-478f-8df4-dc0e03305e93": {
+          "type": "collection",
+          "settings": {
+            "collection": "magsafe-collection"
+          }
+        },
+        "5348582c-dabe-4e96-857e-ff74d1eafb5f": {
+          "type": "collection",
+          "settings": {
+            "collection": "earbuds"
+          }
+        }
+      },
+      "block_order": [
+        "80262970-6ac3-423f-bd90-619c66ca3055",
+        "7ddeb14a-e226-47d5-b5d2-acd6901804eb",
+        "5cd15ec4-493c-4b59-b84e-cb60bce60da5",
+        "f96b4b69-c770-43a7-9c51-578d81fb6351",
+        "7e0d18ec-c621-4b18-af34-14adad1c0152",
+        "3b8445f8-ff38-4bff-b484-e044ad0c4cdc",
+        "34bf362a-6854-478f-8df4-dc0e03305e93",
+        "5348582c-dabe-4e96-857e-ff74d1eafb5f"
+      ],
+      "settings": {
+        "title": "Collections",
+        "list_collection_results_per_row": "3",
+        "list_collection_title_size": "20",
+        "style_categories": "style_little"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "80ece06f-2fb9-41e1-b762-604c2a4bc35b"
   ]
 }

@@ -113,10 +113,10 @@
               {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
                 <div class="overlay-text__button-row">
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button button btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}

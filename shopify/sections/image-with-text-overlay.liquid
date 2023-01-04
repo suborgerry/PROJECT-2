@@ -16,10 +16,18 @@
     .overlay-text__button-row .iwto-btn-color-{{ section.id }} {
       background: {{ section.settings.btn_color }}
     }
-    
+    .image-overlay .overlay-text .overlay-text__text .middle {
+      max-width: 550px;
+      margin: 0 auto 20px;
+    }
+    @media (max-width: 749px) {
+      .image-overlay .overlay-text .overlay-text__text p {
+        font-size: 14px;
+      }
+    }
     .ev__rte-{{ section.id }} {
       font-size: {{ section.settings.text_size }}px;
-      max-width: 472px;
+      max-width: 440px;
       line-height: 23px;
     }
 
@@ -140,7 +148,7 @@
               {% if section.settings.use_h1 %}
                 <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
               {% else %}
-                <h2 class="overlay-text__title h1-style text-transform-{{ section.id }} text-color-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
+            <h2 class="overlay-text__title h1-style text-transform-{{ section.id }} text-color-{{ section.id }} {% if section.settings.title_center %}middle{% endif %}">{% render 'multiline-text' with section.settings.title %}</h2>
               {% endif %}
             {%- endif -%}
             {%- if section.settings.text != blank -%}
@@ -342,6 +350,12 @@
         "id": "title",
         "label": "Heading",
         "default": "Two line\ntext heading"
+      },
+      {
+        "type": "checkbox",
+        "id": "title_center",
+        "label": "Title in the middle",
+        "default": false
       },
       {
         "type": "select",

@@ -2,6 +2,19 @@
   .section-{{ section.id }} h2 {
     text-transform: {{ section.settings.transform_heading }}
   }
+  .container-w100 {
+    max-width: 100%;
+    padding: 0px 45px;
+  }
+  .overlay-text__title {
+    text-transform: capitalize!important;
+  }
+  @media (max-width: 767px) {
+    .container-w100 {
+      max-width: 100%;
+      padding: 0px 0px;
+    }
+  }
 {%- endstyle -%}
 
 <div id="section-id-{{ section.id }}" data-section-type="gallery" class="section-{{ section.id }}">
@@ -58,7 +71,7 @@
   {%- endcapture -%}
 
   <div class="{{ super_container_class }}">
-    {%- unless section.settings.full_width -%}<div class="container container--not-mobile">{%- endunless -%}
+    {%- unless section.settings.full_width -%}<div class="container container-w100 container--not-mobile">{%- endunless -%}
 
     <div class="gallery gallery--height-{{ section.settings.height }} gallery--grid-{{ section.settings.grid }}{% if section.settings.enable_margin %} gallery--with-margins{% endif %}{% if section.settings.enable_carousel %} gallery--mobile-carousel slick-slider-overlay-dots{% endif %}{% if section.settings.full_width and section.settings.enable_margin %} gallery--with-vertical-outer-padding{% endif %}" data-grid="{{ section.settings.grid }}">
       <div class="gallery__row">
