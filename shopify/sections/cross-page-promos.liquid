@@ -59,7 +59,7 @@
                 <div class="icon-with-caption">
                   <div class="icon-with-caption__icon">
                     {% if block.type == 'icon' %}
-                      {% render 'icon', icon: block.settings.icon, size: 'medium' %}
+                      {% render 'icon', icon: block.settings.icon %}
                     {% else %}
                       <div class="icon-with-caption__image-{{ block.settings.image_size }}">
                         {% if block.settings.image == blank %}
@@ -91,6 +91,7 @@
 {%- endif -%}
 
 <style type="text/css">
+
   {% for block in section.blocks %}
   {% if block.type == 'image' and block.settings.text != blank %}
   .cross-page-promos .block-id-{{ block.id }} .overlay-text .overlay-text__text {
@@ -98,6 +99,24 @@
   }
   {% endif %}
   {% endfor %}
+
+  .cross-page-promos .image-block {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .cross-page-promos .icon-with-caption__text {
+    line-height: 12px;
+  }
+  .cross-page-promos .icon-with-caption__icon svg {
+    width: 48px;
+    height: 48px;
+  }
+  @media (max-width: 767px) {
+    .cross-page-promos .image-block {
+      max-width: 100%;
+    }
+  }
+
 </style>
 
 
@@ -177,6 +196,22 @@
               {
                 "value": "box",
                 "label": "Box"
+              },
+              {
+                "value": "free",
+                "label": "Free"
+              },
+              {
+                "value": "warranty",
+                "label": "Warranty"
+              },
+              {
+                "value": "support",
+                "label": "Support"
+              },
+              {
+                "value": "designed",
+                "label": "Designed"
               },
               {
                 "value": "briefcase",

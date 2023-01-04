@@ -961,8 +961,8 @@
   },
   "current": {
     "use_fullwidth_layout": true,
-    "font_col_base": "#6d7175",
-    "font_col_link": "#202223",
+    "font_col_base": "#232323",
+    "font_col_link": "#232323",
     "font_col_heads": "#202223",
     "font_col_shoptitle": "#202223",
     "font_col_sale": "#c4293d",
@@ -1151,32 +1151,32 @@
           "1478526632862": {
             "type": "icon",
             "settings": {
-              "icon": "box",
-              "text": "Free delivery!",
+              "icon": "free",
+              "text": "30 Days \nReturn",
               "link_url": ""
             }
           },
           "1478526645605": {
             "type": "icon",
             "settings": {
-              "icon": "map_pin",
-              "text": "Your nearest store",
+              "icon": "warranty",
+              "text": "2 Years\nWarranty",
               "link_url": ""
             }
           },
           "1478526647261": {
             "type": "icon",
             "settings": {
-              "icon": "gift",
-              "text": "Gift cards",
+              "icon": "support",
+              "text": "24\/7 Customer\nSupport",
               "link_url": ""
             }
           },
           "1478527611164": {
             "type": "icon",
             "settings": {
-              "icon": "percent",
-              "text": "Student discount",
+              "icon": "designed",
+              "text": "Designed in \nSwitzerland",
               "link_url": ""
             }
           }
@@ -1216,6 +1216,7 @@
             "settings": {
               "title": "Newsletter",
               "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
+              "footer_newsletter_des": "Don't worry, we hate spam too 💩",
               "button_style": "primary",
               "show_social_icons": true,
               "soc_icons_large": false

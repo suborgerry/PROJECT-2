@@ -323,6 +323,20 @@
   {% endif %}
 </div>
 
+<script>
+  const filterFixed = document.querySelector(".utility-bar");
+  const mediaQuery = window.matchMedia('(max-width: 767px)')
+  if (mediaQuery.matches) {
+    window.addEventListener('scroll', () => { 
+      if(window.scrollY >= headerWrapper.offsetHeight){
+        filterFixed.classList.add('fixed');
+      }else{    
+        filterFixed.classList.remove('fixed');
+      }
+    });
+  }
+</script>
+
 
 {% schema %}
   {

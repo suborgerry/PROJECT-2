@@ -248,6 +248,7 @@
     "general": {
       "see_all_subcollections": "See all...",
       "view_all": "View all",
+      "shop_now": "Shop Now",
       "product_count": {
         "one": "{{ count }} product",
         "other": "{{ count }} products"

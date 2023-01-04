@@ -81,6 +81,12 @@
                 </div>
               {% endif %}
 
+              {% if block.settings.footer_newsletter_des != blank %}
+                <p class="newsletter-des">
+                  {{ block.settings.footer_newsletter_des }}
+                </p>
+              {% endif %}
+
               <div class="signup-form">
                 {% form 'customer', id: 'footer_newsletter_signup' %}
                   {% if form.posted_successfully? %}
@@ -308,6 +314,11 @@
             "label": "Text",
             "default": "<p>Sign up for exclusive offers, original stories, events and more.</p>"
           },
+          {
+            "type": "textarea",
+            "id": "footer_newsletter_des",
+            "label": "Footer Newsletter Descriptions"
+          },   
           {
             "type": "paragraph",
             "content": "Customers who subscribe will have their email address added to the “accepts marketing” [customer list](/admin/customers?query=&accepts_marketing=1)"
