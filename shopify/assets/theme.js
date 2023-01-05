@@ -3297,8 +3297,6 @@
     });
   };
 
-
-
   /*=============== Components ===============*/
   theme.applyAjaxToProductForm = function ($formContainer) {
     $formContainer.find('form.product-purchase-form').each(function () {
@@ -3341,6 +3339,8 @@
               $form.submit();
             }
           });
+
+          skipPrice();
         }
       });
     });
@@ -5738,6 +5738,7 @@
         $(container).on('click.cartTemplateSection', '.quantity-down, .quantity-up', function (evt) {
           var $input = $(this).closest('.quantity').find('input'),
           step = $input.attr('step') ? parseInt($input.attr('step')) : 1;
+
           if ($(this).hasClass('quantity-down')) {
             $input.val(parseInt($input.val()) - step).trigger('changeFromButton', { data: this });
           } else {

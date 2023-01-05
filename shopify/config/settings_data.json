@@ -961,8 +961,8 @@
   },
   "current": {
     "use_fullwidth_layout": true,
-    "font_col_base": "#232323",
-    "font_col_link": "#232323",
+    "font_col_base": "#6d7175",
+    "font_col_link": "#202223",
     "font_col_heads": "#202223",
     "font_col_shoptitle": "#202223",
     "font_col_sale": "#c4293d",
@@ -1051,18 +1051,23 @@
         "blocks": {
           "1478526632860": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "<p>Designed with ❤️ in Switzerland<\/p>",
               "bg_color": "#17e260",
-              "color": "#000000"
+              "color": "#000000",
+              "use_money": false,
+              "money": 1
             }
           },
           "1478526632861": {
             "type": "announcement",
             "settings": {
-              "text": "<p>✈️ Free Shipping over <\/p>",
+              "text": "<p>✈️ Free Shipping <\/p>",
               "bg_color": "#1761ff",
-              "color": "#fefdfd"
+              "color": "#fefdfd",
+              "use_money": true,
+              "money": 80
             }
           }
         },
@@ -1151,32 +1156,32 @@
           "1478526632862": {
             "type": "icon",
             "settings": {
-              "icon": "free",
-              "text": "30 Days \nReturn",
+              "icon": "box",
+              "text": "Free delivery!",
               "link_url": ""
             }
           },
           "1478526645605": {
             "type": "icon",
             "settings": {
-              "icon": "warranty",
-              "text": "2 Years\nWarranty",
+              "icon": "map_pin",
+              "text": "Your nearest store",
               "link_url": ""
             }
           },
           "1478526647261": {
             "type": "icon",
             "settings": {
-              "icon": "support",
-              "text": "24\/7 Customer\nSupport",
+              "icon": "gift",
+              "text": "Gift cards",
               "link_url": ""
             }
           },
           "1478527611164": {
             "type": "icon",
             "settings": {
-              "icon": "designed",
-              "text": "Designed in \nSwitzerland",
+              "icon": "percent",
+              "text": "Student discount",
               "link_url": ""
             }
           }
@@ -1216,7 +1221,7 @@
             "settings": {
               "title": "Newsletter",
               "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
-              "footer_newsletter_des": "Don't worry, we hate spam too 💩",
+              "footer_newsletter_des": "",
               "button_style": "primary",
               "show_social_icons": true,
               "soc_icons_large": false
