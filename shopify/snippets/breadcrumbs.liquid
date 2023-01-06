@@ -168,32 +168,32 @@ endif
 <nav class="breadcrumbs" aria-label="{{ breadcrumbs_title }}">
   <ol class="breadcrumbs-list">
     <li class="breadcrumbs-list__item">
-      <a class="breadcrumbs-list__link" href="{{ routes.root_url }}">{{ home_title | escape }}</a> {{ divider }}
+      <a class="breadcrumbs-list__link" href="{{ routes.root_url }}">{{ home_title  }}</a> {{ divider }}
     </li>
 
     {%- if template.name == 'collection' and collection.handle -%}
       {%- if show_collection_listing_link -%}
         <li class="breadcrumbs-list__item">
-          <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}">{{ collections_title | escape }}</a> {{ divider }}
+          <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}">{{ collections_title  }}</a> {{ divider }}
         </li>
       {%- endif -%}
       <li class="breadcrumbs-list__item">
-        <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}/{{ collection.handle }}" aria-current="page">{{ collection.title | escape }}</a>
+        <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}/{{ collection.handle }}" aria-current="page">{{ collection.title }}</a>
       </li>
 
     {%- elsif template.name == 'product' -%}
       {%- if collection -%}
         {%- if show_collection_listing_link -%}
           <li class="breadcrumbs-list__item">
-            <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}">{{ collections_title | escape }}</a> {{ divider }}
+            <a class="breadcrumbs-list__link" href="{{ routes.collections_url }}">{{ collections_title }}</a> {{ divider }}
           </li>
         {%- endif -%}
         <li class="breadcrumbs-list__item">
-          <a class="breadcrumbs-list__link" href="{{ collection.url }}">{{ collection.title | escape }}</a> {{ divider }}
+          <a class="breadcrumbs-list__link" href="{{ collection.url }}">{{ collection.title }}</a> {{ divider }}
         </li>
       {%- endif -%}
       <li class="breadcrumbs-list__item">
-        <a class="breadcrumbs-list__link" href="{{ product.url }}" aria-current="page">{{ product.title | escape }}</a>
+        <a class="breadcrumbs-list__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
       </li>
 
     {%- elsif template.name == 'blog' and current_tags -%}
@@ -206,15 +206,15 @@ endif
 
     {%- elsif template.name == 'article' -%}
       <li class="breadcrumbs-list__item">
-        <a class="breadcrumbs-list__link" href="{{ blog.url }}">{{ blog.title | escape }}</a> {{ divider }}
+        <a class="breadcrumbs-list__link" href="{{ blog.url }}">{{ blog.title }}</a> {{ divider }}
       </li>
       <li class="breadcrumbs-list__item">
-        <a class="breadcrumbs-list__link" href="{{ article.url }}" aria-current="page">{{ article.title | escape }}</a>
+        <a class="breadcrumbs-list__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
       </li>
 
     {%- elsif other_templates contains template.name or template.directory == 'customers' -%}
       <li class="breadcrumbs-list__item">
-        <a class="breadcrumbs-list__link" href="{{ item_url }}" aria-current="page">{{ item_title | escape }}</a>
+        <a class="breadcrumbs-list__link" href="{{ item_url }}" aria-current="page">{{ item_title }}</a>
       </li>
 
     {%- else -%}

@@ -20,9 +20,12 @@
     }
 
     .overlay-text__button-row .btn-color-{{ section.id }}:hover {
-      background-color: {{ section.settings.background_color_hover }};
-      color: {{ section.settings.text_color_hover }};
-      border-color: {{ section.settings.text_color_hover }};
+      background-color: {{ section.settings.background_color }};
+      color: {{ section.settings.text_color }};
+    }
+
+    .overlay-text__button-row .btn-color-{{ section.id }}:after {
+      border-color: {{ section.settings.background_color }} !important;
     }
 
     .overlay-text .overlay-text__title.bv-other-text-color-{{ section.id }},
@@ -102,9 +105,9 @@
               {%- endif -%}
               {%- if section.settings.title != blank -%}
                 {% if section.settings.use_h1 %}
-                  <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
+                  <h1 class="overlay-text__title">{{ section.settings.title }}</h1>
                 {% else %}
-                  <h2 class="bv-other-text-color-{{ section.id }} overlay-text__title h1-style text-transform-{{ section.id }}">{% render 'multiline-text' with section.settings.title %}</h2>
+                  <h2 class="bv-other-text-color-{{ section.id }} overlay-text__title h1-style text-transform-{{ section.id }}">{{ section.settings.title }}</h2>
                 {% endif %}
               {%- endif -%}
               {%- if section.settings.text != blank -%}
@@ -113,10 +116,10 @@
               {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
                 <div class="overlay-text__button-row">
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button hover-line button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button hover-line button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}
@@ -176,7 +179,7 @@
         "default": "Tell your story"
       },
       {
-        "type": "textarea",
+        "type": "liquid",
         "id": "title",
         "label": "Heading",
         "default": "Background video"
