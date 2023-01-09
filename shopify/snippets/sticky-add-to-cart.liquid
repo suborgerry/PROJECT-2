@@ -23,6 +23,13 @@
         height: 45px;
     }
 
+    .action.sticky-item.hover-line {
+        position: relative;
+    }
+
+    .action.sticky-item.hover-line::after {
+        border-color: #17e260;
+    }
     
     .pr-img.sticky-item {
         display: flex;
@@ -122,6 +129,7 @@
         line-height: 16px;
         transition: all ease 0.3s;
         font-family: 'Montserat',  Arial;
+        z-index: 1;
     }
 
     .action.sticky-item .sticky-add-to-cart:hover {
@@ -237,7 +245,7 @@
                         </div>
 
                         <div class=" col-actions">
-                            <div class="action sticky-item">
+                            <div class="action sticky-item hover-line">
                                 {% if product.selected_or_first_available_variant.available %}
                                 <input type="hidden" name="id" value="{{ product.variants[0].id }}" /> 
                                 <input data-sticky-btn-addToCart type="submit" name="add" class="btn sticky-add-to-cart" {% if settings.enable_multilang %}data-translate="products.product.add_to_cart"{%endif%} value="{{ 'products.product.add_to_cart' | t }}">          

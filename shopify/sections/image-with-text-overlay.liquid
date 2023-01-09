@@ -16,6 +16,19 @@
     .overlay-text__button-row .iwto-btn-color-{{ section.id }} {
       background: {{ section.settings.btn_color }}
     }
+
+    .overlay-text__button-row .iwto-btn-color-{{ section.id }}::after {
+      border-color: {{ section.settings.btn_color }};
+    }
+
+    .overlay-text__button-row .iwto-btn-color-{{ section.id }}:hover {
+      background: {{ section.settings.btn_color }};
+    }
+
+    .overlay-text__button-row .iwto-btn-color-{{ section.id }}:hover::after {
+      border-color: {{ section.settings.btn_color }};
+    }
+
     .image-overlay .overlay-text .overlay-text__text .middle {
       max-width: 550px;
       margin: 0 auto 20px;
@@ -146,9 +159,9 @@
             {%- endif -%}
             {%- if section.settings.title != blank -%}
               {% if section.settings.use_h1 %}
-                <h1 class="overlay-text__title">{% render 'multiline-text' with section.settings.title %}</h1>
+                <h1 class="overlay-text__title">{{ section.settings.title }}</h1>
               {% else %}
-            <h2 class="overlay-text__title h1-style text-transform-{{ section.id }} text-color-{{ section.id }} {% if section.settings.title_center %}middle{% endif %}">{% render 'multiline-text' with section.settings.title %}</h2>
+            <h2 class="overlay-text__title h1-style text-transform-{{ section.id }} text-color-{{ section.id }} {% if section.settings.title_center %}middle{% endif %}">{{ section.settings.title }}</h2>
               {% endif %}
             {%- endif -%}
             {%- if section.settings.text != blank -%}
@@ -158,17 +171,17 @@
               <div class="overlay-text__button-row">
                 {%- if wrap_image_with_link -%}
                   {%- if section.settings.button_label_1 != blank -%}
-                    <span class="overlay-text__button button altcolour">{{ section.settings.button_label_1 | escape }}</span>
+                    <span class="overlay-text__button button hover-line altcolour">{{ section.settings.button_label_1 | escape }}</span>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <span class="overlay-text__button button altcolour">{{ section.settings.button_label_2 | escape }}</span>
+                    <span class="overlay-text__button button hover-line altcolour">{{ section.settings.button_label_2 | escape }}</span>
                   {%- endif -%}
                 {%- else -%}
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button altcolour iwto-btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button button hover-line altcolour iwto-btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button button altcolour" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button button hover-line altcolour" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 {%- endif -%}
               </div>
@@ -346,7 +359,7 @@
         "default": "Tell your story"
       },
       {
-        "type": "textarea",
+        "type": "liquid",
         "id": "title",
         "label": "Heading",
         "default": "Two line\ntext heading"

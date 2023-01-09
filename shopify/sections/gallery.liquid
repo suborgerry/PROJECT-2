@@ -123,11 +123,11 @@
                     <div class="overlay-text__subheading subheading subheading--over">{{ block.settings.subheading | escape }}</div>
                   {%- endif -%}
                   {%- if block.settings.title != blank -%}
-                    <h2 class="overlay-text__title h4-style" style="color: {{ block.settings.text_color }}">{% render 'multiline-text' with block.settings.title %}</h2>
+                    <h2 class="overlay-text__title h4-style" style="color: {{ block.settings.text_color }}">{{ block.settings.title }}</h2>
                   {%- endif -%}
                   {%- if block.settings.button_label != blank -%}
                     <div class="overlay-text__button-row overlay-text__button-row--{{ section.settings.button_style }}">
-                      <span class="overlay-text__button {% if section.settings.button_style != 'link' %}btn btn--{{ section.settings.button_style }}{% else %}small-feature-link{% endif %}">{{ block.settings.button_label | escape }}</span>
+                      <span class="overlay-text__button hover-line {% if section.settings.button_style != 'link' %}btn btn--{{ section.settings.button_style }}{% else %}small-feature-link{% endif %}">{{ block.settings.button_label | escape }}</span>
                     </div>
                   {%- endif -%}
                 </div>

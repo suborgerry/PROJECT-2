@@ -165,7 +165,7 @@
 
             {% when 'title' %}
               <div class="title-row" {{ block.shopify_attributes }}>
-                <h1 class="title">{{ product.title | escape }}</h1>
+                <h1 class="title">{{ product.title }}</h1>
               </div>
             {% when 'mini-description' %}
               {% if product.description contains '[countdown]' %}
@@ -384,7 +384,7 @@
                             {{- 'products.product.add_to_cart' | t -}}
                           {%- endif -%}
                         {%- endcapture -%}
-                        <button class="button button--large" id="main-product-add-to-cart" type="submit" data-add-to-cart-text="{{ add_to_cart_text | escape }}">
+                        <button class="button button--large hover-line" id="main-product-add-to-cart" type="submit" data-add-to-cart-text="{{ add_to_cart_text | escape }}">
                           {{- add_to_cart_text -}}
                         </button>
                       </div>
