@@ -39,7 +39,11 @@
                     background-color:{{ block.settings.bg_color }}
                   }
                 </style>
-                <div class="announcement__text" style="color: {{ block.settings.color }}">{{ block.settings.text }}{% if block.settings.use_money %}<span id="over_money" class="d-none">over <b id="shipping_money" data-over-price="{{ block.settings.money }}">{{ block.settings.money }}</b><b>$</b></span>{% endif %}</div>
+                <div class="announcement__text" style="color: {{ block.settings.color }}" {% if block.settings.use_money %}id="alternative_text_money" data-over-price="{{ block.settings.money }}"{% endif %}>
+                  {% unless block.settings.use_money %}
+                    {{ block.settings.text }}
+                  {% endunless %}
+                </div>
               </div>
 
               {% if block.settings.use_money %}
@@ -57,23 +61,28 @@
                     }
 
                     const updatePrice = (price, step, count) => {
-                      const shippingMoney = document.querySelector('#shipping_money');
-                      const overMoney = document.querySelector('#over_money');
+                      const alternativeTextMoney = document.querySelector('#alternative_text_money');
+                      const shippingPrice = parseInt(alternativeTextMoney.dataset.overPrice);
+                      const totalPrice = parseFloat(price).toString().substring(0, price.toString().length - 2);
                       const cartSubtotal = document.querySelector('.checkout-subtotal-container__dynamic');
                       const cartTotal = cartSubtotal ? cartSubtotal.querySelector('.theme-money') : undefined;
-                      const overPrice = parseInt(shippingMoney.dataset.overPrice);
-                      const handlePrice = parseFloat(price).toString().substring(0, price.toString().length - 2);
                       const cartLinkСount = document.querySelector('.cart-link__count');
 
                       if(cartLinkСount) {
                         cartLinkСount.innerHTML = count;
                       }
 
-                      if(handlePrice >= overPrice) {
-                        overMoney.classList.add("d-none");
+                      if(totalPrice >= shippingPrice) {
+                        alternativeTextMoney.innerHTML = "✈️ Free Shipping";
+                        console.log(totalPrice, shippingPrice, totalPrice >= shippingPrice)
                       } else {
-                        overMoney.classList.remove("d-none");
-                        shippingMoney.innerHTML = overPrice - handlePrice;
+                        let unpatedPrice = shippingPrice - totalPrice;
+
+                        if(totalPrice == 0) {
+                          alternativeTextMoney.innerHTML = `✈️ Free Shipping over ${unpatedPrice}$`
+                        } else if(totalPrice > 0) {
+                          alternativeTextMoney.innerHTML = `✈️ Only ${unpatedPrice}$ left for free shipping`
+                        }
                       }
                     }
 
