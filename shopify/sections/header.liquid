@@ -67,7 +67,7 @@
 
 {%- assign featured_links = section.settings.nav_featured_link | split: ', ' -%}
 <div data-section-type="header" data-cc-animate>
-  <div id="pageheader" class="pageheader pageheader--layout-{{ section.settings.menu_layout }}{% if section.settings.enable_transparent and template.name == 'index' %} pageheader--transparent-permitted pageheader--transparent{% endif %}{% if section.settings.enable_sticky %} pageheader--sticky{% endif %}">
+  <div id="pageheader" data-template-name="{{ template.name }}" class="pageheader pageheader--layout-{{ section.settings.menu_layout }}{% if section.settings.enable_transparent and template.name == 'index' %} pageheader--transparent-permitted pageheader--transparent{% endif %}{% if section.settings.enable_sticky %} pageheader--sticky{% endif %} {%if template.name == 'product' %}text-black bg-white{% endif %}" >
     <div class="logo-area container container--no-max">
       <div class="logo-area__left">
         <div class="logo-area__left__inner">
@@ -463,16 +463,22 @@
 </script>
 
 <script>
-  const headerWrapper = document.querySelector("#pageheader");
-
-  window.addEventListener('scroll', () => { 
-
-    if(window.scrollY >= headerWrapper.offsetHeight){
-        headerWrapper.classList.add('bg-white', 'text-black');
-    }else{    
-        headerWrapper.classList.remove('bg-white', 'text-black');
+  (() => {
+    const headerWrapper = document.querySelector("#pageheader");
+    const templateName = headerWrapper.dataset.templateName;
+    if(templateName != 'product') {
+      window.addEventListener('scroll', () => { 
+    
+        if(window.scrollY >= headerWrapper.offsetHeight){
+            headerWrapper.classList.add('bg-white', 'text-black');
+        }else{    
+            headerWrapper.classList.remove('bg-white', 'text-black');
+        }
+      });
+    } else {
+      headerWrapper.classList.add('bg-white', 'text-black', 'position-relative');
     }
-  });
+  })();
 </script>
 {%- endif -%}
 
