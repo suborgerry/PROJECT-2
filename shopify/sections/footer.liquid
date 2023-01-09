@@ -89,6 +89,7 @@
 
               <div class="signup-form">
                 {% form 'customer', id: 'footer_newsletter_signup' %}
+                  <span>Don't worry, we hate spam too 💩</span>
                   {% if form.posted_successfully? %}
                     <div class="section-footer__newsletter-block__message signup-form__response signup-form__response--success">
                       <h6>{{ 'layout.signup.post_success' | t }}</h6>
