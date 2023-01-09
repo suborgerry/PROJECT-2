@@ -1960,7 +1960,13 @@ body {
 .section-header--nav-hover #pageheader {
   background: #fff !important;
   color: #000;
+}
+
+.section-header--nav-hover #pageheader:after {
   border-bottom: 1px solid #e2e2e2;
+  width: 100%;
+  position: absolute;
+  content: "";
 }
 
 .section-header--nav-hover #pageheader .logo__image {
@@ -2090,7 +2096,7 @@ body {
 
 .text-black.pageheader {
   position: fixed;
-  top: -1px;
+  top: 0px;
 }
 
 @media (min-width: 765px) and (max-width: 1025px) {
@@ -2561,7 +2567,6 @@ body {
   }
 
   .bg-white.pageheader+#main-nav .navigation--main .navigation__tier-2-container {
-    top: 65px;
   }
 
   .bg-white  + .navigation .navigation__tier-2-container {
@@ -4005,7 +4010,7 @@ input[type=text].main-search__input {
 }
 .section-footer__newsletter-block .signup-form__email {
   width: 100%;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .section-footer__newsletter-block__social:not(:first-child) {
@@ -6374,6 +6379,10 @@ input[type=text].main-search__input {
   padding-top: 5px;
 }
 
+.js .cc-accordion-item.is-open:not(.is-closing) .cc-accordion-item__content p + p {
+  margin-top: 10px;
+}
+
 .cc-accordion {
   margin-bottom: 50px;
 }
@@ -6410,8 +6419,11 @@ html {
   transition: all 0.3s ease;
 }
 
-#pageheader.pageheader.bg-white {
+#pageheader.pageheader.bg-white:after {
+  content: "";
   border-bottom: 1px solid #e2e2e2;
+  width: 100%;
+  position: absolute;
 }
 
 
@@ -6586,6 +6598,8 @@ body {
 {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}
 {%- assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic' -%}
 {%- assign heading_font = settings.type_heading_font -%}
+{%- assign main_font = settings.type_other_font -%}
+
 h1, .h1-style, h2, h3, h4, h5, h6, .heading-font {
     font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
     font-weight: {{ heading_font.weight }};
@@ -6633,6 +6647,7 @@ body {
   /* Fonts on Macs look bad without these */
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  font-family: {{ main_font.family }}
 }
 
 {% if bg_col_alpha > 0 %}
