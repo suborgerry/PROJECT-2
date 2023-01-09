@@ -103,7 +103,7 @@
 
 // Font family
 .font-Montserat {
-  font-family: 'Montserat',  Arial;
+  font-family: 'Montserat', Sans-Serif;
 }
 
 .font-Basier-Square-Mono {
@@ -115,7 +115,7 @@ h1, .h1 {
   font-weight: 400;
   font-size: 48px;
   line-height: 61px;
-  @extend .font-Montserat;
+  // @extend .font-Montserat;
 
   &.h3-style {
     line-height: 32px;
@@ -131,7 +131,7 @@ h2, .h2 {
   font-weight: 400;
   font-size: 3.6rem;
   line-height: 4.5rem;
-  @extend .font-Montserat;
+  // @extend .font-Montserat;
 }
 
 h3, .h3 {
@@ -150,7 +150,7 @@ h4, .h4 {
 
 .title,
 .product-block__title {
-  @extend .font-Montserat;
+  // @extend .font-Montserat;
 }
 
 .product-block__title {

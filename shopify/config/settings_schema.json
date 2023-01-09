@@ -468,6 +468,12 @@
         "default": "lato_n4"
       },
       {
+        "type": "font_picker",
+        "id": "type_other_font",
+        "label": "Other text font",
+        "default": "montserrat_n4"
+      },
+      {
         "type": "checkbox",
         "id": "bold_mobile_nav",
         "label": "Bold mobile navigation",
