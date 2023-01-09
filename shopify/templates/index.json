@@ -227,9 +227,9 @@
         "height_mobile": 460,
         "image_link": "",
         "subheading": "",
-        "title": "all products",
+        "title": "All Products",
         "title_center": false,
-        "title_transform": "uppercase",
+        "title_transform": "capitalize",
         "title_size": 38,
         "title_size_mobile": 24,
         "text_size": 16,
@@ -301,7 +301,7 @@
             "alignment": "center center",
             "enlarge_image": true,
             "subheading": "",
-            "title": "about the rolling team",
+            "title": "About the Rolling team",
             "button_label": "discover",
             "text_color": "#ffffff",
             "link": "shopify:\/\/pages\/about",
@@ -329,7 +329,7 @@
         "enable_carousel": true,
         "overlay_style": "full",
         "button_style": "secondary",
-        "transform_heading": "uppercase"
+        "transform_heading": "none"
       }
     },
     "1f4d6850-384d-48b4-840a-304cbe307d34": {
