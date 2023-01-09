@@ -12,7 +12,7 @@
     <div class="{% if section.settings.enable_carousel %}collection-slider{% endif %}">
       <h2 class="hometitle h4-style align-center has-paging" data-cc-animate data-cc-animate-delay="0.3s">
         {%- comment -%} {% if section.settings.enable_carousel %}<a class="prev ltr-icon" href="#">{% render 'svg-chevron-left' %}</a>{% endif %} {%- endcomment -%}
-        <a class="has-paging__title" href="{{ collection.url }}"><span>{{ section.settings.title | escape }}</span></a>
+        <a class="has-paging__title" href="{{ collection.url }}"><span>{{ section.settings.title }}</span></a>
         {%- comment -%} {% if section.settings.enable_carousel %}<a class="next ltr-icon" href="#">{% render 'svg-chevron-right' %}</a>{% endif %} {%- endcomment -%}
         <div class="owl-dots" id="carousel-custom-dots"></div>
       </h2>
