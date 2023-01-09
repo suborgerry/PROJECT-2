@@ -5672,7 +5672,7 @@ body {
   background-color: #1761FF;
 }
 
-.c-black, .text-black + #main-nav a, .text-black a.navigation__link, .text-black a {
+.c-black, .text-black a.navigation__link, .text-black a {
   color: #000000;
 }
 

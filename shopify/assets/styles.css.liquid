@@ -268,6 +268,7 @@ body.cc-popup-no-scroll {
 }
 .cc-popup .cc-popup-container .cc-popup-title {
   color: {{ font_col_base }};
+  font-weight: bold;
 }
 .cc-popup .cc-popup-close {
   position: absolute;
@@ -2030,6 +2031,7 @@ body {
   justify-content: center;
 }
 .announcement .announcement__text {
+  font-weight: bold;
   flex: 0 0 100%;
   line-height: 1.3em;
   transition: opacity 500ms ease-out 500ms, transform 700ms cubic-bezier(0.09, 0.49, 0.39, 0.99) 500ms;
@@ -2527,7 +2529,7 @@ body {
   .navigation .navigation__tier-1 > .navigation__item > .navigation__link::before {
     content: "";
     position: absolute;
-    bottom: 1px;
+    bottom: 0px;
     background-color: #000;
     height: 2px;
     transition: transform 0.3s;
@@ -3952,6 +3954,7 @@ input[type=text].main-search__input {
 
 .section-footer__title {
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .section-footer__title {
@@ -4002,6 +4005,7 @@ input[type=text].main-search__input {
 }
 .section-footer__newsletter-block .signup-form__email {
   width: 100%;
+  margin-top: 20px;
 }
 
 .section-footer__newsletter-block__social:not(:first-child) {
@@ -8724,7 +8728,7 @@ ul.inline li {
   width: 300px;
 }
 #pagefooter .signup-form__button {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 14px;
   line-height: 15px;
   color: #fff;
