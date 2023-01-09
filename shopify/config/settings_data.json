@@ -1051,7 +1051,6 @@
         "blocks": {
           "1478526632860": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "<p>Designed with ❤️ in Switzerland<\/p>",
               "bg_color": "#17e260",
