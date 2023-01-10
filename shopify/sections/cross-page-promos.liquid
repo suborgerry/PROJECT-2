@@ -59,7 +59,7 @@
                 <div class="icon-with-caption">
                   <div class="icon-with-caption__icon">
                     {% if block.type == 'icon' %}
-                      {% render 'icon', icon: block.settings.icon %}
+                      {% render 'icon', icon: block.settings.icon, viewBox: false %}
                     {% else %}
                       <div class="icon-with-caption__image-{{ block.settings.image_size }}">
                         {% if block.settings.image == blank %}
@@ -340,6 +340,22 @@
               {
                 "value": "washing",
                 "label": "Washing"
+              },
+              {
+                "value": "arrows",
+                "label": "Arrows"
+              },
+              {
+                "value": "agent",
+                "label": "Agent"
+              },
+              {
+                "value": "hospital",
+                "label": "Hospital"
+              },
+              {
+                "value": "verified",
+                "label": "Verified"
               }
             ]
           },
