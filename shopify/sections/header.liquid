@@ -13,7 +13,7 @@
 
     @media (min-width: 1024.98px) {
       .navigation .navigation__tier-2-container {
-        top: 65px;
+        top: 0px;
       }
     }
   {% endif %}
@@ -470,9 +470,9 @@
       window.addEventListener('scroll', () => { 
     
         if(window.scrollY >= headerWrapper.offsetHeight){
-            headerWrapper.classList.add('bg-white', 'text-black');
+            headerWrapper.classList.add('bg-white', 'text-black', 'position-relative');
         }else{    
-            headerWrapper.classList.remove('bg-white', 'text-black');
+            headerWrapper.classList.remove('bg-white', 'text-black', 'position-relative');
         }
       });
     } else {
