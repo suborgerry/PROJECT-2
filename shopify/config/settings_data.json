@@ -1155,32 +1155,32 @@
           "1478526632862": {
             "type": "icon",
             "settings": {
-              "icon": "box",
-              "text": "Free delivery!",
+              "icon": "arrows",
+              "text": "30 Days  Return",
               "link_url": ""
             }
           },
           "1478526645605": {
             "type": "icon",
             "settings": {
-              "icon": "map_pin",
-              "text": "Your nearest store",
+              "icon": "verified",
+              "text": "2 Years Warranty",
               "link_url": ""
             }
           },
           "1478526647261": {
             "type": "icon",
             "settings": {
-              "icon": "gift",
-              "text": "Gift cards",
+              "icon": "agent",
+              "text": "24\/7 Customer Support",
               "link_url": ""
             }
           },
           "1478527611164": {
             "type": "icon",
             "settings": {
-              "icon": "percent",
-              "text": "Student discount",
+              "icon": "hospital",
+              "text": "Designed in Switzerland",
               "link_url": ""
             }
           }

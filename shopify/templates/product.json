@@ -54,6 +54,11 @@
             "show_pickup_availability": true
           }
         },
+        "b068446d-8047-446c-9ee8-8eeb01306a54": {
+          "type": "secure-checkout",
+          "settings": {
+          }
+        },
         "844ccdc8-e8e6-47ea-a5a2-88c791907b66": {
           "type": "info-image",
           "settings": {
@@ -138,6 +143,7 @@
         "vendor",
         "divider",
         "buy_buttons",
+        "b068446d-8047-446c-9ee8-8eeb01306a54",
         "844ccdc8-e8e6-47ea-a5a2-88c791907b66",
         "description",
         "cea407f5-f2a9-48a0-bc82-2d00f83befdb",
