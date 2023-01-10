@@ -51,10 +51,10 @@
               <div class="cart-item__not-image">
                 <div class="cart-item__column cart-item__description">
                   <div>
-                    <a class="name" href="{{ item.url }}">{{ item.product.title | escape_once }}</a>
+                    <a class="name" href="{{ item.url }}">{{ item.product.title }}</a>
                     <div class="small-text">
                       {% if item.product.variants.size > 1 %}
-                        <div class="variant">{{ item.variant.title | escape_once }}</div>
+                        <div class="variant">{{ item.variant.title }}</div>
                       {% endif %}
 
                       {%- for p in item.properties -%}
