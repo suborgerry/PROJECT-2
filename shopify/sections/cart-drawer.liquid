@@ -27,11 +27,11 @@
         <img src="{{ item.image | img_url: '170x' }}" alt="{{ item.title | escape }}" />
       </div>
       <div class="cart-summary-overlay__column-item">
-        <div class="cart-summary-overlay__title">{{ item.product.title | escape }}</div>
+        <div class="cart-summary-overlay__title">{{ item.product.title }}</div>
         <div class="cart-summary-overlay__variants">
           {%- unless item.product.has_only_default_variant -%}
             <div class="cart-summary-overlay__variant">
-              <span class="cart-summary-overlay__variant-value">{{ item.variant.title | escape }}</span>
+              <span class="cart-summary-overlay__variant-value">{{ item.variant.title }}</span>
             </div>
 
             {%- for p in item.properties -%}
@@ -153,7 +153,7 @@
     </div>
   {% endfor %}
   <div class="cart-summary-overlay__actions">
-    <a class="button altcolour shop-more" href="#">{{ 'products.added_notification.keep_shopping' | t }}</a>
-    <a class="button to-cart" href="{{ routes.cart_url }}">{{ 'products.added_notification.cart' | t }}</a>
+    <a class="button altcolour shop-more hover-line" href="#">{{ 'products.added_notification.keep_shopping' | t }}</a>
+    <a class="button to-cart hover-line" href="{{ routes.cart_url }}">{{ 'products.added_notification.cart' | t }}</a>
   </div>
 </div>
