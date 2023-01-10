@@ -167,6 +167,13 @@
               <div class="title-row" {{ block.shopify_attributes }}>
                 <h1 class="title">{{ product.title }}</h1>
               </div>
+            {% when 'secure-checkout' %}
+              <div class="section-product__payment-icons">
+                <p><b>Secure checkout</b></p>
+                {% for type in shop.enabled_payment_types %}
+                  {{ type | payment_type_svg_tag: class: 'section-footer__payment-icon' }}
+                {% endfor %}
+              </div>
             {% when 'mini-description' %}
               {% if product.description contains '[countdown]' %}
                 {% assign des = product.description | split:'[/countdown]' | last %}
@@ -309,7 +316,7 @@
                       {{- 'products.product.description' | t -}}
                     {%- else -%}
                       <div class="with-icon">
-                        {% render 'icon', icon: block.settings.icon, size: 'small' %}
+                        {% render 'icon', icon: block.settings.icon, size: 'small', viewBox: true %}
                         <span class="with-icon__beside">{{ 'products.product.description' | t }}</span>
                       </div>
                     {%- endif -%}
@@ -321,7 +328,7 @@
                       {{- product.description -}}
                     {%- else -%}
                       <div class="with-icon">
-                        {% render 'icon', icon: block.settings.icon, size: 'small' %}
+                        {% render 'icon', icon: block.settings.icon, size: 'small', viewBox: true %}
                         <span class="with-icon__beside">{{ product.description }}</span>
                       </div>
                     {%- endif -%}
@@ -476,7 +483,7 @@
                       {{- block.settings.title | escape -}}
                     {%- else -%}
                       <div class="with-icon">
-                        {% render 'icon', icon: block.settings.icon, size: 'small' %}
+                        {% render 'icon', icon: block.settings.icon, size: 'small', viewBox: true %}
                         <span class="with-icon__beside">{{ block.settings.title }}</span>
                       </div>
                     {%- endif -%}
@@ -508,7 +515,7 @@
                       {{- block.settings.text -}}
                     {%- else -%}
                       {% if block.settings.custom_icon == blank %}
-                        {% render 'icon', icon: block.settings.icon, size: block.settings.icon_size %}
+                        {% render 'icon', icon: block.settings.icon, size: block.settings.icon_size, viewBox: true %}
                       {% else %}
                         <span class="icon icon--image icon--{{ block.settings.icon_size }}">{% render 'responsive-image', image: block.settings.custom_icon %}</span>
                       {% endif %}
@@ -541,7 +548,7 @@
                       <div class="rte cf">{{ block.settings.richtext }}</div>
                     {%- else -%}
                       {% if block.settings.custom_icon == blank %}
-                        {% render 'icon', icon: block.settings.icon, size: block.settings.icon_size %}
+                        {% render 'icon', icon: block.settings.icon, size: block.settings.icon_size, viewBox: true %}
                       {% else %}
                         <span class="icon icon--image icon--{{ block.settings.icon_size }}">{% render 'responsive-image', image: block.settings.custom_icon %}</span>
                       {% endif %}
@@ -940,6 +947,11 @@
       {
         "type": "mini-description",
         "name": "Mini description",
+        "limit": 1
+      },
+      {
+        "type": "secure-checkout",
+        "name": "Secure checkout",
         "limit": 1
       },
       {
