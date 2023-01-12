@@ -2001,21 +2001,13 @@ body {
 
 .announcement:after {
   width: 100%;
-  height: 41px;
+  height: 100%;
   content: "";
   position: absolute;
   left: 0;
-  background: inherit;
   z-index: -1;
-  transition: all ease 0.3s;
-  opacity: 1;
-  visibility: hidden;
+  /* transition: all ease 0.3s; */
 }
-
-.announcement:not(.announcement--inactive):after {
-  opacity: 1;
-  visibility: visible;
-} 
 
 .announcement span {
   margin-left: 5px !important;
@@ -2055,7 +2047,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  transition: visibility 0s 300ms;
+  /* transition: visibility 0s 300ms; */
   visibility: hidden;
 }
 .announcement--inactive .announcement__text {
@@ -12011,7 +12003,7 @@ model-viewer .container {
 .sticky-content-container {
   position: -webkit-sticky;
   position: sticky;
-  top: calc(30px + var(--theme-sticky-header-height));
+  /* top: calc(30px + var(--theme-sticky-header-height)); */
 }
 
 {% if bg_col != panel_nav_bg %}
