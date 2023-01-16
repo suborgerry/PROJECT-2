@@ -13,21 +13,6 @@
       text-transform: {{ section.settings.title_transform }}
     }
 
-    .overlay-text__button-row .iwto-btn-color-{{ section.id }} {
-      background: {{ section.settings.btn_color }}
-    }
-
-    .overlay-text__button-row .iwto-btn-color-{{ section.id }}::after {
-      border-color: {{ section.settings.btn_color }};
-    }
-
-    .overlay-text__button-row .iwto-btn-color-{{ section.id }}:hover {
-      background: {{ section.settings.btn_color }};
-    }
-
-    .overlay-text__button-row .iwto-btn-color-{{ section.id }}:hover::after {
-      border-color: {{ section.settings.btn_color }};
-    }
 
     .image-overlay .overlay-text .overlay-text__text .middle {
       max-width: 550px;
@@ -171,17 +156,17 @@
               <div class="overlay-text__button-row">
                 {%- if wrap_image_with_link -%}
                   {%- if section.settings.button_label_1 != blank -%}
-                    <span class="overlay-text__button button hover-line altcolour">{{ section.settings.button_label_1 | escape }}</span>
+                    <span class="overlay-text__button button hover-line {{ section.settings.btn_color }}-button">{{ section.settings.button_label_1 | escape }}</span>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <span class="overlay-text__button button hover-line altcolour">{{ section.settings.button_label_2 | escape }}</span>
+                    <span class="overlay-text__button button hover-line {{ section.settings.btn_color }}-button">{{ section.settings.button_label_2 | escape }}</span>
                   {%- endif -%}
                 {%- else -%}
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button button hover-line altcolour iwto-btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button button hover-line {{ section.settings.btn_color }}-button" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button button hover-line altcolour" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button button hover-line {{ section.settings.btn_color }}-button" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 {%- endif -%}
               </div>
@@ -460,10 +445,28 @@
         "default": "#fff"
       },    
       {
-        "type": "color",
+        "type": "select",
         "id": "btn_color",
-        "label": "Button bg color",
-        "default": "#fff"
+        "label": "Button color",
+        "options": [
+          {
+            "value": "green",
+            "label": "Green"
+          },
+          {
+            "value": "blue",
+            "label": "Blue"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "default": "green"
       },
       {
         "type": "text",

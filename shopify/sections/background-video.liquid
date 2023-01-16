@@ -14,20 +14,6 @@
       {% endif %}
     }
 
-    .overlay-text__button-row .btn-color-{{ section.id }} {
-      background-color: {{ section.settings.background_color }};
-      color: {{ section.settings.text_color }};
-    }
-
-    .overlay-text__button-row .btn-color-{{ section.id }}:hover {
-      background-color: {{ section.settings.background_color }};
-      color: {{ section.settings.text_color }};
-    }
-
-    .overlay-text__button-row .btn-color-{{ section.id }}:after {
-      border-color: {{ section.settings.background_color }} !important;
-    }
-
     .overlay-text .overlay-text__title.bv-other-text-color-{{ section.id }},
     .bv-other-text-color-{{ section.id }} {
       color: {{ section.settings.other_text_color }}
@@ -116,10 +102,10 @@
               {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
                 <div class="overlay-text__button-row">
                   {%- if section.settings.button_label_1 != blank -%}
-                    <a class="overlay-text__button hover-line button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
+                    <a class="overlay-text__button hover-line button {{ section.settings.button_color }}-button" href="{{ section.settings.button_url_1 }}">{{ section.settings.button_label_1 | escape }}</a>
                   {%- endif -%}
                   {%- if section.settings.button_label_2 != blank -%}
-                    <a class="overlay-text__button hover-line button altcolour btn-color-{{ section.id }}" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
+                    <a class="overlay-text__button hover-line button {{ section.settings.button_color }}-button" href="{{ section.settings.button_url_2 }}">{{ section.settings.button_label_2 | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}
@@ -272,28 +258,28 @@
         "label": "Button 2 link"
       },
       {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background color of button",
-        "default": "#000000"
-      },
-      {
-        "type": "color",
-        "id": "background_color_hover",
-        "label": "Background color(Hover) of button",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text color of button",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "text_color_hover",
-        "label": "Text color(hover) of button",
-        "default": "#000000"
+        "type": "select",
+        "id": "button_color",
+        "label": "Color of button",
+        "options": [
+          {
+            "value": "green",
+            "label": "Green"
+          },
+          {
+            "value": "blue",
+            "label": "Blue"
+          },
+          {
+            "value": "black",
+            "label": "Black"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "default": "white"
       },
       {
         "type": "color",

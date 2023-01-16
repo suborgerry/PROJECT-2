@@ -137,6 +137,8 @@
 
         .action.sticky-item .sticky-add-to-cart:hover {
             border-color: #000;
+            background: #000;
+            color: #17e260;
         }
 
         @media (max-width: 1025px) {
@@ -248,7 +250,7 @@
                             </div>
 
                             <div class=" col-actions">
-                                <div class="action sticky-item hover-line">
+                                <div class="action sticky-item">
                                     {% if product.selected_or_first_available_variant.available %}
                                     <input type="hidden" name="id" value="{{ product.variants[0].id }}" /> 
                                     <input data-sticky-btn-addToCart type="submit" name="add" class="btn sticky-add-to-cart" {% if settings.enable_multilang %}data-translate="products.product.add_to_cart"{%endif%} value="ADD TO CART">          
