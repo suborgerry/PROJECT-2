@@ -49,7 +49,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_quantity_selector": true,
-            "enable_payment_button": true,
+            "enable_payment_button": false,
             "show_backorder_text": true,
             "show_pickup_availability": true
           }
@@ -62,7 +62,7 @@
         "844ccdc8-e8e6-47ea-a5a2-88c791907b66": {
           "type": "info-image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_3.png"
+            "image": "shopify:\/\/shop_images\/image_3_8f18da9e-e20d-45e2-a2b9-528fe6837b35.png"
           }
         },
         "description": {
