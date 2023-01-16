@@ -16,6 +16,39 @@
       margin-top: 0
     }
 
+    #pageheader.pageheader .container a, #pageheader.pageheader .container a span {
+      color: #fff;
+    }
+
+    .cart-link__count {
+      background: #fff !important;
+      color: #000!important;
+    }
+
+    #pageheader.pageheader .container a span svg {
+      fill: #fff;
+    }
+
+    .section-header--nav-hover .container a span svg {
+      fill: #000;
+    }
+
+    .section-header--nav-hover #pageheader .logo__image.contrast {
+      display: block;
+    }
+
+    .section-header--nav-hover #pageheader .logo__image:not(.contrast) {
+      display: none;
+    }
+
+    .section-header--nav-hover #pageheader .container a span.cart-link__count {
+      background: #000 !important;
+    }
+
+    #pageheader .container a span.cart-link__count {
+      background: #000 !important;
+    }
+
     @media (min-width: 1024.98px) {
       .navigation .navigation__tier-2-container {
         top: 0px;
@@ -115,7 +148,7 @@
                     -%}
                     <li class="navigation__item{% if has_dropdown %} navigation__item--with-children {% if use_columns %}navigation__item--with-mega-menu{% else %}navigation__item--with-small-menu{% endif %}{% endif %}{% if featured_links contains link.title %} featured-link{% endif %}{% if link.active %} navigation__item--active{% endif %}">
                       <a href="{{ link.url }}" class="navigation__link" {% if has_dropdown %}aria-haspopup="true" aria-expanded="false" aria-controls="NavigationTier2-{{ forloop.index }}"{% endif %}>
-                        {{- link.title | escape -}}
+                        {{- link.title  -}}
                       </a>
                     </li>
                   {% endfor %}
@@ -218,7 +251,9 @@
         <div class="main-search__container container">
           <button class="main-search__close button notabutton" aria-label="{{ 'layout.search.close' | t | escape }}">{% render 'svg-x' %}</button>
 
+          <img class="logo__image-search" src="{{ section.settings.logo_contrast | img_url: img_size }}" alt="{{ section.settings.logo_contrast.alt | default: shop.name | escape }}" itemprop="logo" width="{{ section.settings.logo_contrast.width }}" height="{{ section.settings.logo_contrast.height }}" />
           <form class="main-search__form" action="{{ routes.search_url }}" method="get" autocomplete="off">
+
             <input type="hidden" name="type" value="{{ settings.search_type }}" />
             <input type="hidden" name="options[prefix]" value="last" />
             <div class="main-search__input-container">
