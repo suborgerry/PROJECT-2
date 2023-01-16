@@ -73,14 +73,14 @@
                       }
 
                       if(totalPrice >= shippingPrice) {
-                        alternativeTextMoney.innerHTML = "✈️ Free Shipping";
+                        alternativeTextMoney.innerHTML = "Free shipping 📦";
                       } else {
                         let unpatedPrice = shippingPrice - totalPrice;
 
                         if(totalPrice == 0) {
-                          alternativeTextMoney.innerHTML = `✈️ Free Shipping over ${unpatedPrice}$`
+                          alternativeTextMoney.innerHTML = `Free Shipping 📦 over ${unpatedPrice}$`
                         } else if(totalPrice > 0) {
-                          alternativeTextMoney.innerHTML = `✈️ Only ${unpatedPrice}$ left for free shipping`
+                          alternativeTextMoney.innerHTML = `Only ${unpatedPrice}$ left for free shipping 📦`
                         }
                       }
                     }
