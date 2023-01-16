@@ -6807,10 +6807,10 @@ input[type=button] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: calc(1em/2) 1em;
   vertical-align: middle;
   text-align: center;
-  border-radius: 10px;
+  border-radius: calc(1em/2);
   transition: background-color 100ms, color 100ms, border-color 100ms, opacity 100ms;
     font-family: Montserrat,Arial,Helvetica,Calibri;
     font-style: {{ base_font.style }};
@@ -6818,6 +6818,44 @@ input[type=button] {
   text-transform: uppercase;
   -webkit-tap-highlight-color: transparent;
   position: relative;
+}
+
+// buttons colors
+
+.green-button {
+  color: #000 !important;
+  background: #17e260 !important;
+}
+
+.green-button:after {
+  border-color: #17e260 !important;
+}
+
+.white-button {
+  color: #000 !important;
+  background: #fff !important;
+}
+
+.white-button:after {
+  border-color: #fff !important;
+}
+
+.black-button {
+  color: #fff !important;
+  background: #000 !important;
+}
+
+.black-button:after {
+  border-color: #000 !important;
+}
+
+.blue-button {
+  color: #fff !important;
+  background: #1761ff !important;
+}
+
+.blue-button:after {
+  border-color: #1761ff !important;
 }
 
 .hover-line {
@@ -6834,7 +6872,7 @@ input[type=button] {
   top: 50%;
   border: 5px solid;
   border-color: #fff;
-  border-radius: 17px;
+  border-radius: 0.8em;
   transform: translate(-50%, -50%);
   transition: all ease 0.3s;
 }
@@ -8781,17 +8819,8 @@ ul.inline li {
   margin-top: 20px;
   font-size: 14px;
   line-height: 15px;
-  color: #fff;
-  background: #000;
 }
 
-#pagefooter .signup-form__button:after {
-  border-color: #000;
-}
-
-#pagefooter .signup-form__button:hover:after {
-  border-color: #000;
-}
 @media (max-width: 767.98px) {
   .signup-form__inline-container {
     display: block;
@@ -12584,6 +12613,19 @@ model-viewer .container {
 .shopify-challenge__container {
   padding-top: 60px;
   padding-bottom: 40px;
+}
+
+.jdgm-carousel-title {
+  font-weight: 700;
+}
+
+.jdgm-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.jdgm-carousel-title-and-link {
+  margin-bottom: 0;
 }
 
 .jdgm-widget.jdgm-revs-tab.jdgm--done-setup-widget {
